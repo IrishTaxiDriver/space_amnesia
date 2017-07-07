@@ -1,0 +1,31 @@
+// Weapons
+Game.ItemRepository.define(loc.ItemWeaponLaserRifleName, {
+    name: loc.ItemWeaponLaserRifleName,
+    description: loc.ItemWeaponLaserRifleDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: ')',
+    foreground: 'gray',
+    attackValue: 5,
+    wieldable: true,
+    slot: 'hands',
+    range: 8,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWeaponBowName, {
+    name: loc.ItemWeaponBowName,
+    description: loc.ItemWeaponBowDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: ')',
+    foreground: 'gray',
+    attackValue: 5,
+    wieldable: true,
+    slot: 'hands',
+    range: 8,
+    components: [loc.ItemIntestinesName, loc.ItemWoodScrapName],
+    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+}, {
+    disableRandomCreation: true
+});
