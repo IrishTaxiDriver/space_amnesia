@@ -1,7 +1,11 @@
 TODO List
 
-Items
-  -Backpacks
+Entities
   -Containers
+Items
+  -MORE ITEMS
 Maps
+  -Hook up pre-made maps
 Systems
+  -Grammar ("You picked up an Intestines.")
+  -Debug
