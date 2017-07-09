@@ -12,7 +12,7 @@ Game.Repository.prototype.define = function(name, template, options) {
     this._templates[name] = template;
     // Apply any options
     var disableRandomCreation = options && options['disableRandomCreation'];
-    //Util.debug("Repository: Defining " + this._templates[name].name + " from template. Random Creation = " + disableRandomCreation);
+    //Debug.log("Repository: Defining " + this._templates[name].name + " from template. Random Creation = " + disableRandomCreation);
     if (!disableRandomCreation) {
         this._randomTemplates[name] = template;
     }
@@ -25,7 +25,7 @@ Game.Repository.prototype.create = function(name, extraProperties) {
     }
     // Copy the template
     var template = Object.create(this._templates[name]);
-    Util.debug("Game.Repository.create: Creating " + this._templates[name].name + " from template.");
+    Debug.log("Game.Repository.create: Creating " + this._templates[name].name + " from template.");
     // Apply any extra properties
     if (extraProperties) {
         for (var key in extraProperties) {
@@ -44,7 +44,7 @@ Game.Repository.prototype.createRandom = function() {
 
 Game.Repository.prototype.filter = function(key, value) {
     var results = {};
-    Util.debug("Game.Repository.filter: Finding entities with [\"" + key + "\"] : \"" + value + "\"");
+    Debug.log("Game.Repository.filter: Finding entities with [\"" + key + "\"] : \"" + value + "\"");
     for (var obj in this._templates) {
         var values = Object.getOwnPropertyDescriptor(this._templates[obj], key).value;
         //Its an array.
@@ -65,13 +65,20 @@ Game.Repository.prototype.filter = function(key, value) {
     return results;
 };
 
+Game.Repository.prototype.getContainingRepository = function(key, value) {
+    //Debug.log("Game.Repository.getContainingRepository: Finding repository with [\"" + key + "\"] : \"" + value + "\"");
+    results = Object.keys(this.getFromCriteria(key, value));
+    if (results.length != 0)
+        return true;
+}
+
 Game.Repository.prototype.getFromCriteria = function(key, value) {
-    //Util.debug("Game.Repository.getFromCriteria: Evaluating array with [\"" + key + "\"] : \"" + value + "\"");
+    //Debug.log("Game.Repository.getFromCriteria: Evaluating array with [\"" + key + "\"] : \"" + value + "\"");
     return this.filter(key, value);
 };
 
 // Create a random object based on the given criteria
 Game.Repository.prototype.createRandomFromCriteria = function(key, value) {
-    //Util.debug("Game.Repository.createRandomFromCriteria: Creating random thing from criteria [\"" + key + "\"] : \"" + value + "\"");
+    //Debug.log("Game.Repository.createRandomFromCriteria: Creating random thing from criteria [\"" + key + "\"] : \"" + value + "\"");
     return this.create(Object.keys(this.getFromCriteria(key,value)).random());
 };

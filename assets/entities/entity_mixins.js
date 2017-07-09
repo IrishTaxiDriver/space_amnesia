@@ -393,40 +393,40 @@ Game.EntityMixins.InventoryHolder = {
         return num;
     },
     modifyInventorySlots: function(change) {
-        Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Backpack changed. New backpack has " + change + " slots.");
+        Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Backpack changed. New backpack has " + change + " slots.");
         //TODO: Fanny pack gives inventory slots too?
         var invSize = 0;
         if (change > 0) {
             //Add empty slots onto the end of the array.
             invSize = this._items.length;
             for (var i = invSize; i < invSize + change; i++) {
-                Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Adding inventory slot.");
+                Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Adding inventory slot.");
                 this._items.push(null);
             }
         } else {
             //We don't have enough inventory slots to match our current inventory size.
             //Try removing empty inventory slots first.
-            Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: " + this._items.length + " < " + this.inventorySlots);
+            Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: " + this._items.length + " < " + this.inventorySlots);
             invSize = this._items.length;
             if (invSize > this.inventorySlots) {
-                Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing Slots: Try remove empty slots");
+                Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing Slots: Try remove empty slots");
                 for (var i = invSize - 1; i >= this.inventorySlots; i--) {
                     if (this._items[i] == null) {
-                        Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing empty inventory slot.");
+                        Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing empty inventory slot.");
                         this._items.pop(this._items[i]);
                     }
                 }
             }
             //If we still haven't removed enough space, drop non-equipped items next if we have to.
-            Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: " + this._items.length + " < " + this.inventorySlots);
+            Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: " + this._items.length + " < " + this.inventorySlots);
             invSize = this._items.length;
             if (invSize > this.inventorySlots) {
-                Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing Slots: Try remove unequipped items.");
+                Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing Slots: Try remove unequipped items.");
                 for (var i = invSize - 1; i >= this.inventorySlots; i--) {
                     if (this._items[i]) {
                         //Skip equipped items.
                         if (!Util.isFunction(this._items[i].getSlot)) {
-                            Util.debug("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing unequipped item.");
+                            Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Removing unequipped item.");
                             Game.sendMessage(this, loc.ItemListScreenDroppedItem, [this._items[i].getName()]);
                             this.dropItem(i);
                             this._items.pop(this._items[i]);
@@ -577,7 +577,7 @@ Game.EntityMixins.Equipper = {
         this._equipped[loc.EntityPlayerEquipSlotWaist] = null;
     },
     equip: function(item) {
-        Util.debug("Game.EntityMixins.Equipper.equip: Equipping " + item.getName() + " in slot: " + item.getSlot());
+        Debug.log("Game.EntityMixins.Equipper.equip: Equipping " + item.getName() + " in slot: " + item.getSlot());
         this._equipped[item.getSlot()] = item;
         if (item.getSlot() == loc.EntityPlayerEquipSlotBack) {
             this.modifyInventorySlots(item.getInventorySlots());
@@ -585,7 +585,7 @@ Game.EntityMixins.Equipper = {
     },
     unequip: function(item) {
         if (item == "all") {
-            Util.debug("Game.EntityMixins.Equipper.unequip: Removing all.");
+            Debug.log("Game.EntityMixins.Equipper.unequip: Removing all.");
             this._equipped[loc.EntityPlayerEquipSlotLHand] = null;
             this._equipped[loc.EntityPlayerEquipSlotRHand] = null;
             this._equipped[loc.EntityPlayerEquipSlotHead] = null;
@@ -596,7 +596,7 @@ Game.EntityMixins.Equipper = {
             this._equipped[loc.EntityPlayerEquipSlotBack] = null;
             this._equipped[loc.EntityPlayerEquipSlotWaist] = null;         
         } else { //its an item
-            Util.debug("Game.EntityMixins.Equipper.unequip: Removing " + item.getName() + " in slot: " + item.getSlot());
+            Debug.log("Game.EntityMixins.Equipper.unequip: Removing " + item.getName() + " in slot: " + item.getSlot());
             if (item.getSlot() == loc.EntityPlayerEquipSlotBack) {
                 this.modifyInventorySlots(item.getInventorySlots() * -1);
             }

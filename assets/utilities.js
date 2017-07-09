@@ -12,37 +12,42 @@ Game.extend = function(src, dest) {
 };
 
 var Util = {
-    _debug: false,
     isFunction: function(functionName) {
         return typeof(functionName) === typeof(Function);
-    },
-    debug: function(msg) {
-        if (this._debug) {
+    }
+};
+
+var Debug = {
+    enable: false,
+    log: function(msg) {
+        if (this.enable) {
                 console.log(msg);
         }
     },
-    spawn: function(key, value, type) {
-        if (this._debug) {
-
-            Util.debug("Util.spawn: Trying to spawn: " + value );
-
-            if (type == "entity") {
-                repo = Game.EntityRepository;
-            } else if (type == "item") {
-                repo = Game.ItemRepository;
-            }
-
-            Util.debug("Util.spawn: Using " + repo._name + "repository.");
+    spawn: function(name) {
+        if (this.enable) {
+            Debug.log("Debug.spawn: Trying to spawn: " + name );
 
             var player = Game._currentScreen._player;
             var map = player.getMap();
 
-            map.addItem(player.getX(), player.getY(), player.getZ(),
-                repo.create( Object.keys( repo.getFromCriteria( key, value ) ) ) );
+            if (Game.EntityRepository.getContainingRepository("name", name)) {
+                Debug.log("Debug.spawn: Using entity repository.");
+                var entity = Game.EntityRepository.create( Object.keys( Game.EntityRepository.getFromCriteria( "name", name ) ) );
+                entity.setX(player.getX() - 1);
+                entity.setY(player.getY() - 1);
+                entity.setZ(player.getZ());
+                //must set xyz of entity.
+                map.addEntity( entity );
+            } else {
+                Debug.log("Debug.spawn: Using item repository.");
+                map.addItem( player.getX(), player.getY(), player.getZ(),
+                    Game.ItemRepository.create( 
+                        Object.keys(
+                            Game.ItemRepository.getFromCriteria( "name", name ) ) ) );
+            }
 
-            //Game.refresh();
-
-            Util.debug("Util.spawn: Spawned: " + value);
+            Debug.log("Debug.spawn: Spawned: " + name);
         }
     }
 };
