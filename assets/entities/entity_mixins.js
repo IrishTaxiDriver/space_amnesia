@@ -10,7 +10,8 @@ Game.EntityMixins.PlayerActor = {
             return;
         }
         this._acting = true;
-        this.addTurnHunger();
+        if (!Debug.sated)
+            this.addTurnHunger();
         // Detect if the game is over
         if (!this.isAlive()) {
             Game.Screen.playScreen.setGameEnded(true);
@@ -186,7 +187,13 @@ Game.EntityMixins.Attacker = {
             Game.sendMessage(target, loc.EntityTakeAttack, 
                 [this.getName(), damage]);
 
-            target.takeDamage(this, damage);
+            if (Debug.god) {
+                if (target != this.getMap().getPlayer()) {
+                    target.takeDamage(this, damage);
+                }
+            } else {
+                target.takeDamage(this, damage);
+            }   
         }
     },
     listeners: {

@@ -19,6 +19,10 @@ var Util = {
 
 var Debug = {
     enable: false,
+    sated: false,
+    god: false,
+    notarget: false,
+    levelup: false,
     log: function(msg) {
         if (this.enable) {
                 console.log(msg);
