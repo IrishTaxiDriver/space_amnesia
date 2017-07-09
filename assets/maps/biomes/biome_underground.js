@@ -27,12 +27,5 @@ Game.Map.biome_underground = function(tiles, player) {
             this.addItemAtRandomPosition(item, z);
         }
     }
-    // Add weapons and armor to the map in random positions and floors
-    // var templates = ['dagger', 'sword', 'staff', 
-    //     'tunic', 'chainmail', 'platemail'];
-    // for (var i = 0; i < templates.length; i++) {
-    //     this.addItemAtRandomPosition(Game.ItemRepository.create(templates[i]),
-    //         Math.floor(this._depth * Math.random()));
-    // }
 };
 Game.Map.biome_underground.extend(Game.Map);

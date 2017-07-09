@@ -25,6 +25,7 @@ var loc = {
 	ItemListScreenNoItems : "0 - no items",
 	ItemListScreenWearingSuffix : " (wearing)",
 	ItemListScreenWieldingSuffix : " (wielding)",
+	ItemListScreenDroppedItem : "You can't carry this anymore: ",
 
 	//WIN SCREEN
 	WinScreenEnter : "Entered win screen.",
@@ -41,19 +42,24 @@ var loc = {
 	PickupScreenPartialPickup : "Your inventory is full! Not all items were picked up.",
 	
 	//DROP SCREEN
-	DropScreenChooseDrop : "Choose the item you wish to drop",
+	DropScreenChooseDrop : "Choose the item(s) you wish to drop",
 
 	//EAT SCREEN
-	EatScreenChooseEat : "Choose the item you wish to eat",
+	EatScreenChooseEat : "Choose the item(s) you wish to eat",
 	EatScreenEat : "You eat %s.",
 
+	//EAT SCREEN
+	ContainerScreenChooseItem : "Choose the item(s) you wish to loot",
+	ContainerScreenLoot : "You loot %s.",
+	ContainerScreenLootEmpty : "There is nothing in the ",
+
 	//WIELD SCREEN	
-	WieldScreenChooseWield : "Choose the item you wish to wield",
+	WieldScreenChooseWield : "Choose the item(s) you wish to wield",
 	WieldScreenEmptyHanded : "You are empty handed.",
 	WieldScreenYouAreWielding : "You are wielding %s.",
 
 	//WEAR SCREEN
-	WearScreenChooseWear : "Choose the item you wish to wear",
+	WearScreenChooseWear : "Choose the item(s) you wish to wear",
 	WearScreenNude : "You are not wearing anthing.",
 	WearScreenYouAreWearing : "You are wearing %s.",
 
@@ -182,6 +188,7 @@ var loc = {
 	EntityClassMutant : "mutant",
 	EntityClassAnimal : "animal",
 	EntityClassRobot : "robot",
+	EntityClassContainer : "container",
 	EntityClassSubInsect : "insect",
 	EntityClassSubArachnid : "arachnid",
 	EntityClassSubReptile : "reptile",
@@ -464,6 +471,17 @@ var loc = {
 
 	ItemWearablesWaistFannyPackName : "Fanny Pack",
 	ItemWearablesWaistFannyPackDesc : "A fanny pack",
+
+	//ITEMS - CONTAINERS
+	
+	ItemContainerLockerName : "Locker",
+	ItemContainerLockerDesc : "A stand up metal locker",
+
+	ItemContainerFootLockerName : "Foot Locker",
+	ItemContainerFootLockerDesc : "A foot locker",
+
+	ItemContainerTrunkName : "Trunk",
+	ItemContainerTrunkDesc : "A steamer trunk",
 
 	//ITEMS - QUEST
 	ItemQuestGymTowelName : "Gym Towel",

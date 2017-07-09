@@ -8,6 +8,7 @@ Game.ItemRepository.define(loc.ItemWearablesBackToteName, {
     defenseValue: 1,
     wearable: true,
     slot: loc.EntityPlayerEquipSlotBack,
+    inventorySlots: 4,
     mixins: [Game.ItemMixins.Equippable]
 }, {
     disableRandomCreation: true
@@ -22,6 +23,7 @@ Game.ItemRepository.define(loc.ItemWearablesBackPackName, {
     defenseValue: 2,
     wearable: true,
     slot: loc.EntityPlayerEquipSlotBack,
+    inventorySlots: 8,
     mixins: [Game.ItemMixins.Equippable]
 }, {
     disableRandomCreation: true
@@ -36,6 +38,7 @@ Game.ItemRepository.define(loc.ItemWearablesBackPackMilName, {
     defenseValue: 2,
     wearable: true,
     slot: loc.EntityPlayerEquipSlotBack,
+    inventorySlots: 12,
     mixins: [Game.ItemMixins.Equippable]
 }, {
     disableRandomCreation: true

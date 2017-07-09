@@ -17,9 +17,32 @@ var Util = {
         return typeof(functionName) === typeof(Function);
     },
     debug: function(msg) {
-
         if (this._debug) {
                 console.log(msg);
+        }
+    },
+    spawn: function(key, value, type) {
+        if (this._debug) {
+
+            Util.debug("Util.spawn: Trying to spawn: " + value );
+
+            if (type == "entity") {
+                repo = Game.EntityRepository;
+            } else if (type == "item") {
+                repo = Game.ItemRepository;
+            }
+
+            Util.debug("Util.spawn: Using " + repo._name + "repository.");
+
+            var player = Game._currentScreen._player;
+            var map = player.getMap();
+
+            map.addItem(player.getX(), player.getY(), player.getZ(),
+                repo.create( Object.keys( repo.getFromCriteria( key, value ) ) ) );
+
+            //Game.refresh();
+
+            Util.debug("Util.spawn: Spawned: " + value);
         }
     }
 };

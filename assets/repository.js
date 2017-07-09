@@ -12,7 +12,7 @@ Game.Repository.prototype.define = function(name, template, options) {
     this._templates[name] = template;
     // Apply any options
     var disableRandomCreation = options && options['disableRandomCreation'];
-    Util.debug("Repository: Defining " + this._templates[name].name + " from template. Random Creation = " + disableRandomCreation);
+    //Util.debug("Repository: Defining " + this._templates[name].name + " from template. Random Creation = " + disableRandomCreation);
     if (!disableRandomCreation) {
         this._randomTemplates[name] = template;
     }
@@ -47,8 +47,17 @@ Game.Repository.prototype.filter = function(key, value) {
     Util.debug("Game.Repository.filter: Finding entities with [\"" + key + "\"] : \"" + value + "\"");
     for (var obj in this._templates) {
         var values = Object.getOwnPropertyDescriptor(this._templates[obj], key).value;
-        for (i = 0; i < values.length; i++) {
-            if (values[i] == value || values[i] == "any") {
+        //Its an array.
+        if (typeof (values) != "string") {
+            for (i = 0; i < values.length; i++) {
+                if (values[i] == value || values[i] == "any") {
+                    results[obj] = this._templates[obj];
+                }
+            }
+        }
+        //Its a string.
+        else if (typeof (values) == "string") {
+            if (values == value) {
                 results[obj] = this._templates[obj];
             }
         }
@@ -57,12 +66,12 @@ Game.Repository.prototype.filter = function(key, value) {
 };
 
 Game.Repository.prototype.getFromCriteria = function(key, value) {
-    Util.debug("Game.Repository.getFromCriteria: Evaluating array with [\"" + key + "\"] : \"" + value + "\"");
+    //Util.debug("Game.Repository.getFromCriteria: Evaluating array with [\"" + key + "\"] : \"" + value + "\"");
     return this.filter(key, value);
 };
 
 // Create a random object based on the given criteria
 Game.Repository.prototype.createRandomFromCriteria = function(key, value) {
-    Util.debug("Game.Repository.createRandomFromCriteria: Creating random thing from criteria [\"" + key + "\"] : \"" + value + "\"");
+    //Util.debug("Game.Repository.createRandomFromCriteria: Creating random thing from criteria [\"" + key + "\"] : \"" + value + "\"");
     return this.create(Object.keys(this.getFromCriteria(key,value)).random());
 };

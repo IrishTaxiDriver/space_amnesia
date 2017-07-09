@@ -38,7 +38,7 @@ Game.Screen.ItemListScreen.prototype.setup = function(player, items) {
 Game.Screen.ItemListScreen.prototype.render = function(display) {
     var letters = 'abcdefghijklmnopqrstuvwxyz';
     // Render the caption in the top row
-    display.drawText(0, 0, this._caption);
+    display.drawText(0, 0, this._caption + ": " + this._player.getFullInventorySlots() + " out of " + this._items.length);
     // Render the no item row if enabled
     if (this._hasNoItemOption) {
         display.drawText(0, 1, loc.ItemListScreenNoItems);
@@ -83,27 +83,33 @@ Game.Screen.ItemListScreen.prototype.executeOkFunction = function() {
     Game.Screen.playScreen.setSubScreen(undefined);
     // Call the OK function and end the player's turn if it return true.
     if (this._okFunction(selectedItems)) {
+        Util.debug("Game.Screen.ItemListScreen.prototype.executeOkFunction: Function OK.");
         this._player.getMap().getEngine().unlock();
     }
 };
 Game.Screen.ItemListScreen.prototype.handleInput = function(inputType, inputData) {
     if (inputType === 'keydown') {
+        Util.debug("Game.Screen.ItemListScreen.prototype.handleInput: Key pressed.");
         // If the user hit escape, hit enter and can't select an item, or hit
         // enter without any items selected, simply cancel out
         if (inputData.keyCode === ROT.VK_ESCAPE || 
             (inputData.keyCode === ROT.VK_RETURN && 
                 (!this._canSelectItem || Object.keys(this._selectedIndices).length === 0))) {
+            Util.debug("Game.Screen.ItemListScreen.prototype.handleInput: Exiting subScreen.");
             Game.Screen.playScreen.setSubScreen(undefined);
         // Handle pressing return when items are selected
         } else if (inputData.keyCode === ROT.VK_RETURN) {
+            Util.debug("Game.Screen.ItemListScreen.prototype.handleInput: Executing OK function.");
             this.executeOkFunction();
         // Handle pressing zero when 'no item' selection is enabled
         } else if (this._canSelectItem && this._hasNoItemOption && inputData.keyCode === ROT.VK_0) {
+            Util.debug("Game.Screen.ItemListScreen.prototype.handleInput: \'0\' pressed.");
             this._selectedIndices = {};
             this.executeOkFunction();
         // Handle pressing a letter if we can select
         } else if (this._canSelectItem && inputData.keyCode >= ROT.VK_A &&
             inputData.keyCode <= ROT.VK_Z) {
+            Util.debug("Game.Screen.ItemListScreen.prototype.handleInput: Item selected.");
             // Check if it maps to a valid item by subtracting 'a' from the character
             // to know what letter of the alphabet we used.
             var index = inputData.keyCode - ROT.VK_A;

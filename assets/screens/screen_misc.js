@@ -43,6 +43,24 @@ Game.Screen.eatScreen = new Game.Screen.ItemListScreen({
     }
 });
 
+Game.Screen.containerScreen = new Game.Screen.ItemListScreen({
+    caption: loc.ContainerScreenChooseItem,
+    canSelect: true,
+    canSelectMultipleItems: true,
+    isAcceptable: function(item) {
+        return item;
+    },
+    ok: function(selectedItems) {
+        // Eat the item, removing it if there are no consumptions remaining.
+        var key = Object.keys(selectedItems)[0];
+        var item = selectedItems[key];
+        Game.sendMessage(this._player, loc.ContainerScreenLoot, [item.describeThe()]);
+        removeContentFromContainer(this._player, item);
+
+        return true;
+    }
+});
+
 Game.Screen.wieldScreen = new Game.Screen.ItemListScreen({
     caption: loc.WieldScreenChooseWield,
     canSelect: true,
@@ -58,11 +76,19 @@ Game.Screen.wieldScreen = new Game.Screen.ItemListScreen({
             this._player.unequip("all");
             Game.sendMessage(this._player, loc.WieldScreenEmptyHanded)
         } else {
-            // Make sure to unequip the item first in case it is the weapon.
             var item = selectedItems[keys[0]];
-            this._player.unequip(item);
-            this._player.equip(item);
-            Game.sendMessage(this._player, loc.WieldScreenYouAreWielding, [item.describeA()]);
+            var removedItem = null;
+            var slot = item.getSlot();
+            // Make sure to unequip the slot first, if theres something there.
+            if (this._player.getItemInSlot(slot) != null) {
+                removedItem = this._player.getItemInSlot(slot)
+                this._player.unequip(removedItem);
+            }
+            // If we just unequipped the item above, we don't want to re-equip it.
+            if (removedItem != item) {
+                this._player.equip(item);
+                Game.sendMessage(this._player, loc.WearScreenYouAreWearing, [item.describeA()]);
+            }
         }
         return true;
     }
@@ -83,11 +109,19 @@ Game.Screen.wearScreen = new Game.Screen.ItemListScreen({
             this._player.unequip("all");
             Game.sendMessage(this._player, loc.WearScreenNude)
         } else {
-            // Make sure to unequip the item first in case it is the armor.
             var item = selectedItems[keys[0]];
-            this._player.unequip(item);
-            this._player.equip(item);
-            Game.sendMessage(this._player, loc.WearScreenYouAreWearing, [item.describeA()]);
+            var removedItem = null;
+            var slot = item.getSlot();
+            // Make sure to unequip the slot first, if theres something there.
+            if (this._player.getItemInSlot(slot) != null) {
+                removedItem = this._player.getItemInSlot(slot)
+                this._player.unequip(removedItem);
+            }
+            // If we just unequipped the item above, we don't want to re-equip it.
+            if (removedItem != item) {
+                this._player.equip(item);
+                Game.sendMessage(this._player, loc.WearScreenYouAreWearing, [item.describeA()]);
+            }
         }
         return true;
     }
@@ -162,12 +196,12 @@ Game.Screen.gainStatScreen = {
 Game.Screen.helpScreen = {
     render: function(display) {
         var text = loc.HelpScreenText;
-        var border = '-------------';
+        var border = '------------------';
         var y = 0;
         display.drawText(Game.getScreenWidth() / 2 - text.length / 2, y++, text);
         display.drawText(Game.getScreenWidth() / 2 - text.length / 2, y++, border);
-        display.drawText(0, y++, 'The villagers have been complaining of a terrible stench coming from the cave.');
-        display.drawText(0, y++, 'Find the source of this smell and get rid of it!');
+        display.drawText(0, y++, 'You wake up with no memory.');
+        display.drawText(0, y++, 'Explore your surroundings.');
         y += 3;
         display.drawText(0, y++, '[' + String.fromCharCode(config.PickupKey) + '] ' + loc.HelpScreenPickupKeyDesc);
         display.drawText(0, y++, '[' + String.fromCharCode(config.DropKey) + '] ' + loc.HelpScreenDropKeyDesc);
