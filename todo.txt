@@ -4,6 +4,7 @@ Entities
   -Containers
 Items
   -Keys
+  -Books
   -MORE ITEMS
 Maps
   -Hook up pre-made maps
