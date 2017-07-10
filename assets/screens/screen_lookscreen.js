@@ -36,7 +36,8 @@ Game.Screen.lookScreen = new Game.Screen.TargetBasedScreen({
                 Game.Tile.nullTile.getRepresentation(),
                 Game.Tile.nullTile.getDescription());
         }
-    }
+    },
+    ok: function(x, y) {}
 });
 
 Game.Screen.lookScreen = new Game.Screen.TargetBasedScreen({
@@ -77,5 +78,6 @@ Game.Screen.lookScreen = new Game.Screen.TargetBasedScreen({
                 Game.Tile.nullTile.getRepresentation(),
                 Game.Tile.nullTile.getDescription());
         }
-    }
+    },
+    ok: function(x, y) {}
 });

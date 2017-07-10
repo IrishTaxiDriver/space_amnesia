@@ -8,6 +8,7 @@ Game.Screen.TargetBasedScreen = function(template) {
     this._captionFunction = template['captionFunction'] || function(x, y) {
         return '';
     }
+    this._okFunction = template['ok'];
 };
 
 Game.Screen.TargetBasedScreen.prototype.setup = function(player, startX, startY, offsetX, offsetY) {

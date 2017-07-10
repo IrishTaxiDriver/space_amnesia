@@ -518,7 +518,7 @@ Game.EntityMixins.FoodConsumer = {
         this.modifyFullnessBy(-this._fullnessDepletionRate);
     },
     modifyFullnessBy: function(points) {
-        this._fullness = this._fullness + points;
+        this._fullness += points;
         if (this._fullness <= 0) {
             this.kill(loc.EntityStarved);
         } else if (this._fullness > this._maxFullness) {
@@ -649,6 +649,9 @@ Game.EntityMixins.ExperienceGainer = {
     },
     setStatPoints: function(statPoints) {
         this._statPoints = statPoints;
+    },
+    giveStatPoints: function(statPoints) {
+        this._statPoints += statPoints;
     },
     getStatOptions: function() {
         return this._statOptions;
