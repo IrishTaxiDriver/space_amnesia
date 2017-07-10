@@ -1,6 +1,4 @@
 # space_amnesia
-makework javascript roguelike project based on jokeofweek/jsrogue 's tutorial
+makework javascript roguelike project branched from jokeofweek/jsrogue 's tutorial at: https://github.com/jokeofweek/jsrogue
 
-This is a makework project for me.
-I'm learning javascript.
-Please be gentle.
+This is a makework project for me and I'm learning javascript as I go.
