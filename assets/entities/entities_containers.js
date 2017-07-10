@@ -4,7 +4,7 @@ Game.EntityRepository.define(loc.ItemContainerLockerName, {
     class: [loc.EntityClassContainer],
     habitat: [loc.MapBiomeHabitatNone],
     character: '[',
-    foreground: 'aqua',
+    foreground: 'white',
     mixins: [Game.EntityMixins.Container]
 });
 
@@ -14,7 +14,7 @@ Game.EntityRepository.define(loc.ItemContainerFootLockerName, {
     class: [loc.EntityClassContainer],
     habitat: [loc.MapBiomeHabitatNone],
     character: '[',
-    foreground: 'aqua',
+    foreground: 'white',
     mixins: [Game.EntityMixins.Container]
 });
 
@@ -24,6 +24,6 @@ Game.EntityRepository.define(loc.ItemContainerTrunkName, {
     class: [loc.EntityClassContainer],
     habitat: [loc.MapBiomeHabitatNone],
     character: '[',
-    foreground: 'aqua',
+    foreground: 'white',
     mixins: [Game.EntityMixins.Container]
 });

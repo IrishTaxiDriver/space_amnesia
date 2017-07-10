@@ -3,7 +3,7 @@ Game.ItemRepository.define(loc.ItemWeaponLargePipeName, {
     name: loc.ItemWeaponLargePipeName,
     description: loc.ItemWeaponLargePipeDesc,
     habitat: [loc.MapBiomeHabitatAny],
-    character: ')',
+    character: '/',
     foreground: 'gray',
     attackValue: 1,
     attackType: loc.ItemWeaponAttackTypeStrike,

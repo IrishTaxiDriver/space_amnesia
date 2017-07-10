@@ -3,7 +3,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesName, {
     name: loc.ItemWearablesHandsGlovesName,
     description: loc.ItemWearablesHandsGlovesDesc,
     habitat: [loc.MapBiomeHabitatAny],
-    character: '[',
+    character: '(',
     foreground: 'aqua',
     defenseValue: 1,
     wearable: true,
