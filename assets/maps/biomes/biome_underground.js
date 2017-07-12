@@ -26,6 +26,11 @@ Game.Map.biome_underground = function(tiles, player) {
             // Add a random item for the habitat
             this.addItemAtRandomPosition(item, z);
         }
+        
+        // 1 container per floor
+        var container = Game.EntityRepository.createRandomFromCriteria("class", loc.EntityClassContainer);
+        container.populateContainerWithRandomCount(5);
+        this.addEntityAtRandomPosition(container, z);
     }
 };
 Game.Map.biome_underground.extend(Game.Map);

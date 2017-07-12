@@ -50,13 +50,12 @@ Game.Screen.containerScreen = new Game.Screen.ItemListScreen({
     isAcceptable: function(item) {
         return item;
     },
-    ok: function(selectedItems) {
-        // Eat the item, removing it if there are no consumptions remaining.
-        var key = Object.keys(selectedItems)[0];
-        var item = selectedItems[key];
-        Game.sendMessage(this._player, loc.ContainerScreenLoot, [item.describeThe()]);
-        removeContentFromContainer(this._player, item);
-
+    ok: function(selectedItems,container) {
+        // Try to pick up all items, messaging the player if they couldn't all be
+        // picked up.
+        if (!this._player.pickupItemsFromContainer(Object.keys(selectedItems), container)) {
+            Game.sendMessage(this._player, loc.PickupScreenPartialPickup);
+        }
         return true;
     }
 });

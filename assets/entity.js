@@ -96,10 +96,16 @@ Game.Entity.prototype.tryMove = function(x, y, z, map) {
         // either the entity or the target is the player.
         if (this.hasMixin('Attacker') && 
             (this.hasMixin(Game.EntityMixins.PlayerActor) ||
-             target.hasMixin(Game.EntityMixins.PlayerActor))) {
+             target.hasMixin(Game.EntityMixins.PlayerActor)) && !target.hasMixin(Game.EntityMixins.Container)) {
             this.attack(target);
             return true;
-        } 
+        }
+        //The entity is a container.
+        if (this.hasMixin(Game.EntityMixins.PlayerActor) && target.hasMixin(Game.EntityMixins.Container)) {
+            Debug.log("Game.Entity.prototype.tryMove: Hitting a chest."); 
+            target.showContainerLoot();
+            return true;
+        }
         // If not nothing we can do, but we can't 
         // move to the tile
         return false;        
@@ -152,6 +158,16 @@ Game.Entity.prototype.kill = function(message) {
     } else {
         this.getMap().removeEntity(this);
     }
+};
+Game.Entity.prototype.populateContainerWithRandomCount = function(amount) {
+    array = [];
+    while(amount > 0) {
+        item = Game.ItemRepository.createRandomFromCriteria("habitat", this._habitat);
+        array[array.length] = item;
+        amount--;
+        Debug.log("Game.Entity.prototype.populateContainerWithRandomCount: Adding " + item._name + " to container.");
+    }
+    this.setContents(array);
 };
 Game.Entity.prototype.switchMap = function(newMap) {
     // If it's the same map, nothing to do!

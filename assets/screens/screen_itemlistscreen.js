@@ -12,13 +12,14 @@ Game.Screen.ItemListScreen = function(template) {
     this._canSelectMultipleItems = template['canSelectMultipleItems'];
     // Whether a 'no item' option should appear.
     this._hasNoItemOption = template['hasNoItemOption'];
+    this._entity = template['entity'] || null;
 };
 
 Game.Screen.ItemListScreen.prototype.setup = function(player, items) {
     this._player = player;
     // Should be called before switching to the screen.
     var count = 0;
-    // Iterate over each item, keeping only the aceptable ones and counting
+    // Iterate over each item, keeping only the acceptable ones and counting
     // the number of acceptable items.
     var that = this;
     this._items = items.map(function(item) {
@@ -58,10 +59,10 @@ Game.Screen.ItemListScreen.prototype.render = function(display) {
             if (Util.isFunction(this._items[i].getSlot)) {
                 if (this._items[i] === this._player.getItemInSlot(this._items[i].getSlot())) {
                     if (this._items[i].isWearable()) {
-                        suffix = loc.ItemListScreenWearingSuffix;
+                        suffix = loc.ItemListScreenWearingSuffix + "[" + this._items[i].getSlot() + "]";
                     }
                     if (this._items[i].isWieldable()) {
-                        suffix = loc.ItemListScreenWieldingSuffix;
+                        suffix = loc.ItemListScreenWieldingSuffix + "[" + this._items[i].getSlot() + "]";
                     }
                 }
             }
@@ -78,13 +79,26 @@ Game.Screen.ItemListScreen.prototype.executeOkFunction = function() {
     var selectedItems = {};
     for (var key in this._selectedIndices) {
         selectedItems[key] = this._items[key];
+        Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: _items: " + this._items[key]._name);
+    }
+    for (obj in selectedItems) {
+        Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: Selected items: " + obj._name);
     }
     // Switch back to the play screen.
+    if (Game._currentScreen._container)
+        this._container = Game._currentScreen._container;
     Game.Screen.playScreen.setSubScreen(undefined);
     // Call the OK function and end the player's turn if it return true.
-    if (this._okFunction(selectedItems)) {
-        Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: Function OK.");
-        this._player.getMap().getEngine().unlock();
+    if (!this._container) {
+        if (this._okFunction(selectedItems)) {
+            Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: Function OK.");
+            this._player.getMap().getEngine().unlock();
+        }
+    } else {
+         if (this._okFunction(selectedItems, this._container)) {
+            Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: Function OK.");
+            this._player.getMap().getEngine().unlock();
+        }       
     }
 };
 Game.Screen.ItemListScreen.prototype.handleInput = function(inputType, inputData) {

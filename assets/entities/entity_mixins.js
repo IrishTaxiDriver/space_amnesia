@@ -1,6 +1,8 @@
 // Create our Mixins namespace
 Game.EntityMixins = {};
 
+//TODO: Consider splitting this up into different script files as it grows.
+
 // Main player's actor mixin
 Game.EntityMixins.PlayerActor = {
     name: 'PlayerActor',
@@ -35,7 +37,7 @@ Game.EntityMixins.Container = {
     groupName: 'Container',
     init: function(template) {
         this._components = template['components'] || null;
-        this._contents = template['contents'] || [];
+        this._items = template['items'] || [];
         this._name = template["name"] || null;
         this._canPickUp = template["canPickUp"] || false;
         this._locked = template["locked"] || false;
@@ -47,13 +49,13 @@ Game.EntityMixins.Container = {
         return this._locked;
     },
     getContents: function() {
-        return this._contents;
+        return this._items;
     },
     getName: function() {
         return this._name;
     },
-    setContents: function(contents) {
-        this._contents = contents;
+    setContents: function(items) {
+        this._items = items;
     },
     setLocked: function(state) {
         this._locked = state;
@@ -62,17 +64,18 @@ Game.EntityMixins.Container = {
         this._canPickUp = state;
     },
     showContainerLoot: function() {
-        Game.Screen.playScreen.showItemsSubScreen(Game.Screen.examineScreen,
-            this._map.getItemsAt(this.getX(), this.getY(), this.getZ()).getContents(),
-            loc.ContainerScreenLootEmpty);
+        Debug.log("Game.EntityMixins.Container.showContainerLoot: Displaying Container items.");
+        Game.Screen.playScreen.showItemsSubScreen(Game.Screen.containerScreen,
+            this.getContents(),
+            loc.ContainerScreenLootEmpty, this);
     },
-    removeContentFromContainer: function(player, item) {
-        //remove the item from this._contents
-        
-        return item;
+    removeContentsFromContainer: function(entity, item) {
+        //remove the item from this._items
+        this._items.pop(item);
+        entity.addItem(item);
     },
-    addContentToContainer: function(item) {
-        this._contents[this._contents.length] = item;
+    addContentsToContainer: function(item) {
+        this._items.push(item);
     }
 };
 
@@ -170,7 +173,7 @@ Game.EntityMixins.Attacker = {
         // If no value was passed, default to 2.
         value = value || 2;
         // Add to the attack value.
-        this._attackValue += 2;
+        this._attackValue += value;
         Game.sendMessage(this, loc.EntityIncreasedAttackValue);
     },
     attack: function(target) {
@@ -246,15 +249,15 @@ Game.EntityMixins.Destructible = {
         // If no value was passed, default to 2.
         value = value || 2;
         // Add to the defense value.
-        this._defenseValue += 2;
+        this._defenseValue += value;
         Game.sendMessage(this, loc.EntityIncreasedDefenseValue);
     },
     increaseMaxHp: function(value) {
         // If no value was passed, default to 10.
         value = value || 10;
         // Add to both max HP and HP.
-        this._maxHp += 10;
-        this._hp += 10;
+        this._maxHp += value;
+        this._hp += value;
         Game.sendMessage(this, loc.EntityIncreasedHealthValue);
     },
     takeDamage: function(attacker, damage) {
@@ -312,7 +315,7 @@ Game.EntityMixins.Sight = {
         // If no value was passed, default to 1.
         value = value || 1;
         // Add to sight radius.
-        this._sightRadius += 1;
+        this._sightRadius += value;
         Game.sendMessage(this, loc.EntityIncreasedSightValue);
     },
     canSee: function(entity) {
@@ -324,24 +327,27 @@ Game.EntityMixins.Sight = {
         var otherX = entity.getX();
         var otherY = entity.getY();
 
-        // If we're not in a square field of view, then we won't be in a real
-        // field of view either.
-        if ((otherX - this._x) * (otherX - this._x) +
-            (otherY - this._y) * (otherY - this._y) >
-            this._sightRadius * this._sightRadius) {
-            return false;
-        }
+        if (!Debug.allSeeing)
+        {
+            // If we're not in a square field of view, then we won't be in a real
+            // field of view either.
+            if ((otherX - this._x) * (otherX - this._x) +
+                (otherY - this._y) * (otherY - this._y) >
+                this._sightRadius * this._sightRadius) {
+                return false;
+            }
 
-        // Compute the FOV and check if the coordinates are in there.
-        var found = false;
-        this.getMap().getFov(this.getZ()).compute(
-            this.getX(), this.getY(), 
-            this.getSightRadius(), 
-            function(x, y, radius, visibility) {
-                if (x === otherX && y === otherY) {
-                    found = true;
-                }
-            });
+            // Compute the FOV and check if the coordinates are in there.
+            var found = false;
+            this.getMap().getFov(this.getZ()).compute(
+                this.getX(), this.getY(), 
+                this.getSightRadius(), 
+                function(x, y, radius, visibility) {
+                    if (x === otherX && y === otherY) {
+                        found = true;
+                    }
+                });
+        }
         return found;
     }
 };
@@ -376,6 +382,10 @@ Game.sendMessageNearby = function(map, centerX, centerY, centerZ, message, args)
     }
 };
 
+//TODO: Equip items don't count against inventory space.
+//TODO: Other equip slots can give inventory space? (ex: fanny pack in waist slot)
+//TODO: Equipped items say what slot they're equipped in on inventory screen.
+//TODO: Switching from a smaller backpack to a larger backpack doesn't just add the difference.
 Game.EntityMixins.InventoryHolder = {
     name: 'InventoryHolder',
     init: function(template) {
@@ -401,7 +411,6 @@ Game.EntityMixins.InventoryHolder = {
     },
     modifyInventorySlots: function(change) {
         Debug.log("Game.EntityMixins.InventoryHolder.modifyInventorySlots: Backpack changed. New backpack has " + change + " slots.");
-        //TODO: Fanny pack gives inventory slots too?
         var invSize = 0;
         if (change > 0) {
             //Add empty slots onto the end of the array.
@@ -470,6 +479,31 @@ Game.EntityMixins.InventoryHolder = {
         }
         return false;
     },
+    //TODO: Figure out a better way to get the container entity.
+    pickupItemsFromContainer: function(indices, container) {
+        var items = [];
+        var added = 0;
+        items = container.getContents();
+
+        for (var i = 0; i < indices.length; i++) {
+            // Try to add the item. If our inventory is not full, then splice the 
+            // item out of the list of items. In order to fetch the right item, we
+            // have to offset the number of items already added.
+            if (this.addItem(items[indices[i]  - added])) {
+                items.splice(indices[i] - added, 1);
+                added++;
+            } else {
+                // Inventory is full
+                break;
+            }
+        }
+
+        // Update the container items
+        container.setContents(items);
+
+        // Return true only if we added all items
+        return added === indices.length;
+    },
     pickupItems: function(indices) {
         // Allows the user to pick up items from the map, where indices is
         // the indices for the array returned by map.getItemsAt
@@ -488,8 +522,10 @@ Game.EntityMixins.InventoryHolder = {
                 break;
             }
         }
+
         // Update the map items
         this._map.setItemsAt(this.getX(), this.getY(), this.getZ(), mapItems);
+
         // Return true only if we added all items
         return added === indices.length;
     },
@@ -568,7 +604,6 @@ Game.EntityMixins.CorpseDropper = {
     }
 };
 
-//TODO: Condense functions / equip array. (1 equip/remove func)
 Game.EntityMixins.Equipper = {
     name: 'Equipper',
     init: function(template) {

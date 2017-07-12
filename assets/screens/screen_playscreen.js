@@ -244,14 +244,20 @@ Game.Screen.playScreen = {
     setGameEnded: function(gameEnded) {
         this._gameEnded = gameEnded;
     },
-    setSubScreen: function(subScreen) {
+    setSubScreen: function(subScreen, container) {
         this._subScreen = subScreen;
+        if (container)
+            this._container = container;
         // Refresh screen on changing the subscreen
         Game.refresh();
     },
-    showItemsSubScreen: function(subScreen, items, emptyMessage) {
+    showItemsSubScreen: function(subScreen, items, emptyMessage, container) {
         if (items && subScreen.setup(this._player, items) > 0) {
-            this.setSubScreen(subScreen);
+            if (!container) {
+                this.setSubScreen(subScreen);
+            } else {
+                this.setSubScreen(subScreen, container);
+            }
         } else {
             Game.sendMessage(this._player, emptyMessage);
             Game.refresh();

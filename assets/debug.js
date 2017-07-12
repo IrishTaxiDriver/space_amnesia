@@ -1,8 +1,13 @@
+//TODO: Hook up All Seeing.
+//TODO: Hook up No Target.
+//TODO: Fix teleportTo.
+
 var Debug = {
     enable: false,
     sated: false,
     god: false,
     notarget: false,
+    allSeeing : false,
     log: function(msg) {
         if (this.enable) {
                 console.log(msg);
@@ -31,6 +36,35 @@ var Debug = {
         var player = Debug.getPlayer();
         player.modifyFullnessBy(player._maxFullness - player._fullness);
         Debug.log("Debug.resetPlayerHunger: Player hunger reset.");
+    },
+    clearFog: function() {
+
+    },
+    omnipotent: function() {
+
+    },
+    teleportTo: function(name) {
+        if (this.enable) {
+            Debug.log("Debug.teleportTo: Trying to teleport to: " + name );
+            var player = Debug.getPlayer();
+            var map = player.getMap();
+
+            var target = null;
+
+            for (ent in map._entities) {
+                if (ent._name == name && ent.getZ() == player.getZ()) {
+                    target = ent;
+                }
+            }
+
+            if (target) {
+                player.setX(target.getX() - 1);
+                player.setY(target.getY() - 1);
+            } else {
+                Debug.log("Debug.teleportTo: Target " + name + " not found." );
+            }
+        }
+
     },
     spawn: function(name) {
         if (this.enable) {
