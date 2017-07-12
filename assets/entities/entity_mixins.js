@@ -32,6 +32,8 @@ Game.EntityMixins.PlayerActor = {
 };
 
 // Container Mixin
+// TODO: Look at implementing these in a less hacky way.
+// TODO: Chests always show up after they're seen? Like stairs?
 Game.EntityMixins.Container = {
     name: 'Container',
     groupName: 'Container',
@@ -107,6 +109,9 @@ Game.EntityMixins.TaskActor = {
     },
     hunt: function() {
         var player = this.getMap().getPlayer();
+
+        if (Debug.noTarget)
+            return;
 
         // If we are adjacent to the player, then attack instead of hunting.
         var offsets = Math.abs(player.getX() - this.getX()) + 
