@@ -1,7 +1,6 @@
 TODO List
 
 Entities
-  -Containers
 Items
   -Keys
   -Books
