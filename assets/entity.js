@@ -163,9 +163,11 @@ Game.Entity.prototype.populateContainerWithRandomCount = function(amount) {
     array = [];
     while(amount > 0) {
         item = Game.ItemRepository.createRandomFromCriteria("habitat", this._habitat);
-        array[array.length] = item;
-        amount--;
-        Debug.log("Game.Entity.prototype.populateContainerWithRandomCount: Adding " + item._name + " to container.");
+        if (item.getName != loc.EntityCorpse) {
+            array[array.length] = item;
+            amount--;
+            Debug.log("Game.Entity.prototype.populateContainerWithRandomCount: Adding " + item._name + " to container.");
+        }
     }
     this.setContents(array);
 };

@@ -241,6 +241,15 @@ Game.Map.prototype.addItem = function(x, y, z, item) {
     }
 };
 
+Game.Map.prototype.removeItem = function(x, y, z, item) {
+    var key = x + ',' + y + ',' + z;
+    if (this._items[key]) {
+        this._items[key].pop(item);
+    } else {
+        this._items[key] = null;
+    }  
+}
+
 Game.Map.prototype.addItemAtRandomPosition = function(item, z) {
     var position = this.getRandomFloorPosition(z);
     this.addItem(position.x, position.y, position.z, item);

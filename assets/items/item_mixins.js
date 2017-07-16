@@ -46,6 +46,26 @@ Game.ItemMixins.Craftable = {
 
 };
 
+Game.ItemMixins.Currency = {
+    name: 'ItemCurrency',
+    init: function(template) {
+        this._type = template['type'] || null;
+        this._value = template['value'] || 0;
+    },
+    randomizeValue: function(max) {
+        this._value = Math.floor(Math.random() * (max + 1));
+    },
+    getValue: function() {
+        return this._value;
+    },
+    getType: function() {
+        return this._type;
+    },
+    setValue: function(amount) {
+        this._value = amount;
+    }
+};
+
 // Equipment Mixin
 Game.ItemMixins.Equippable = {
     name: 'Equippable',

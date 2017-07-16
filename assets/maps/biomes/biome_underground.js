@@ -6,6 +6,7 @@ Game.Map.biome_underground = function(tiles, player) {
     // Set the habitat
     this._habitat = loc.MapBiomeHabitatUnderground;
     // Add random entities and items to each floor.
+    // TODO: Figure out where this should live.
     for (var z = 0; z < this._depth; z++) {
         // 15 entities per floor
         for (var i = 0; i < 15; i++) {
@@ -24,6 +25,9 @@ Game.Map.biome_underground = function(tiles, player) {
         for (var i = 0; i < 15; i++) {
             var item = Game.ItemRepository.createRandomFromCriteria("habitat", this._habitat);
             // Add a random item for the habitat
+            if (item.hasMixin(Game.ItemMixins.Currency)) {
+                item.randomizeValue(100);
+            }
             this.addItemAtRandomPosition(item, z);
         }
         

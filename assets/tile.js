@@ -20,7 +20,7 @@ Game.Tile.prototype.isDiggable = function() {
     return this._diggable;
 };
 Game.Tile.prototype.isBlockingLight = function() {
-    if (Debug.enable && Debug.clearFog)
+    if (Debug.clearFog)
         return false;
     else
         return this._blocksLight;

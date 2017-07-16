@@ -60,14 +60,33 @@ var Debug = {
         else
             Debug.clearFog = true;
     },
-    giveExperience: function(points) {
+    toggleEverything: function() {
+        if (!Debug.enable)
+            return;
 
+        Debug.toggleSated();
+        Debug.toggleGod();
+        Debug.toggleNoTarget();
+        Debug.toggleClearFog();
+        Debug.allExplored();
+
+        Debug.giveExperience(100000);
+    },
+    giveExperience: function(points) {
         if (!Debug.enable)
             return;
 
         var player = Debug.getPlayer();
         player.giveExperience(points);
         Debug.log("Debug.giveExperience: Player given " + points + " experience.");
+    },
+    giveCurrency: function(type, amount) {
+        if (!Debug.enable)
+            return;
+
+        var player = Debug.getPlayer();
+        player.addCurrencyToType(type, amount);
+        Debug.log("Debug.giveCredits: Player given: " + amount + " " + type);
     },
     giveNextLevel: function() {
         if (!Debug.enable)
@@ -158,10 +177,11 @@ var Debug = {
             map.addEntity( entity );
         } else {
             Debug.log("Debug.spawn: Using item repository.");
-            map.addItem( player.getX(), player.getY(), player.getZ(),
-                Game.ItemRepository.create( 
-                    Object.keys(
-                        Game.ItemRepository.getFromCriteria( "name", name ) ) ) );
+            item = Game.ItemRepository.create( Object.keys( Game.ItemRepository.getFromCriteria( "name", name ) ) );
+            if (item.hasMixin(Game.ItemMixins.Currency)) {
+                item.randomizeValue(100);
+            }
+            map.addItem( player.getX(), player.getY(), player.getZ(), item);
         }
 
         Debug.log("Debug.spawn: Spawned: " + name);

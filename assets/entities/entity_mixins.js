@@ -31,6 +31,48 @@ Game.EntityMixins.PlayerActor = {
     }
 };
 
+//TODO: Credits function like an item when dropped.
+//TODO: Credits show up on the inventory screen.
+Game.EntityMixins.Currency = {
+    name: 'EntityCurrency',
+    groupName: 'EntityCurrency',
+    init: function(template) {
+        this._currency = template["type"] || [];
+        this._currency[loc.ItemCurrencyCreditsName] = 0;
+    },
+    subtractCurrencyFromType: function(type, amount) {
+        if (this._currency[type] - amount < 0) {
+            return false;
+        }
+        else {
+            this._currency[type]  -= amount;
+            return true;
+        }
+    },
+    addCurrencyToType: function(type, amount) {
+        this._currency[type]  += amount;
+    },
+    getCurrencyFromType: function(type) {
+        return this._currency[type] ;
+    },
+    setCurrencyForType: function(type, amount) {
+        this._currency[type] = amount;
+    },
+    addCurrencyType: function(type) {
+        this._currency[type] = 0;
+    },
+    removeCurrencyType: function(type) {
+        this._currency[type] = null;
+    },
+    dropCurrencyType: function(type, amount) {
+        //If an amount isn't specified, drop it all.
+        if (!amount) {
+            amount = this._currency[type];
+        }
+        this._currency[type] -= amount;
+    },
+}
+
 // Container Mixin
 // TODO: Look at implementing these in a less hacky way.
 // TODO: Chests always show up after they're seen? Like stairs?
@@ -190,6 +232,9 @@ Game.EntityMixins.Attacker = {
             var max = Math.max(0, attack - defense);
             var damage = 1 + Math.floor(Math.random() * max);
 
+            if (target == this.getMap().getPlayer() && Debug.noTarget)
+                return;
+
             Game.sendMessage(this, loc.EntityYouAttack, 
                 [target.getName(), damage]);
             Game.sendMessage(target, loc.EntityTakeAttack, 
@@ -307,6 +352,7 @@ Game.EntityMixins.MessageRecipient = {
 };
 
 // This signifies our entity posseses a field of vision of a given radius.
+// TODO: Make this function more like a circle than a diamond.
 Game.EntityMixins.Sight = {
     name: 'Sight',
     groupName: 'Sight',
@@ -389,7 +435,6 @@ Game.sendMessageNearby = function(map, centerX, centerY, centerZ, message, args)
 
 //TODO: Equip items don't count against inventory space.
 //TODO: Other equip slots can give inventory space? (ex: fanny pack in waist slot)
-//TODO: Equipped items say what slot they're equipped in on inventory screen.
 //TODO: Switching from a smaller backpack to a larger backpack doesn't just add the difference.
 Game.EntityMixins.InventoryHolder = {
     name: 'InventoryHolder',
@@ -484,7 +529,6 @@ Game.EntityMixins.InventoryHolder = {
         }
         return false;
     },
-    //TODO: Figure out a better way to get the container entity.
     pickupItemsFromContainer: function(indices, container) {
         var items = [];
         var added = 0;
@@ -509,6 +553,7 @@ Game.EntityMixins.InventoryHolder = {
         // Return true only if we added all items
         return added === indices.length;
     },
+    //TODO: Stop the "you picked up nothing" message if you pick up only currency.
     pickupItems: function(indices) {
         // Allows the user to pick up items from the map, where indices is
         // the indices for the array returned by map.getItemsAt
@@ -516,15 +561,23 @@ Game.EntityMixins.InventoryHolder = {
         var added = 0;
         // Iterate through all indices.
         for (var i = 0; i < indices.length; i++) {
-            // Try to add the item. If our inventory is not full, then splice the 
-            // item out of the list of items. In order to fetch the right item, we
-            // have to offset the number of items already added.
-            if (this.addItem(mapItems[indices[i]  - added])) {
-                mapItems.splice(indices[i] - added, 1);
-                added++;
+            //Check if the item is currency first.
+            if (mapItems[i].hasMixin(Game.ItemMixins.Currency))
+            {
+                this.addCurrencyToType(mapItems[i].getType(), mapItems[i].getValue());
+                Game.sendMessage(this, loc.InventoryScreenYouPickUpCurrency, [mapItems[i].getValue(),mapItems[i].getType()]);
+                this._map.removeItem(this.getX(), this.getY(), this.getZ(), mapItems[i]);
             } else {
-                // Inventory is full
-                break;
+                // Try to add the item. If our inventory is not full, then splice the 
+                // item out of the list of items. In order to fetch the right item, we
+                // have to offset the number of items already added.
+                if (this.addItem(mapItems[indices[i]  - added])) {
+                    mapItems.splice(indices[i] - added, 1);
+                    added++;
+                } else {
+                    // Inventory is full
+                    break;
+                }
             }
         }
 

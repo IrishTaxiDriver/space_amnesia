@@ -12,6 +12,7 @@ Game.PlayerTemplate = {
     habitat: [],
     mixins: [Game.EntityMixins.PlayerActor,
              Game.EntityMixins.Attacker,
+             Game.EntityMixins.Currency,
              Game.EntityMixins.Destructible,
              Game.EntityMixins.InventoryHolder,
              Game.EntityMixins.FoodConsumer,

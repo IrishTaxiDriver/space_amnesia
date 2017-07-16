@@ -18,6 +18,7 @@ var loc = {
 	InventoryScreenNothingToWield : "You have nothing to wield.",
 	InventoryScreenNothingToExamine : "You have nothing to examine.",
 	InventoryScreenYouPickUp : "You pick up %s.",
+	InventoryScreenYouPickUpCurrency: "You pick up %d %s",
 	InventoryScreenCantPickUpFull : "Your inventory is full! Nothing was picked up.",
 	InventoryScreenCantPickUpNothing : "There is nothing here to pick up.",
 
@@ -40,7 +41,7 @@ var loc = {
 	//PICKUP SCREEN
 	PickupScreenChoosePickup : "Choose the items you wish to pickup",
 	PickupScreenPartialPickup : "Your inventory is full! Not all items were picked up.",
-	
+
 	//DROP SCREEN
 	DropScreenChooseDrop : "Choose the item(s) you wish to drop",
 
@@ -239,6 +240,10 @@ var loc = {
 	EntityDroidHazardHeavyName : "Heavy Hazard Droid",
 
 	EntityDroidCleanupName : "Radioactive Cleanup Droid",
+
+	//ITEMS - CURRENCY
+	ItemCurrencyCreditsName : "credits",
+	ItemCurrencyCreditsDesc : "Standard currency",
 
 	//ITEMS - JUNK
 	ItemRockName : "Rock",
