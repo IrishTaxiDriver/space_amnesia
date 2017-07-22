@@ -10,3 +10,4 @@ Maps
 Systems
   -Grammar ("You picked up an Intestines.")
   -Debug
+  -Status Effects
