@@ -2,6 +2,7 @@ TODO List
 
 Entities
   -Recycler from Prey
+   -Autodoc
 Items
   -Keys
   -Books
@@ -12,3 +13,4 @@ Systems
   -Grammar ("You picked up an Intestines.")
   -Debug
   -Status Effects
+  -Localized Damage
