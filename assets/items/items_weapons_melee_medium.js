@@ -28,18 +28,32 @@ Game.ItemRepository.define(loc.ItemWeaponSwordCaptainName, {
     disableRandomCreation: true
 });
 
-Game.ItemRepository.define(loc.ItemWeaponSpearName, {
-    name: loc.ItemWeaponSpearName,
-    description: loc.ItemWeaponSpearDesc,
-    habitat: [loc.MapBiomeHabitatAny],
+Game.ItemRepository.define(loc.ItemWeaponCrowbarName, {
+    name: loc.ItemWeaponCrowbarName,
+    description: loc.ItemWeaponCrowbarDesc,
+    habitat: [loc.MapBiomeHabitatNone],
     character: '|',
     foreground: 'white',
     attackValue: 3,
-    attackType: loc.ItemWeaponAttackTypeThrust,
+    attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
     range: 1,
-    components: [loc.ItemWoodScrapName, loc.ItemTapeName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWeaponFireaxeName, {
+    name: loc.ItemWeaponFireaxeName,
+    description: loc.ItemWeaponFireaxeDesc,
+    habitat: [loc.MapBiomeHabitatNone],
+    character: '|',
+    foreground: 'white',
+    attackValue: 3,
+    attackType: loc.ItemWeaponAttackTypeStrike,
+    wieldable: true,
+    range: 1,
+    mixins: [Game.ItemMixins.Equippable]
 }, {
     disableRandomCreation: true
 });

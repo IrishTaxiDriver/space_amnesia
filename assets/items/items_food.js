@@ -1,16 +1,16 @@
 //FOOD - BIOMES - UNDERGROUND
-Game.ItemRepository.define(loc.ItemMushroomName, {
-    name: loc.ItemMushroomName,
-    description: loc.ItemMushroomDesc,
+Game.ItemRepository.define(loc.ItemFoodMushroomName, {
+    name: loc.ItemFoodMushroomName,
+    description: loc.ItemFoodMushroomDesc,
     habitat: [loc.MapBiomeHabitatUnderground],
     character: '*',
     foreground: 'white',
     foodValue: 50,
     mixins: [Game.ItemMixins.Edible]
 });
-Game.ItemRepository.define(loc.ItemLichenName, {
-    name: loc.ItemLichenName,
-    description: loc.ItemLichenDesc,
+Game.ItemRepository.define(loc.ItemFoodLichenName, {
+    name: loc.ItemFoodLichenName,
+    description: loc.ItemFoodLichenDesc,
     habitat: [loc.MapBiomeHabitatUnderground],
     character: '*',
     foreground: 'white',
@@ -20,18 +20,18 @@ Game.ItemRepository.define(loc.ItemLichenName, {
 
 //FOOD - BIOMES - ARCTIC
 //FOOD - BIOMES - TEMPERATE
-Game.ItemRepository.define(loc.ItemAppleName, {
-    name: loc.ItemAppleName,
-    description: loc.ItemAppleDesc,
+Game.ItemRepository.define(loc.ItemFoodAppleName, {
+    name: loc.ItemFoodAppleName,
+    description: loc.ItemFoodAppleDesc,
     habitat: [loc.MapBiomeHabitatTemporate],
     character: '%',
     foreground: 'red',
     foodValue: 50,
     mixins: [Game.ItemMixins.Edible]
 });
-Game.ItemRepository.define(loc.ItemPumpkinName, {
-    name: loc.ItemPumpkinName,
-    description: loc.ItemPumpkinDesc,
+Game.ItemRepository.define(loc.ItemFoodPumpkinName, {
+    name: loc.ItemFoodPumpkinName,
+    description: loc.ItemFoodPumpkinDesc,
     habitat: [loc.MapBiomeHabitatTemporate],
     character: '%',
     foreground: 'orange',
@@ -44,9 +44,9 @@ Game.ItemRepository.define(loc.ItemPumpkinName, {
 });
 
 //FOOD - BIOMES - JUNGLE
-Game.ItemRepository.define(loc.ItemMelonName, {
-    name: loc.ItemMelonName,
-    description: loc.ItemMelonDesc,
+Game.ItemRepository.define(loc.ItemFoodMelonName, {
+    name: loc.ItemFoodMelonName,
+    description: loc.ItemFoodMelonDesc,
     habitat: [loc.MapBiomeHabitatJungle],
     character: '%',
     foreground: 'lightGreen',
@@ -56,9 +56,9 @@ Game.ItemRepository.define(loc.ItemMelonName, {
 });
 
 //FOOD - BIOMES - SAVANNAH
-Game.ItemRepository.define(loc.ItemOkraName, {
-    name: loc.ItemOkraName,
-    description: loc.ItemOkraDesc,
+Game.ItemRepository.define(loc.ItemFoodOkraName, {
+    name: loc.ItemFoodOkraName,
+    description: loc.ItemFoodOkraDesc,
     habitat: [loc.MapBiomeHabitatSavannah],
     character: '%',
     foreground: 'lightGreen',
@@ -69,9 +69,9 @@ Game.ItemRepository.define(loc.ItemOkraName, {
 
 //FOOD - BIOMES - OCEAN
 //FOOD - ANY
-Game.ItemRepository.define(loc.ItemMREName, {
-    name: loc.ItemMREName,
-    description: loc.ItemMREDesc,
+Game.ItemRepository.define(loc.ItemFoodMREName, {
+    name: loc.ItemFoodMREName,
+    description: loc.ItemFoodMREDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '%',
     foreground: 'green',
@@ -79,9 +79,9 @@ Game.ItemRepository.define(loc.ItemMREName, {
     consumptions: 4,
     mixins: [Game.ItemMixins.Edible]
 });
-Game.ItemRepository.define(loc.ItemSunflowerSeedsName, {
-    name: loc.ItemSunflowerSeedsName,
-    description: loc.ItemSunflowerSeedsDesc,
+Game.ItemRepository.define(loc.ItemFoodSunflowerSeedsName, {
+    name: loc.ItemFoodSunflowerSeedsName,
+    description: loc.ItemFoodSunflowerSeedsDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '%',
     foreground: 'green',

@@ -13,6 +13,34 @@ Game.ItemRepository.define(loc.ItemWearablesCryoUndiesName, {
     disableRandomCreation: true
 });
 
+Game.ItemRepository.define(loc.ItemWearablesPantsShortsName, {
+    name: loc.ItemWearablesPantsShortsName,
+    description: loc.ItemWearablesPantsShortsDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotLegs,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesPantsShortsCargoName, {
+    name: loc.ItemWearablesPantsShortsCargoName,
+    description: loc.ItemWearablesPantsShortsCargoDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotLegs,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
 Game.ItemRepository.define(loc.ItemWearablesPantsCrewmanName, {
     name: loc.ItemWearablesPantsCrewmanName,
     description: loc.ItemWearablesPantsCrewmanDesc,

@@ -13,13 +13,83 @@ Game.ItemRepository.define(loc.ItemWearablesFeetShoesCrewmansName, {
     disableRandomCreation: true
 });
 
+Game.ItemRepository.define(loc.ItemWearablesFeetFlipFlopsName, {
+    name: loc.ItemWearablesFeetFlipFlopsName,
+    description: loc.ItemWearablesFeetFlipFlopsDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 0,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotFeet,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesFeetBootsName, {
+    name: loc.ItemWearablesFeetBootsName,
+    description: loc.ItemWearablesFeetBootsDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotFeet,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesFeetBootsSnowName, {
+    name: loc.ItemWearablesFeetBootsSnowName,
+    description: loc.ItemWearablesFeetBootsSnowDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotFeet,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesFeetBootsDuckName, {
+    name: loc.ItemWearablesFeetBootsDuckName,
+    description: loc.ItemWearablesFeetBootsDuckDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotFeet,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesFeetBootsWetName, {
+    name: loc.ItemWearablesFeetBootsWetName,
+    description: loc.ItemWearablesFeetBootsWetDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotFeet,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
 Game.ItemRepository.define(loc.ItemWearablesFeetBootsSoldierName, {
     name: loc.ItemWearablesFeetBootsSoldierName,
     description: loc.ItemWearablesFeetBootsSoldierDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '[',
     foreground: 'white',
-    defenseValue: 2,
+    defenseValue: 3,
     wearable: true,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]

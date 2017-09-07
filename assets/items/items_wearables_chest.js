@@ -13,6 +13,48 @@ Game.ItemRepository.define(loc.ItemWearablesChestCryoFilmName, {
     disableRandomCreation: true
 });
 
+Game.ItemRepository.define(loc.ItemWearablesChestShirtTeeName, {
+    name: loc.ItemWearablesChestShirtTeeName,
+    description: loc.ItemWearablesChestShirtTeeDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotChest,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesChestShirtTankName, {
+    name: loc.ItemWearablesChestShirtTankName,
+    description: loc.ItemWearablesChestShirtTankDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotChest,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
+Game.ItemRepository.define(loc.ItemWearablesChestShirtHenleyName, {
+    name: loc.ItemWearablesChestShirtHenleyName,
+    description: loc.ItemWearablesChestShirtHenleyDesc,
+    habitat: [loc.MapBiomeHabitatAny],
+    character: '(',
+    foreground: 'white',
+    defenseValue: 2,
+    wearable: true,
+    slot: loc.EntityPlayerEquipSlotChest,
+    mixins: [Game.ItemMixins.Equippable]
+}, {
+    disableRandomCreation: true
+});
+
 Game.ItemRepository.define(loc.ItemWearablesChestShirtCrewmansName, {
     name: loc.ItemWearablesChestShirtCrewmansName,
     description: loc.ItemWearablesChestShirtCrewmansDesc,

@@ -286,33 +286,45 @@ var loc = {
 	ItemTapeDesc : "Durable tape",
 
 	//ITEMS - FOOD
-	ItemAppleName : "Apple",
-	ItemAppleDesc : "An apple",
+	ItemFoodAppleName : "Apple",
+	ItemFoodAppleDesc : "An apple",
 
-	ItemMushroomName : "Mushroom",
-	ItemMushroomDesc : "A cave mushroom",
+	ItemFoodMushroomName : "Mushroom",
+	ItemFoodMushroomDesc : "A cave mushroom",
 
-	ItemLichenName : "Lichen",
-	ItemLichenDesc : "Some cave lichen",
+	ItemFoodLichenName : "Lichen",
+	ItemFoodLichenDesc : "Some cave lichen",
 
-	ItemOkraName : "Okra",
-	ItemOkraDesc : "A small green vegetable",
+	ItemFoodOkraName : "Okra",
+	ItemFoodOkraDesc : "A small green vegetable",
 
-	ItemMelonName : "Melon",
-	ItemMelonDesc : "A tropical melon",
+	ItemFoodMelonName : "Melon",
+	ItemFoodMelonDesc : "A tropical melon",
 
-	ItemPumpkinName : "Pumpkin",
-	ItemPumpkinDesc : "A round and orange pumpkin",
+	ItemFoodPumpkinName : "Pumpkin",
+	ItemFoodPumpkinDesc : "A round and orange pumpkin",
 
-	ItemMREName : "MRE",
-	ItemMREDesc : "A pre-packaged meal",
+	ItemFoodMREName : "MRE",
+	ItemFoodMREDesc : "A pre-packaged meal",
 
-	ItemSunflowerSeedsName : "A bag of sunflower seeds",
-	ItemSunflowerSeedsDesc : "Guht's Premium Sunflower Seeds",
+	ItemFoodSunflowerSeedsName : "A bag of sunflower seeds",
+	ItemFoodSunflowerSeedsDesc : "Guht's Premium Sunflower Seeds",
 
 	//ITEMS - MEDICINE
-	ItemBandageName : "Bandage(s)",
-	ItemBandageDesc : "Bandages made from plant extracts and gauze",
+	ItemMedicineBandageName : "Bandage(s)",
+	ItemMedicineBandageDesc : "Bandages made from plant extracts and gauze",
+
+	ItemMedicineAntibioticsName : "Antibiotics",
+	ItemMedicineAntibioticsDesc : "A bottle of antibiotics",
+
+	ItemMedicineDisinfectantName : "Disinfectant",
+	ItemMedicineDisinfectantDesc : "A bottle of disinfectant",
+
+	ItemMedicineAspirinName : "Aspirin",
+	ItemMedicineAspirinDesc : "A bottle of aspirin",
+
+	ItemMedicineAntacidName : "Antacid",
+	ItemMedicineAntacidDesc : "A bottle of antacid",
 
 	//ITEMS - USEFULS
 	ItemHandChargerName : "Hand Powered Charger",
@@ -322,15 +334,29 @@ var loc = {
 	ItemWristComputerDesc : "A wrist mounted computer",
 
 	//ITEMS - AMMO
-	ItemArrowsName : "Arrow(s)",
-	ItemArrowsDesc : "Arrows made from wood and pillow feathers",
+	ItemAmmoArrowsName : "Arrow(s)",
+	ItemAmmoArrowsDesc : "Arrows made from wood and pillow feathers",
 
-	ItemRocketsName : "Rocket(s)",
-	ItemRocketsDesc : "Rockets made from pipes, fuses and plant extracts",
+	ItemAmmoRocketsName : "Rocket(s)",
+	ItemAmmoRocketsDesc : "Rockets made from pipes, fuses and plant extracts",
+
+	ItemAmmoSmallBulletsName : "Small Bullet(s)",
+	ItemAmmoSmallBulletsDesc : "Small caliber bullets",
+
+	ItemAmmoLargeBulletsName : "Large Bullet(s)",
+	ItemAmmoLargeBulletsDesc : "Large caliber bullets",
+
+	ItemAmmoShellsName : "Shell(s)",
+	ItemAmmoShellDesc : "Shotgun shells",
+
+	ItemAmmoSlugShellsName : "Slug Shell(s)",
+	ItemAmmoSlugShellDesc : "Shotgun slug shells",
 
 	//ITEMS - WEAPONS - ATTACK TYPES
 	ItemWeaponAttackTypeSlash : "slash",
+
 	ItemWeaponAttackTypeStrike : "strike",
+
 	ItemWeaponAttackTypeThrust : "thrust",
 
 	//ITEMS - WEAPONS - MELEE - SMALL
@@ -338,13 +364,34 @@ var loc = {
 	ItemWeaponPipeDesc : "A metal pipe",
 
 	ItemWeaponNightstickName : "Nightstick",
-	ItemWeaponNightstickDesc : "A nice hard plastic nightstick",
+	ItemWeaponNightstickDesc : "A hard plastic nightstick",
 
 	ItemWeaponBoxcutterName : "Boxcutter",
 	ItemWeaponBoxcutterDesc : "A standard boxcutter",
 
-	ItemWeaponWrenchName : "Wrench",
-	ItemWeaponWrenchDesc : "A standard plumbers wrench",
+	ItemWeaponWrenchPlumberName : "Plumber Wrench",
+	ItemWeaponWrenchPlumberDesc : "A standard plumbers wrench",
+
+	ItemWeaponWrenchCrescentName : "Crescent Wrench",
+	ItemWeaponWrenchCrescentDesc : "A standard crescent wrench",
+
+	ItemWeaponWrenchMonkeyName : "Monkey Wrench",
+	ItemWeaponWrenchMonkeyDesc : "A standard monkey wrench",
+
+	ItemWeaponWrenchPipeName : "Pipe Wrench",
+	ItemWeaponWrenchPipeDesc : "A standard pipe wrench",
+
+	ItemWeaponHammerName : "Hammer",
+	ItemWeaponHammerDesc : "A standard hammer",
+
+	ItemWeaponMalletName : "Mallet",
+	ItemWeaponMallerDesc : "A standard mallet",
+
+	ItemWeaponHatchetName : "Hatchet",
+	ItemWeaponHatchetDesc : "A standard hatchet",
+
+	ItemWeaponScrewdriverName : "Screwdriver",
+	ItemWeaponScrewdriverDesc : "A standard screwdriver",
 
 	ItemWeaponAxeName : "Stone Axe",
 	ItemWeaponAxeDesc : "A crafted stone axe.",
@@ -356,12 +403,24 @@ var loc = {
 	ItemWeaponSwordCaptainName : "Captains Sword",
 	ItemWeaponSwordCaptainDesc : "A battle-ready sword",
 
-	ItemWeaponSpearName : "Spear",
-	ItemWeaponSpearDesc : "A carved spear",
+	ItemWeaponCrowbarName : "Crowbar",
+	ItemWeaponCrowbarDesc : "A standard crowbar",
+
+	ItemWeaponFireaxeName : "Fireaxe",
+	ItemWeaponFireaxeDesc : "A standard fireaxe",
 
 	//ITEMS - WEAPONS - MELEE - CUMBERSOME
 	ItemWeaponLargePipeName : "Large Pipe",
 	ItemWeaponLargePipeDesc : "A large metal pipe",
+
+	ItemWeaponSpearName : "Spear",
+	ItemWeaponSpearDesc : "A carved spear",
+
+	ItemWeaponPolearmName : "Polearm",
+	ItemWeaponPolearmDesc : "A carved polearm",
+
+	ItemWeaponSledgehammerName : "Sledgehammer",
+	ItemWeaponSledgehammerDesc : "A sledgehammer",
 
 	//ITEMS - WEAPONS - RANGED - SMALL
 	ItemWeaponAntiRiotGunName : "Anti-Riot Gun",
@@ -374,8 +433,14 @@ var loc = {
 	ItemWeaponLaserRifleName : "Laser Rifle",
 	ItemWeaponLaserRifleDesc : "A medium sized handheld energy weapon",
 
+	ItemWeaponCrossBowName : "Crossbow",
+	ItemWeaponCrossBowDesc : "A polymer crossbow",
+
 	ItemWeaponBowName : "Bow",
 	ItemWeaponBowDesc : "A simple wooden bow",
+
+	ItemWeaponBowHuntingName : "Hunting Bow",
+	ItemWeaponBowHuntingDesc : "A professional hunting bow",
 
 	//ITEMS - WEAPONS - RANGED - CUMBERSOME
 	ItemWeaponFlamethrowerName : "Flamethrower",
@@ -386,15 +451,84 @@ var loc = {
 
 	//ITEMS - WEAPONS - RANGED - ATTACHMENTS
 	ItemWeaponAttachmentSilencerName : "Silencer",
-	ItemWeaponAttachmentSilencerDesc : "A silencer for a pistol",
+	ItemWeaponAttachmentSilencerDesc : "A silencer for a gun",
+
+	ItemWeaponAttachmentForegripName : "Foregrip",
+	ItemWeaponAttachmentForegripDesc : "A foregrip for a gun",
+
+	ItemWeaponAttachmentCollapsableStockName : "Collapsable Stock",
+	ItemWeaponAttachmentCollapsableStockDesc : "A collapsable stock for a gun",
+
+	ItemWeaponAttachmentReddotScopeName : "Red-Dot Scope",
+	ItemWeaponAttachmentReddotScopeDesc : "A Red-Dot scope for a gun",
+
+	ItemWeaponAttachmentBayonetName : "Bayonet",
+	ItemWeaponAttachmentBayonetDesc : "A bayonet for a gun",
+
+	ItemWeaponAttachmentGripShieldName : "Grip Shield",
+	ItemWeaponAttachmentGripShieldDesc : "A foregrip shield for a gun",
+
+	ItemWeaponAttachmentBipodName : "Bipod",
+	ItemWeaponAttachmentBipodDesc : "A bipod for a rifle",
+
+	ItemWeaponAttachmentLaserSightName : "Laser Sight",
+	ItemWeaponAttachmentLaserSightDesc : "A laser sight for a gun",
+
+	ItemWeaponAttachmentDazzlerName : "Dazzler",
+	ItemWeaponAttachmentDazzlerDesc : "A dazzler flashlight for a gun",
+
+	ItemWeaponAttachmentFlashlightName : "Flashlight",
+	ItemWeaponAttachmentFlashlightDesc : "A flashlight for a gun",
+
+	ItemWeaponAttachmentStrapName : "Weapon Strap",
+	ItemWeaponAttachmentStragDesc : "A weapon strap for a gun",
+
+	ItemWeaponAttachmentDrumMagazineName : "Drum Magazine",
+	ItemWeaponAttachmentDrumMagazineDesc : "A drum magazine for a rifle",
+
+	ItemWeaponAttachmentPentagonMagazineName : "Pentagon Magazine",
+	ItemWeaponAttachmentPentagonMagazineDesc : "A pentagon magazine coupler for magazines",
+
+	ItemWeaponAttachmentCouplerMagazineName : "Magazine Coupler",
+	ItemWeaponAttachmentCouplerMagazineDesc : "A magazine coupler for magazines",
+
+	ItemWeaponAttachmentSideSaddleName : "Side Saddle",
+	ItemWeaponAttachmentSideSaddleDesc : "A side saddle shell holder for shotguns",
 
 	//ITEMS - WEAPONS - THROWABLES
 	ItemWeaponThrowableMolotovName : "Molotov Cocktail",
 	ItemWeaponThrowableMolotovDesc : "A molotov cocktail",
 
+	ItemWeaponThrowableKnifeName : "Throwing Knife",
+	ItemWeaponThrowableKnifeDesc : "A throwing knife",
+
+	ItemWeaponThrowableGrenadeName : "Grenade",
+	ItemWeaponThrowableGrenadeDesc : "A fragmentation grenade",
+
+	ItemWeaponThrowableRiotGrenadeName : "Riot Grenade",
+	ItemWeaponThrowableRiotGrenadeDesc : "A rubber ball filled grenade",
+
+	ItemWeaponThrowableStickyGrenadeName : "Sticky Grenade",
+	ItemWeaponThrowableStickyGrenadeDesc : "A sticky fragmentation grenade",
+
+	ItemWeaponThrowableSatchelChargeName : "Satchel Charge",
+	ItemWeaponThrowableSatchelChargeDesc : "A satchel charge",
+
+	ItemWeaponThrowableFlashbangName : "Flashbang",
+	ItemWeaponThrowableFlashbangDesc : "A flashbang",
+
+	ItemWeaponThrowableConcGrenadeName : "Concussion Grenade",
+	ItemWeaponThrowableConcGrenadeDesc : "A concussion grenade",
+
 	//ITEMS - WEARABLES - LEGS
 	ItemWearablesCryoUndiesName : "Cryo Undies",
 	ItemWearablesCryoUndiesDesc : "Stark white briefs, form fitting",
+
+	ItemWearablesPantsShortsName : "Shorts",
+	ItemWearablesPantsShortsDesc : "Standard issue shorts",
+
+	ItemWearablesPantsShortsCargoName : "Cargo Shorts",
+	ItemWearablesPantsShortsCargoDesc : "Standard issue cargo shorts",
 
 	ItemWearablesPantsCrewmanName : "Crewmans Pants",
 	ItemWearablesPantsCrewmanDesc : "Standard issue crewmans pants",
@@ -415,9 +549,36 @@ var loc = {
 	ItemWearablesHandsGlovesWelderName : "Welders Gloves",
 	ItemWearablesHandsGlovesWelderDesc : "Tanned leather gloves",
 
+	ItemWearablesHandsGlovesSnowName : "Snow Gloves",
+	ItemWearablesHandsGlovesSnowDesc : "Woven nylon snow gloves",	
+
+	ItemWearablesHandsGlovesWoolName : "Wool Gloves",
+	ItemWearablesHandsGlovesWoolDesc : "Woven wool gloves",	
+
+	ItemWearablesHandsGlovesLatexName : "Latex Gloves",
+	ItemWearablesHandsGlovesLatexDesc : "White Latex gloves",	
+
+	ItemWearablesHandsGlovesTacticalName : "Tactical Gloves",
+	ItemWearablesHandsGlovesTacticalDesc : "Black tactical combat gloves",	
+
+	ItemWearablesHandsGlovesCombatName : "Combat Gloves",
+	ItemWearablesHandsGlovesCombatDesc : "Black combat gloves",
+
+	ItemWearablesHandsGlovesCombatFingerlessName : "Fingerless Combat Gloves",
+	ItemWearablesHandsGlovesCombatFingerlessDesc : "Black fingerless combat gloves",	
+
 	//ITEMS - WEARABLES - CHEST
 	ItemWearablesChestCryoFilmName : "Cryo Film",
 	ItemWearablesChestCryoFilmDesc : "A gross film leftover from the cryogenic freezing",
+
+	ItemWearablesChestShirtTeeName : "T-Shirt",
+	ItemWearablesChestShirtTeeDesc : "Standard issue white t-shirt",
+
+	ItemWearablesChestShirtTankName : "Tank Top",
+	ItemWearablesChestShirtTankDesc : "Standard issue white tank top",
+
+	ItemWearablesChestShirtHenleyName : "Henley",
+	ItemWearablesChestShirtHenleyDesc : "Standard issue white henley",
 
 	ItemWearablesChestShirtCrewmansName : "Crewmans Shirt",
 	ItemWearablesChestShirtCrewmansDesc : "Standard issue crewmans shirt",
@@ -434,6 +595,21 @@ var loc = {
 	//ITEMS - WEARABLES - FEET
 	ItemWearablesFeetShoesCrewmansName : "Crewmans Shoes",
 	ItemWearablesFeetShoesCrewmansDesc : "Standard issue crewmans shoes",
+
+	ItemWearablesFeetFlipFlopsName : "Flip Flops",
+	ItemWearablesFeetFlipFlopsName : "Standard issue flip flops",
+
+	ItemWearablesFeetBootsName : "Boots",
+	ItemWearablesFeetBootsDesc : "Standard issue boots",
+
+	ItemWearablesFeetBootsSnowName : "Snow Boots",
+	ItemWearablesFeetBootsSnowDesc : "Standard issue snow boots",
+
+	ItemWearablesFeetBootsDuckName : "Duck Boots",
+	ItemWearablesFeetBootsDuckDesc : "Standard issue duck boots",
+
+	ItemWearablesFeetBootsWetName : "Wet Boots",
+	ItemWearablesFeetBootsWetDesc : "Standard issue wet boots",
 
 	ItemWearablesFeetBootsSoldierName : "Soldiers Combat Boots",
 	ItemWearablesFeetBootsSoldierDesc : "Standard issue soldiers boots",
@@ -478,7 +654,6 @@ var loc = {
 	ItemWearablesWaistFannyPackDesc : "A fanny pack",
 
 	//ITEMS - CONTAINERS
-	
 	ItemContainerLockerName : "Locker",
 	ItemContainerLockerDesc : "A stand up metal locker",
 
