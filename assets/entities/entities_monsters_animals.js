@@ -1,6 +1,3 @@
-// Create our central entity repository
-Game.EntityRepository = new Game.Repository('entities', Game.Entity);
-
 //BIOMES - UNDERGROUND MONSTERS
 Game.EntityRepository.define(loc.EntityBatName, {
     name: loc.EntityBatName,

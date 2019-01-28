@@ -90,6 +90,7 @@ Game.ItemRepository.define(loc.ItemFoodSunflowerSeedsName, {
     mixins: [Game.ItemMixins.Edible]
 });
 
+//FOOD - Corpse
 Game.ItemRepository.define(loc.EntityCorpse, {
     name: loc.EntityCorpse,
     description: loc.EntityCorpseDesc,

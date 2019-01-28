@@ -1,5 +1,3 @@
-Game.ItemRepository = new Game.Repository('items', Game.Item);
-
 // Wearables
 Game.ItemRepository.define(loc.ItemWearablesHeadGogglesName, {
     name: loc.ItemWearablesHeadGogglesName,
