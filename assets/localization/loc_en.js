@@ -102,6 +102,7 @@ var loc = {
 	MapEntityErrorOccupied : "Tried to add an entity at an occupied positon",
 
 	//BIOME HABITAT NAMES
+	MapBiomeHabitatShip : "ship",
 	MapBiomeHabitatUnderground : "underground",
 	MapBiomeHabitatArctic : "arctic",
 	MapBiomeHabitatOcean : "ocean",
@@ -117,6 +118,10 @@ var loc = {
 	TileDirtFloorDesc : "Dirt",
 	TileLeavesFloorDesc : "Leaf covered ground",
 	TileSandFloorDesc : "Sand",
+
+	//TILES - SHIP
+	TileShipMetalFloorDesc : "Metal floor",
+	TileShipMetalWallDesc : "Metal wall",
 
 	//TILES - BIOMES - UNDERGROUND
 	TileCaveFloorDesc : "A cave floor",

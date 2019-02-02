@@ -47,11 +47,11 @@ Game.Builder.prototype._generateLevel = function() {
     var generator = new ROT.Map.Cellular(this._width, this._height);
     generator.randomize(0.5);
     var totalIterations = 3;
-    // Iteratively smoothen the map
+    // Iteratively smooth the map
     for (var i = 0; i < totalIterations - 1; i++) {
         generator.create();
     }
-    // Smoothen it one last time and then update our map
+    // Smooth it one last time and then update our map
     generator.create(function(x,y,v) {
         if (v === 1) {
             map[x][y] = Game.Tile.undergroundFloorTile;
@@ -61,6 +61,29 @@ Game.Builder.prototype._generateLevel = function() {
     });
     return map;
 };
+
+Game.Builder.prototype._loadLevel = function(url) {
+    // Create the empty map
+    var map = new Array(this._width);
+    for (var w = 0; w < this._width; w++) {
+        map[w] = new Array(this._height);
+    }
+    //Read in the mapfile.
+    var myFetch = fetch(url);
+    myFetch.then(function(response) {
+        response.text().then(function(text) {
+            var lines = text.split('\n');
+            for (var x = 0; x < this._width; x++) {
+                for (var y = 0; y < this._height; y++) {
+                    map[x][y] = this._lookupTile(lines.charAt(h));
+                }
+            }
+        });
+    });
+
+    //Return the map.
+    return map;
+}
 
 Game.Builder.prototype._canFillRegion = function(x, y, z) {
     // Make sure the tile is within bounds

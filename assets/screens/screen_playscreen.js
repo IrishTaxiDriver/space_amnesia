@@ -12,6 +12,7 @@ Game.Screen.playScreen = {
         this._player = new Game.Entity(Game.PlayerTemplate);
         var tiles = new Game.Builder(width, height, depth).getTiles();
         var map = new Game.Map.biome_underground(tiles, this._player);
+        //var map = new Game.Map.cryogenics(this._player);
         // Start the map's engine
         map.getEngine().start();
     },
