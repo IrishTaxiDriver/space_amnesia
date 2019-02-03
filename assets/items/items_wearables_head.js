@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadGogglesName, {
     foreground: 'aqua',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHead,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -21,6 +22,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatCrewmansName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -35,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatOfficersName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -49,6 +52,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatCaptainsName, {
     foreground: 'white',
     defenseValue: 4,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -63,6 +67,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadShieldWeldersName, {
     foreground: 'white',
     defenseValue: 4,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -77,6 +82,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHelmetRiotName, {
     foreground: 'white',
     defenseValue: 4,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -91,6 +97,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadXRayGogglesName, {
     foreground: 'white',
     defenseValue: 4,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHead,
     components: [loc.ItemWearablesHeadGogglesName, loc.ItemMTSName,
                 loc.ItemMagnetName, loc.ItemMetalScrapName],

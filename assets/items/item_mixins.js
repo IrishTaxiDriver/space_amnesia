@@ -80,6 +80,7 @@ Game.ItemMixins.Equippable = {
         this._range = template['range'] || 0;
         this._name = template['name'] || null;
         this._inventorySlots = template['inventorySlots'] || 0;
+        this._prefix = template['prefix'] || '';
     },
     getAttackValue: function() {
         return this._attackValue;
@@ -104,6 +105,9 @@ Game.ItemMixins.Equippable = {
     },
     isWearable: function() {
         return this._wearable;
+    },
+    getPrefix: function() {
+        return this._prefix;
     },
     listeners: {
         'details': function() {

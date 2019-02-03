@@ -4,6 +4,7 @@ Game.ItemRepository.define(loc.ItemMedicineBandageName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName,loc.ItemGauzeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -14,6 +15,7 @@ Game.ItemRepository.define(loc.ItemMedicineAntibioticsName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCAn,
     components: [],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -24,6 +26,7 @@ Game.ItemRepository.define(loc.ItemMedicineDisinfectantName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -34,6 +37,7 @@ Game.ItemRepository.define(loc.ItemMedicineAspirinName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCAn,
     components: [],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -44,6 +48,7 @@ Game.ItemRepository.define(loc.ItemMedicineAntacidName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCAn,
     components: [],
     mixins: [Game.ItemMixins.Craftable]
 });

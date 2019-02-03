@@ -5,6 +5,7 @@ Game.ItemRepository.define(loc.ItemFoodMushroomName, {
     habitat: [loc.MapBiomeHabitatUnderground],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     foodValue: 50,
     mixins: [Game.ItemMixins.Edible]
 });
@@ -14,6 +15,7 @@ Game.ItemRepository.define(loc.ItemFoodLichenName, {
     habitat: [loc.MapBiomeHabitatUnderground],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     foodValue: 50,
     mixins: [Game.ItemMixins.Edible]
 });
@@ -26,6 +28,7 @@ Game.ItemRepository.define(loc.ItemFoodAppleName, {
     habitat: [loc.MapBiomeHabitatTemporate],
     character: '%',
     foreground: 'red',
+    prefix: loc.ItemPrefixLCAn,
     foodValue: 50,
     mixins: [Game.ItemMixins.Edible]
 });
@@ -35,6 +38,7 @@ Game.ItemRepository.define(loc.ItemFoodPumpkinName, {
     habitat: [loc.MapBiomeHabitatTemporate],
     character: '%',
     foreground: 'orange',
+    prefix: loc.ItemPrefixLCA,
     foodValue: 50,
     attackValue: 2,
     defenseValue: 2,
@@ -50,6 +54,7 @@ Game.ItemRepository.define(loc.ItemFoodMelonName, {
     habitat: [loc.MapBiomeHabitatJungle],
     character: '%',
     foreground: 'lightGreen',
+    prefix: loc.ItemPrefixLCA,
     foodValue: 35,
     consumptions: 4,
     mixins: [Game.ItemMixins.Edible]
@@ -62,6 +67,7 @@ Game.ItemRepository.define(loc.ItemFoodOkraName, {
     habitat: [loc.MapBiomeHabitatSavannah],
     character: '%',
     foreground: 'lightGreen',
+    prefix: loc.ItemPrefixLCAn,
     foodValue: 35,
     consumptions: 4,
     mixins: [Game.ItemMixins.Edible]
@@ -75,6 +81,7 @@ Game.ItemRepository.define(loc.ItemFoodMREName, {
     habitat: [loc.MapBiomeHabitatAny],
     character: '%',
     foreground: 'green',
+    prefix: loc.ItemPrefixLCAn,
     foodValue: 35,
     consumptions: 4,
     mixins: [Game.ItemMixins.Edible]
@@ -85,6 +92,7 @@ Game.ItemRepository.define(loc.ItemFoodSunflowerSeedsName, {
     habitat: [loc.MapBiomeHabitatAny],
     character: '%',
     foreground: 'green',
+    prefix: loc.ItemPrefixLCA,
     foodValue: 35,
     consumptions: 4,
     mixins: [Game.ItemMixins.Edible]
@@ -96,6 +104,7 @@ Game.ItemRepository.define(loc.EntityCorpse, {
     description: loc.EntityCorpseDesc,
     habitat: [loc.MapBiomeHabitatNone],
     character: '%',
+    prefix: loc.ItemPrefixLCA,
     foodValue: 75,
     consumptions: 1,
     mixins: [Game.ItemMixins.Edible]

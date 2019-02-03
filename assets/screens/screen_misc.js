@@ -82,11 +82,12 @@ Game.Screen.wieldScreen = new Game.Screen.ItemListScreen({
             if (this._player.getItemInSlot(slot) != null) {
                 removedItem = this._player.getItemInSlot(slot)
                 this._player.unequip(removedItem);
+                Game.sendMessage(this._player, loc.WieldScreenYouPutAway, [item.describeA()]);
             }
             // If we just unequipped the item above, we don't want to re-equip it.
             if (removedItem != item) {
                 this._player.equip(item);
-                Game.sendMessage(this._player, loc.WearScreenYouAreWearing, [item.describeA()]);
+                Game.sendMessage(this._player, loc.WieldScreenYouAreWielding, [item.describeA()]);
             }
         }
         return true;
@@ -115,6 +116,7 @@ Game.Screen.wearScreen = new Game.Screen.ItemListScreen({
             if (this._player.getItemInSlot(slot) != null) {
                 removedItem = this._player.getItemInSlot(slot)
                 this._player.unequip(removedItem);
+                Game.sendMessage(this._player, loc.WearScreenYouTakeOff, [item.describeA()]);
             }
             // If we just unequipped the item above, we don't want to re-equip it.
             if (removedItem != item) {

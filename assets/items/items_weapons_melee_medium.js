@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWeaponSwordOfficerName, {
     attackValue: 1,
     attackType: loc.ItemWeaponAttackTypeSlash,
     wieldable: true,
+    prefix: loc.ItemPrefixLCAn,
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -22,6 +23,7 @@ Game.ItemRepository.define(loc.ItemWeaponSwordCaptainName, {
     attackValue: 3,
     attackType: loc.ItemWeaponAttackTypeSlash,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -37,6 +39,7 @@ Game.ItemRepository.define(loc.ItemWeaponCrowbarName, {
     attackValue: 3,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -52,6 +55,7 @@ Game.ItemRepository.define(loc.ItemWeaponFireaxeName, {
     attackValue: 3,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
 }, {

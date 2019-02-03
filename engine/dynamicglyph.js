@@ -4,6 +4,7 @@ Game.DynamicGlyph = function(properties) {
     Game.Glyph.call(this, properties);
     // Instantiate any properties from the passed object
     this._name = properties['name'] || '';
+    this._prefix = properties['prefix'] || '';
     // Create an object which will keep track what mixins we have
     // attached to this entity based on the name property
     this._attachedMixins = {};
@@ -68,21 +69,24 @@ Game.DynamicGlyph.prototype.getName = function() {
     return this._name;
 };
 
+Game.DynamicGlyph.prototype.setPrefix = function(prefix) {
+    this._prefix = prefix;
+};
+
+Game.DynamicGlyph.prototype.getPrefix = function() {
+    return this._prefix;
+};
+
 Game.DynamicGlyph.prototype.describe = function() {
     return this._name;
 };
 Game.DynamicGlyph.prototype.describeA = function(capitalize) {
     // Optional parameter to capitalize the a/an.
-    var prefixes = capitalize ? ['A', 'An'] : ['a', 'an'];
-    var string = this.describe();
-    var firstLetter = string.charAt(0).toLowerCase();
-    // If word starts by a vowel, use an, else use a. Note that this is not perfect.
-    var prefix = 'aeiou'.indexOf(firstLetter) >= 0 ? 1 : 0;
-
-    return prefixes[prefix] + ' ' + string;
+    //var prefixes = capitalize ? [loc.ItemPrefixCapA, loc.ItemPrefixCapAn] : [loc.ItemPrefixLCA, loc.ItemPrefixLCAn];
+    return this.getPrefix() + " " + this.describe();
 };
 Game.DynamicGlyph.prototype.describeThe = function(capitalize) {
-    var prefix = capitalize ? 'The' : 'the';
+    var prefix = capitalize ? loc.ItemPrefixCapThe : loc.ItemPrefixLCThe;
     return prefix + ' ' + this.describe();
 };
 Game.DynamicGlyph.prototype.raiseEvent = function(event) {

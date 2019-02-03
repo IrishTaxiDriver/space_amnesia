@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesBackToteName, {
     foreground: 'aqua',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotBack,
     inventorySlots: 4,
     mixins: [Game.ItemMixins.Equippable]
@@ -22,6 +23,7 @@ Game.ItemRepository.define(loc.ItemWearablesBackPackName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotBack,
     inventorySlots: 8,
     mixins: [Game.ItemMixins.Equippable]
@@ -37,6 +39,7 @@ Game.ItemRepository.define(loc.ItemWearablesBackPackMilName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotBack,
     inventorySlots: 12,
     mixins: [Game.ItemMixins.Equippable]

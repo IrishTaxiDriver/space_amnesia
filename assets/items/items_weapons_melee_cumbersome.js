@@ -8,6 +8,7 @@ Game.ItemRepository.define(loc.ItemWeaponLargePipeName, {
     attackValue: 1,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 2,
     mixins: [Game.ItemMixins.Equippable]
@@ -24,6 +25,7 @@ Game.ItemRepository.define(loc.ItemWeaponSledgehammerName, {
     attackValue: 1,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 2,
     mixins: [Game.ItemMixins.Equippable]
@@ -40,6 +42,7 @@ Game.ItemRepository.define(loc.ItemWeaponSpearName, {
     attackValue: 3,
     attackType: loc.ItemWeaponAttackTypeThrust,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     range: 2,
     components: [loc.ItemWoodScrapName, loc.ItemTapeName],
     mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
@@ -56,6 +59,7 @@ Game.ItemRepository.define(loc.ItemWeaponPolearmName, {
     attackValue: 4,
     attackType: loc.ItemWeaponAttackTypeThrust,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     range: 2,
     components: [loc.ItemWoodScrapName, loc.ItemTapeName, loc.ItemWeaponBoxcutterName],
     mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]

@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestCryoFilmName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixLCThe,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -21,6 +22,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtTeeName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -35,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtTankName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -49,6 +52,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtHenleyName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -63,6 +67,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtCrewmansName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -77,6 +82,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtOfficersName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -91,6 +97,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtCaptainsName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -105,6 +112,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestVestRiotName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
     mixins: [Game.ItemMixins.Equippable]
 }, {

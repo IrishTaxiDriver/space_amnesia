@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesCryoUndiesName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -21,6 +22,7 @@ Game.ItemRepository.define(loc.ItemWearablesPantsShortsName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -35,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWearablesPantsShortsCargoName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -49,6 +52,7 @@ Game.ItemRepository.define(loc.ItemWearablesPantsCrewmanName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -63,6 +67,7 @@ Game.ItemRepository.define(loc.ItemWearablesPantsOfficerName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -77,6 +82,7 @@ Game.ItemRepository.define(loc.ItemWearablesPantsCaptainName, {
     foreground: 'white',
     defenseValue: 4,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -91,6 +97,7 @@ Game.ItemRepository.define(loc.ItemWearablesPantsBDUName, {
     foreground: 'white',
     defenseValue: 4,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
     mixins: [Game.ItemMixins.Equippable]
 }, {

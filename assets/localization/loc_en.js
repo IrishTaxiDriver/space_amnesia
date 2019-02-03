@@ -39,14 +39,14 @@ var loc = {
 	LoseScreenYouLose : "You lose!",
 
 	//PICKUP SCREEN
-	PickupScreenChoosePickup : "Choose the items you wish to pick up.",
+	PickupScreenChoosePickup : "Choose the items you wish to pick up",
 	PickupScreenPartialPickup : "Your inventory is full! Not all items were picked up.",
 
 	//DROP SCREEN
-	DropScreenChooseDrop : "Choose the item(s) you wish to drop.",
+	DropScreenChooseDrop : "Choose the item(s) you wish to drop",
 
 	//EAT SCREEN
-	EatScreenChooseEat : "Choose the item(s) you wish to eat.",
+	EatScreenChooseEat : "Choose the item(s) you wish to eat",
 	EatScreenEat : "You eat %s.",
 
 	//EAT SCREEN
@@ -58,11 +58,13 @@ var loc = {
 	WieldScreenChooseWield : "Choose the item(s) you wish to wield.",
 	WieldScreenEmptyHanded : "You are empty handed.",
 	WieldScreenYouAreWielding : "You are wielding %s.",
+	WieldScreenYouPutAway : "You put away %s.",
 
 	//WEAR SCREEN
 	WearScreenChooseWear : "Choose the item(s) you wish to wear",
 	WearScreenNude : "You are not wearing anthing.",
 	WearScreenYouAreWearing : "You are wearing %s.",
+	WearScreenYouTakeOff : "You take off %s.",
 
 	//EXAMINE SCREEN
 	ExamineScreenChooseExamine : "Choose the item you wish to examine.",
@@ -195,6 +197,7 @@ var loc = {
 	EntityClassAnimal : "animal",
 	EntityClassRobot : "robot",
 	EntityClassContainer : "container",
+	EntityClassUsable : "usable",
 	EntityClassSubInsect : "insect",
 	EntityClassSubArachnid : "arachnid",
 	EntityClassSubReptile : "reptile",
@@ -245,6 +248,21 @@ var loc = {
 	EntityDroidHazardHeavyName : "Heavy Hazard Droid",
 
 	EntityDroidCleanupName : "Radioactive Cleanup Droid",
+
+	//ENTITY - USABLES
+	ItemUsableDryerName : "Dryer",
+	ItemUsableDryerDesc : "An old industrial clothes dryer",
+
+	//ITEMS - PREFIXES
+	ItemPrefixLCA : "a",
+	ItemPrefixCapA : "A",
+	ItemPrefixLCAn : "an",
+	ItemPrefixCapAn : "An",
+	ItemPrefixLCThe : "the",
+	ItemPrefixCapThe : "The",
+	ItemPrefixPair : "a pair of",
+	ItemPrefixSome : "some",
+	ItemPrefixBlank : "",
 
 	//ITEMS - CURRENCY
 	ItemCurrencyCreditsName : "credits",
@@ -492,10 +510,10 @@ var loc = {
 	ItemWeaponAttachmentDrumMagazineDesc : "A drum magazine for a rifle",
 
 	ItemWeaponAttachmentPentagonMagazineName : "Pentagon Magazine",
-	ItemWeaponAttachmentPentagonMagazineDesc : "A pentagon magazine coupler for magazines",
+	ItemWeaponAttachmentPentagonMagazineDesc : "A pentagon coupler for magazines",
 
 	ItemWeaponAttachmentCouplerMagazineName : "Magazine Coupler",
-	ItemWeaponAttachmentCouplerMagazineDesc : "A magazine coupler for magazines",
+	ItemWeaponAttachmentCouplerMagazineDesc : "A coupler for magazines",
 
 	ItemWeaponAttachmentSideSaddleName : "Side Saddle",
 	ItemWeaponAttachmentSideSaddleDesc : "A side saddle shell holder for shotguns",
@@ -558,7 +576,7 @@ var loc = {
 	ItemWearablesHandsGlovesSnowDesc : "Woven nylon snow gloves",	
 
 	ItemWearablesHandsGlovesWoolName : "Wool Gloves",
-	ItemWearablesHandsGlovesWoolDesc : "Woven wool gloves",	
+	ItemWearablesHandsGlovesWoolDesc : "Woven Wool gloves",	
 
 	ItemWearablesHandsGlovesLatexName : "Latex Gloves",
 	ItemWearablesHandsGlovesLatexDesc : "White Latex gloves",	
@@ -602,7 +620,7 @@ var loc = {
 	ItemWearablesFeetShoesCrewmansDesc : "Standard issue crewmans shoes",
 
 	ItemWearablesFeetFlipFlopsName : "Flip Flops",
-	ItemWearablesFeetFlipFlopsName : "Standard issue flip flops",
+	ItemWearablesFeetFlipFlopsDesc : "Standard issue flip flops",
 
 	ItemWearablesFeetBootsName : "Boots",
 	ItemWearablesFeetBootsDesc : "Standard issue boots",

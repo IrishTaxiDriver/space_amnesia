@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetShoesCrewmansName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -21,6 +22,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetFlipFlopsName, {
     foreground: 'white',
     defenseValue: 0,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -35,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -49,6 +52,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsSnowName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -63,6 +67,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsDuckName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -77,6 +82,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsWetName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -91,6 +97,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsSoldierName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
     mixins: [Game.ItemMixins.Equippable]
 }, {

@@ -8,6 +8,7 @@ Game.ItemRepository.define(loc.ItemWeaponPipeName, {
     attackValue: 1,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -24,6 +25,7 @@ Game.ItemRepository.define(loc.ItemWeaponNightstickName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -40,6 +42,7 @@ Game.ItemRepository.define(loc.ItemWeaponBoxcutterName, {
     attackValue: 1,
     attackType: loc.ItemWeaponAttackTypeSlash,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -56,6 +59,7 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchPlumberName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -72,6 +76,7 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchCrescentName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -88,6 +93,7 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchMonkeyName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -104,6 +110,7 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchPipeName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -120,6 +127,7 @@ Game.ItemRepository.define(loc.ItemWeaponHammerName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -136,6 +144,7 @@ Game.ItemRepository.define(loc.ItemWeaponMalletName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -152,6 +161,7 @@ Game.ItemRepository.define(loc.ItemWeaponHatchetName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeStrike,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]
@@ -168,6 +178,7 @@ Game.ItemRepository.define(loc.ItemWeaponScrewdriverName, {
     attackValue: 2,
     attackType: loc.ItemWeaponAttackTypeThrust,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable]

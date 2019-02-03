@@ -198,7 +198,7 @@ Game.EntityMixins.TaskActor = {
     }
 };
 
-// This signifies our entity can attack basic destructible enities
+// This signifies our entity can attack basic destructible entities
 Game.EntityMixins.Attacker = {
     name: 'Attacker',
     groupName: 'Attacker',
@@ -833,5 +833,24 @@ Game.EntityMixins.PlayerStatGainer = {
             Game.Screen.gainStatScreen.setup(this);
             Game.Screen.playScreen.setSubScreen(Game.Screen.gainStatScreen);
         }
+    }
+};
+
+Game.EntityMixins.Usable = {
+    name: 'Usable',
+    groupName: 'Usable',
+    init: function(template) {
+        this._name = template["name"] || null;
+        this._canPickUp = template["canPickUp"] || false;
+        this._locked = template["locked"] || false;
+    },
+    getName: function() {
+        return this._name;
+    },
+    getCanPickUp: function() {
+        return this._canPickUp;
+    },
+    getLocked: function() {
+        return this._locked;
     }
 };

@@ -4,6 +4,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentSilencerName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName,loc.ItemGauzeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -14,6 +15,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentForegripName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -24,6 +26,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentGripShieldName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -34,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentCollapsableStockName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -44,6 +48,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentReddotScopeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -54,6 +59,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentBayonetName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -64,6 +70,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentBipodName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -74,6 +81,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentLaserSightName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -84,6 +92,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentDazzlerName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -94,6 +103,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentFlashlightName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -104,6 +114,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentStrapName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -114,6 +125,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentDrumMagazineName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -124,6 +136,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentPentagonMagazineName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -134,6 +147,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentCouplerMagazineName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -144,6 +158,7 @@ Game.ItemRepository.define(loc.ItemWeaponAttachmentSideSaddleName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemWeaponPipeName],
     mixins: [Game.ItemMixins.Craftable]
 });

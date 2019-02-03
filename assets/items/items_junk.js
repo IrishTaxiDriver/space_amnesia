@@ -3,7 +3,8 @@ Game.ItemRepository.define(loc.ItemRockName, {
     description: loc.ItemRockDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixLCA
 });
 
 Game.ItemRepository.define(loc.ItemGauzeName, {
@@ -12,6 +13,7 @@ Game.ItemRepository.define(loc.ItemGauzeName, {
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });
 
 Game.ItemRepository.define(loc.ItemPlantExtractsName, {
@@ -20,6 +22,7 @@ Game.ItemRepository.define(loc.ItemPlantExtractsName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });
 
 Game.ItemRepository.define(loc.ItemIntestinesName, {
@@ -28,6 +31,7 @@ Game.ItemRepository.define(loc.ItemIntestinesName, {
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });
 
 Game.ItemRepository.define(loc.ItemWoodScrapName, {
@@ -36,6 +40,7 @@ Game.ItemRepository.define(loc.ItemWoodScrapName, {
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });
 
 Game.ItemRepository.define(loc.ItemPillowFeathersName, {
@@ -44,6 +49,7 @@ Game.ItemRepository.define(loc.ItemPillowFeathersName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
     foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });
 
 Game.ItemRepository.define(loc.ItemBottleName, {
@@ -51,7 +57,8 @@ Game.ItemRepository.define(loc.ItemBottleName, {
     description: loc.ItemBottleDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixLCA
 });
 
 Game.ItemRepository.define(loc.ItemMTSName, {
@@ -59,7 +66,8 @@ Game.ItemRepository.define(loc.ItemMTSName, {
     description: loc.ItemMTSDesc,
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixLCA
 });
 
 Game.ItemRepository.define(loc.ItemFuseName, {
@@ -67,7 +75,8 @@ Game.ItemRepository.define(loc.ItemFuseName, {
     description: loc.ItemFuseDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixLCA
 });
 
 Game.ItemRepository.define(loc.ItemMagnetName, {
@@ -75,7 +84,8 @@ Game.ItemRepository.define(loc.ItemMagnetName, {
     description: loc.ItemMagnetDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixLCA
 });
 
 Game.ItemRepository.define(loc.ItemMetalScrapName, {
@@ -83,7 +93,8 @@ Game.ItemRepository.define(loc.ItemMetalScrapName, {
     description: loc.ItemMetalScrapDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });
 
 Game.ItemRepository.define(loc.ItemTapeName, {
@@ -91,5 +102,6 @@ Game.ItemRepository.define(loc.ItemTapeName, {
     description: loc.ItemTapeDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    prefix: loc.ItemPrefixSome
 });

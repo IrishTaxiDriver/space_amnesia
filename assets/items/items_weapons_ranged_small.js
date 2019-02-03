@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWeaponAntiRiotGunName, {
     foreground: 'white',
     attackValue: 3,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 3,
     mixins: [Game.ItemMixins.Equippable]
@@ -22,6 +23,7 @@ Game.ItemRepository.define(loc.ItemWeaponLaserPistolName, {
     foreground: 'white',
     attackValue: 4,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 5,
     mixins: [Game.ItemMixins.Equippable]

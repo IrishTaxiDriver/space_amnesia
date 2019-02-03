@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesWaistBeltName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotWaist,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -21,6 +22,7 @@ Game.ItemRepository.define(loc.ItemWearablesWaistFannyPackName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotWaist,
     mixins: [Game.ItemMixins.Equippable]
 }, {

@@ -4,6 +4,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableMolotovName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -14,6 +15,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableKnifeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -24,6 +26,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableGrenadeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -34,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableRiotGrenadeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -44,6 +48,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableStickyGrenadeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -54,6 +59,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableSatchelChargeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -64,6 +70,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableFlashbangName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });
@@ -74,6 +81,7 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableConcGrenadeName, {
     habitat: [loc.MapBiomeHabitatNone],
     character: '-',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
     mixins: [Game.ItemMixins.Craftable]
 });

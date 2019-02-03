@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWeaponLaserRifleName, {
     foreground: 'white',
     attackValue: 5,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
     mixins: [Game.ItemMixins.Equippable]
@@ -22,6 +23,7 @@ Game.ItemRepository.define(loc.ItemWeaponCrossBowName, {
     foreground: 'white',
     attackValue: 5,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
     mixins: [Game.ItemMixins.Equippable]
@@ -37,6 +39,7 @@ Game.ItemRepository.define(loc.ItemWeaponBowHuntingName, {
     foreground: 'white',
     attackValue: 5,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
     mixins: [Game.ItemMixins.Equippable]
@@ -52,6 +55,7 @@ Game.ItemRepository.define(loc.ItemWeaponBowName, {
     foreground: 'white',
     attackValue: 5,
     wieldable: true,
+    prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
     components: [loc.ItemIntestinesName, loc.ItemWoodScrapName],

@@ -4,6 +4,7 @@ Game.ItemRepository.define(loc.ItemCurrencyCreditsName, {
     habitat: [loc.MapBiomeHabitatAny],
     character: '$',
     foreground: 'white',
+    prefix: loc.ItemPrefixLCA,
     mixins: [Game.ItemMixins.Currency],
     type: loc.ItemCurrencyCreditsName,
     value: 0

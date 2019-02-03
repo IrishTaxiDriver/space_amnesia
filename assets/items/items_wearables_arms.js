@@ -7,6 +7,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -21,6 +22,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesSnowName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -35,6 +37,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesWoolName, {
     foreground: 'white',
     defenseValue: 1,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -49,6 +52,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesLatexName, {
     foreground: 'white',
     defenseValue: 0,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -63,6 +67,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesWelderName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -77,6 +82,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesTacticalName, {
     foreground: 'white',
     defenseValue: 3,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -91,6 +97,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesCombatName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
@@ -105,6 +112,7 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesCombatFingerlessName, {
     foreground: 'white',
     defenseValue: 2,
     wearable: true,
+    prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
     mixins: [Game.ItemMixins.Equippable]
 }, {
