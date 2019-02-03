@@ -10,7 +10,5 @@ Items
 Maps
   -Hook up pre-made maps
 Systems
-  -Grammar ("You picked up an Intestines.")
-  -Debug
   -Status Effects
   -Localized Damage
