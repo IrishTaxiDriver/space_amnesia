@@ -1,8 +1,8 @@
 var Game =  {
 	_display: null,
     _currentScreen: null,
-    _screenWidth: 80,
-    _screenHeight: 24,
+    _screenWidth: firm.Width,
+    _screenHeight: firm.Height,
 	init: function() {
         // Any necessary initialization will go here.
         this._display = new ROT.Display({width: this._screenWidth,
@@ -54,6 +54,33 @@ var Game =  {
             this._currentScreen.enter();
             this.refresh();
         }
+    },
+    addDisplay: function() {
+        document.body.appendChild(this.getDisplay().getContainer());
+    },
+    addStatsDisplay: function() {
+        var stats = document.createElement("div");
+        stats.id = "canvasStats";
+        var statsText = document.createElement("p");
+        statsText.id = "canvasStatsText";
+        stats.appendChild(statsText);
+        document.body.appendChild(stats);
+    },
+    addInventoryDisplay: function() {
+        var inventory = document.createElement("div");
+        inventory.id = "canvasInventory";
+        var inventoryText = document.createElement("p");
+        inventoryText.id = "canvasInventoryText";
+        inventory.appendChild(inventoryText);
+        document.body.appendChild(inventory);
+    },
+    addLogDisplay: function() {
+        var log = document.createElement("div");
+        log.id = "canvasLog";
+        var logText = document.createElement("p");
+        logText.id = "canvasLogText";
+        log.appendChild(logText);
+        document.body.appendChild(log);
     }
 };
 
@@ -65,7 +92,10 @@ window.onload = function() {
         // Initialize the game
         Game.init();
         // Add the container to our HTML page
-        document.body.appendChild(Game.getDisplay().getContainer());
+        Game.addStatsDisplay();
+        Game.addDisplay();
+        Game.addInventoryDisplay();
+        Game.addLogDisplay();
         // Load the start screen
         Game.switchScreen(Game.Screen.startScreen);
     }

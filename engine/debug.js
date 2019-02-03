@@ -170,10 +170,10 @@ var Debug = {
         if (Game.EntityRepository.getContainingRepository("name", name)) {
             Debug.log("Debug.spawn: Using entity repository.");
             var entity = Game.EntityRepository.create( Object.keys( Game.EntityRepository.getFromCriteria( "name", name ) ) );
+            //must set xyz of entity.
             entity.setX(player.getX() - 1);
             entity.setY(player.getY() - 1);
             entity.setZ(player.getZ());
-            //must set xyz of entity.
             map.addEntity( entity );
         } else {
             Debug.log("Debug.spawn: Using item repository.");

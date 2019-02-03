@@ -62,29 +62,6 @@ Game.Builder.prototype._generateLevel = function() {
     return map;
 };
 
-Game.Builder.prototype._loadLevel = function(url) {
-    // Create the empty map
-    var map = new Array(this._width);
-    for (var w = 0; w < this._width; w++) {
-        map[w] = new Array(this._height);
-    }
-    //Read in the mapfile.
-    var myFetch = fetch(url);
-    myFetch.then(function(response) {
-        response.text().then(function(text) {
-            var lines = text.split('\n');
-            for (var x = 0; x < this._width; x++) {
-                for (var y = 0; y < this._height; y++) {
-                    map[x][y] = this._lookupTile(lines.charAt(h));
-                }
-            }
-        });
-    });
-
-    //Return the map.
-    return map;
-}
-
 Game.Builder.prototype._canFillRegion = function(x, y, z) {
     // Make sure the tile is within bounds
     if (x < 0 || y < 0 || z < 0 || x >= this._width ||

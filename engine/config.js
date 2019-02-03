@@ -16,3 +16,14 @@ var config = {
     LookKey : ROT.VK_SEMICOLON,
     HelpKey : ROT.VK_QUESTION_MARK
 }
+
+var firm = {
+
+    //Height and Width of the screen.
+    Width : 80,
+    Height : 24,
+
+    //URL constant
+    URL : "http://www.danmerboth.com/games/space_amnesia/"
+
+}

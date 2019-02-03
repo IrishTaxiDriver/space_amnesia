@@ -39,23 +39,23 @@ var loc = {
 	LoseScreenYouLose : "You lose!",
 
 	//PICKUP SCREEN
-	PickupScreenChoosePickup : "Choose the items you wish to pickup",
+	PickupScreenChoosePickup : "Choose the items you wish to pick up.",
 	PickupScreenPartialPickup : "Your inventory is full! Not all items were picked up.",
 
 	//DROP SCREEN
-	DropScreenChooseDrop : "Choose the item(s) you wish to drop",
+	DropScreenChooseDrop : "Choose the item(s) you wish to drop.",
 
 	//EAT SCREEN
-	EatScreenChooseEat : "Choose the item(s) you wish to eat",
+	EatScreenChooseEat : "Choose the item(s) you wish to eat.",
 	EatScreenEat : "You eat %s.",
 
 	//EAT SCREEN
 	ContainerScreenChooseItem : "Choose the item(s) you wish to loot",
 	ContainerScreenLoot : "You loot %s.",
-	ContainerScreenLootEmpty : "There is nothing in the ",
+	ContainerScreenLootEmpty : "There is nothing in the %s.",
 
 	//WIELD SCREEN	
-	WieldScreenChooseWield : "Choose the item(s) you wish to wield",
+	WieldScreenChooseWield : "Choose the item(s) you wish to wield.",
 	WieldScreenEmptyHanded : "You are empty handed.",
 	WieldScreenYouAreWielding : "You are wielding %s.",
 
@@ -146,15 +146,15 @@ var loc = {
 	TileOceanWaterFloorDesc : "Open sea",
 
 	//ENTITIES - PLAYER - EQUIP SLOTS
-	EntityPlayerEquipSlotHead : "head",
-	EntityPlayerEquipSlotChest : "chest",
-	EntityPlayerEquipSlotHands : "hands",
-	EntityPlayerEquipSlotLegs : "legs",
-	EntityPlayerEquipSlotFeet : "feet",
-	EntityPlayerEquipSlotBack : "back",
-	EntityPlayerEquipSlotWaist : "waist",
-	EntityPlayerEquipSlotLHand : "lhand",
-	EntityPlayerEquipSlotRHand : "rhand",
+	EntityPlayerEquipSlotHead : "Head",
+	EntityPlayerEquipSlotChest : "Chest",
+	EntityPlayerEquipSlotHands : "Hands",
+	EntityPlayerEquipSlotLegs : "Legs",
+	EntityPlayerEquipSlotFeet : "Feet",
+	EntityPlayerEquipSlotBack : "Back",
+	EntityPlayerEquipSlotWaist : "Waist",
+	EntityPlayerEquipSlotLHand : "LHand",
+	EntityPlayerEquipSlotRHand : "RHand",
 
 	//ENTITIES - MIXINS - PLAYER
 	EntityPlayerPressToContinue : "Press [Enter] to continue!",

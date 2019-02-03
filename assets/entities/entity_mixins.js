@@ -26,7 +26,7 @@ Game.EntityMixins.PlayerActor = {
         // for the player to press a key.
         this.getMap().getEngine().lock();
         // Clear the message queue
-        this.clearMessages();
+        //this.clearMessages();
         this._acting = false;
     }
 };
@@ -341,6 +341,8 @@ Game.EntityMixins.MessageRecipient = {
         this._messages = [];
     },
     receiveMessage: function(message) {
+        if (this._messages.length = 5)
+            this._messages.shift();
         this._messages.push(message);
     },
     getMessages: function() {
@@ -706,6 +708,13 @@ Game.EntityMixins.Equipper = {
     getItemInSlot: function(slot) {
         return this._equipped[slot];
     },
+    getItemInSlotName: function(slot) {
+        item = this.getItemInSlot(slot);
+        if (item === null)
+            return "empty";
+        else
+            return item.getName();
+    }
 };
 
 Game.EntityMixins.ExperienceGainer = {

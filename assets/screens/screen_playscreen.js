@@ -31,6 +31,8 @@ Game.Screen.playScreen = {
         this.renderMessages(display);
         // Render the hud
         this.renderHUD(display);
+        // Render the inventory
+        this.renderInventory(display);
     },
     getScreenOffsets: function() {
         // Make sure we still have enough space to fit an entire game screen
@@ -48,17 +50,28 @@ Game.Screen.playScreen = {
         };
     },
     renderHUD: function(display) {
-        var screenWidth = Game.getScreenWidth();
-        var screenHeight = Game.getScreenHeight();
         // Render player stats
-        var stats = '%c{white}%b{black}';
-        stats += vsprintf('HP: %d/%d L: %d XP: %d', 
+        var stats = vsprintf('HP: %d/%d<br>L: %d<br>XP: %d', 
             [this._player.getHp(), this._player.getMaxHp(),
              this._player.getLevel(), this._player.getExperience()]);
-        display.drawText(0, screenHeight, stats);
-        // Render hunger state
-        var hungerState = this._player.getHungerState();
-        display.drawText(screenWidth - hungerState.length, screenHeight, hungerState);
+        stats += "<br>";
+        stats += this._player.getHungerState();
+        if (document.getElementById("canvasStatsText"))
+            document.getElementById("canvasStatsText").innerHTML = stats;
+    },
+    renderInventory: function(display) {
+        var inventory = loc.EntityPlayerEquipSlotHead + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotHead) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotChest + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotChest) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotBack + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotBack) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotHands + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotHands) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotWaist + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotWaist) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotLegs + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotLegs) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotFeet + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotFeet) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotLHand + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotLHand) + "<br>";
+        inventory += loc.EntityPlayerEquipSlotRHand + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotRHand) + "<br>";
+
+        if (document.getElementById("canvasInventoryText"))
+            document.getElementById("canvasInventoryText").innerHTML = inventory;
     },
     renderTiles: function(display) {
         var screenWidth = Game.getScreenWidth();
@@ -123,14 +136,17 @@ Game.Screen.playScreen = {
     renderMessages: function(display) {
         // Get the messages in the player's queue and render them
         var messages = this._player.getMessages();
-        var messageY = 0;
+
+        if (document.getElementById("canvasLogText"))
+                document.getElementById("canvasLogText").innerHTML = "";
+
         for (var i = 0; i < messages.length; i++) {
-            // Draw each message, adding the number of lines
-            messageY += display.drawText(
-                0, 
-                messageY,
-                '%c{white}%b{black}' + messages[i]
-            );
+            if (typeof messages[i] !== 'undefined') {
+                if (document.getElementById("canvasLogText")) {
+                    document.getElementById("canvasLogText").innerHTML += messages[i];
+                    document.getElementById("canvasLogText").innerHTML += "<br>";
+                }
+            }
         }
     },
     handleInput: function(inputType, inputData) {
@@ -195,7 +211,7 @@ Game.Screen.playScreen = {
                 if (items && items.length === 1) {
                     var item = items[0];
                     if (this._player.pickupItems([0])) {
-                        Game.sendMessage(this._player, loc.inventoryScreenYouPickUp, [item.describeA()]);
+                        Game.sendMessage(this._player, loc.InventoryScreenYouPickUp, [item.describeA()]);
                     } else {
                         Game.sendMessage(this._player, loc.InventoryScreenCantPickUpFull);
                     }
@@ -260,7 +276,7 @@ Game.Screen.playScreen = {
                 this.setSubScreen(subScreen, container);
             }
         } else {
-            Game.sendMessage(this._player, emptyMessage);
+            Game.sendMessage(this._player, emptyMessage, [container.getName()]);
             Game.refresh();
         }
     }
