@@ -11,9 +11,11 @@ Game.EntityRepository.define(loc.EntityBatName, {
     speed: 2000,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor, 
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityNewtName, {
     name: loc.EntityNewtName,
@@ -26,9 +28,11 @@ Game.EntityRepository.define(loc.EntityNewtName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityCaveSpiderName, {
     name: loc.EntityCaveSpiderName,
@@ -41,9 +45,11 @@ Game.EntityRepository.define(loc.EntityCaveSpiderName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityCaveBeetleName, {
     name: loc.EntityCaveBeetleName,
@@ -56,9 +62,11 @@ Game.EntityRepository.define(loc.EntityCaveBeetleName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 //BIOMES - TEMPERATE MONSTERS
@@ -74,9 +82,11 @@ Game.EntityRepository.define(loc.EntityBearBlackName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityBearBrownName, {
     name: loc.EntityBearBrownName,
@@ -89,9 +99,11 @@ Game.EntityRepository.define(loc.EntityBearBrownName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityBearGrizzlyName, {
     name: loc.EntityBearGrizzlyName,
@@ -104,9 +116,11 @@ Game.EntityRepository.define(loc.EntityBearGrizzlyName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityLionMountainName, {
     name: loc.EntityLionMountainName,
@@ -119,9 +133,11 @@ Game.EntityRepository.define(loc.EntityLionMountainName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityTigerSiberianName, {
     name: loc.EntityTigerSiberianName,
@@ -134,9 +150,11 @@ Game.EntityRepository.define(loc.EntityTigerSiberianName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 //BIOMES - SAVANNAH MONSTERS
@@ -152,9 +170,11 @@ Game.EntityRepository.define(loc.EntityLionSavannahName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityAfricanElephantSavannahName, {
     name: loc.EntityAfricanElephantSavannahName,
@@ -167,9 +187,11 @@ Game.EntityRepository.define(loc.EntityAfricanElephantSavannahName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 Game.EntityRepository.define(loc.EntityAsianElephantSavannahName, {
     name: loc.EntityAsianElephantSavannahName,
@@ -182,9 +204,11 @@ Game.EntityRepository.define(loc.EntityAsianElephantSavannahName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 //BIOMES - JUNGLE MONSTERS
@@ -200,9 +224,11 @@ Game.EntityRepository.define(loc.EntityCobraName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 Game.EntityRepository.define(loc.EntityAnacondaName, {
@@ -216,9 +242,11 @@ Game.EntityRepository.define(loc.EntityAnacondaName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 Game.EntityRepository.define(loc.EntityBoaConstrictorName, {
@@ -232,9 +260,11 @@ Game.EntityRepository.define(loc.EntityBoaConstrictorName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 //BIOMES - OCEAN
@@ -250,9 +280,11 @@ Game.EntityRepository.define(loc.EntitySharkMakoName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 Game.EntityRepository.define(loc.EntitySharkGreatWhiteName, {
@@ -266,9 +298,11 @@ Game.EntityRepository.define(loc.EntitySharkGreatWhiteName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 Game.EntityRepository.define(loc.EntitySharkLandName, {
@@ -282,9 +316,11 @@ Game.EntityRepository.define(loc.EntitySharkLandName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });
 
 Game.EntityRepository.define(loc.EntitySharkMegalodonName, {
@@ -298,7 +334,9 @@ Game.EntityRepository.define(loc.EntitySharkMegalodonName, {
     attackValue: 2,
     xpValue: 1,
     mixins: [Game.EntityMixins.TaskActor,
-             Game.EntityMixins.Attacker, Game.EntityMixins.Destructible,
+             Game.EntityMixins.Attacker,
+             Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
-             Game.EntityMixins.ExperienceGainer, Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.ExperienceGainer,
+             Game.EntityMixins.RandomStatGainer]
 });

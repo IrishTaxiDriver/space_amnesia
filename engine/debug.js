@@ -158,7 +158,7 @@ var Debug = {
         Game.refresh();
 
     },
-    spawn: function(name) {
+    spawn: function(name, rarity) {
         if (!Debug.enable)
             return;
 
@@ -180,6 +180,9 @@ var Debug = {
             item = Game.ItemRepository.create( Object.keys( Game.ItemRepository.getFromCriteria( "name", name ) ) );
             if (item.hasMixin(Game.ItemMixins.Currency)) {
                 item.randomizeValue(100);
+            }
+            if (item.hasMixin(Game.ItemMixins.Rarity) && rarity) {
+                item.setRarity(rarity);
             }
             map.addItem( player.getX(), player.getY(), player.getZ(), item);
         }

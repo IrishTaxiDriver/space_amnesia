@@ -8,7 +8,8 @@ Game.EntityRepository.define(loc.EntityFlytrapSmallName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -22,7 +23,8 @@ Game.EntityRepository.define(loc.EntityFlytrapMediumName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -36,6 +38,7 @@ Game.EntityRepository.define(loc.EntityFlytrapLargeName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });

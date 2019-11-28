@@ -66,6 +66,71 @@ Game.ItemMixins.Currency = {
     }
 };
 
+//TODO: Rarity shows up in name.
+Game.ItemMixins.Rarity = {
+    name: 'Rarity',
+    init: function(template) {
+        this._rarity = this.setRandomRarity() || 0;
+    },
+    getRarity: function() {
+        return this._rarity;
+    },
+    setRandomRarity: function() {
+        rarity = Math.round(Math.random() * 100);
+
+        if (rarity <= 60) {
+            return 0;
+        } else if (rarity >= 61 && rarity <= 80 ) {
+            return 1;
+        } else if (rarity >= 81 && rarity <= 90 ) {
+            return 2;
+        } else if (rarity >= 91 && rarity <= 95 ) {
+            return 3;
+        } else if (rarity >= 96 && rarity <= 98 ) {
+            return 4;
+        } else if (rarity >= 99 && rarity <= 100 ) {
+            return 5;
+        }
+    },
+    setRarity: function(rarity) {
+        this._rarity = rarity;
+        this.setColorBasedOnRarity();
+    },
+    getColorForRarity: function(rarity) {
+        if (rarity == 0) { //Grey
+            return 'grey';
+        } else if (rarity == 1 ) { //White
+            return 'white';
+        } else if (rarity == 2 ) { //Green
+            return 'green';
+        } else if (rarity == 3 ) { //Blue
+            return 'blue';
+        } else if (rarity == 4 ) { //Purple
+            return 'purple';
+        } else if (rarity == 5 ) { //Yellow
+            return 'yellow';
+        } else if (rarity == 6 ) { //Orange
+            return 'orange';
+        } else if (rarity == 7 ) { //Red
+            return 'red';
+        }
+    },
+    setColorBasedOnRarity: function() {
+        Debug.log("Game.ItemMixins.setColorBasedOnRarity: Setting " + this._name + " to rarity " + this._rarity);
+        this.setForeground(this.getColorForRarity(this._rarity));
+    }
+};
+
+Game.ItemMixins.Set = {
+    name: 'Set',
+    init: function(template) {
+        this._setName = template['setName'] || null;
+    },
+    //getSetBonuses
+    //applySetBonuses
+    //probably more
+};
+
 // Equipment Mixin
 Game.ItemMixins.Equippable = {
     name: 'Equippable',

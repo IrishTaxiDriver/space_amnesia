@@ -11,7 +11,8 @@ Game.ItemRepository.define(loc.ItemWeaponPipeName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Rarity]
 }, {
     disableRandomCreation: true
 });

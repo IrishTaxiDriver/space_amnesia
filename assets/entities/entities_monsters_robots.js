@@ -8,7 +8,8 @@ Game.EntityRepository.define(loc.EntityDroidSecurityLightName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -22,7 +23,8 @@ Game.EntityRepository.define(loc.EntityDroidSecurityMediumName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -36,7 +38,8 @@ Game.EntityRepository.define(loc.EntityDroidSecurityHeavyName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -50,7 +53,8 @@ Game.EntityRepository.define(loc.EntityDroidSecurityRiotName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -64,7 +68,8 @@ Game.EntityRepository.define(loc.EntityDroidMaintenanceLightName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -78,7 +83,8 @@ Game.EntityRepository.define(loc.EntityDroidMaintenanceMediumName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -92,7 +98,8 @@ Game.EntityRepository.define(loc.EntityDroidMaintenanceHeavyName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -106,7 +113,8 @@ Game.EntityRepository.define(loc.EntityDroidHazardLightName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -120,7 +128,8 @@ Game.EntityRepository.define(loc.EntityDroidHazardMediumName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -134,7 +143,8 @@ Game.EntityRepository.define(loc.EntityDroidHazardHeavyName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });
 
@@ -148,6 +158,7 @@ Game.EntityRepository.define(loc.EntityDroidCleanupName, {
     maxHp: 10,
     speed: 250,
     xpValue: 1,
-    mixins: [Game.EntityMixins.Destructible, Game.EntityMixins.ExperienceGainer,
+    mixins: [Game.EntityMixins.Destructible,
+             Game.EntityMixins.ExperienceGainer,
              Game.EntityMixins.RandomStatGainer]
 });

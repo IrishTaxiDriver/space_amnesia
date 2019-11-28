@@ -253,6 +253,15 @@ var loc = {
 	ItemUsableDryerName : "Dryer",
 	ItemUsableDryerDesc : "An old industrial clothes dryer",
 
+	ItemUsable3DPrinterName : "3D Printer",
+	ItemUsable3DPrinterDesc : "An industrial 3D printer",
+
+	ItemUsableRecyclerName : "Recycler",
+	ItemUsableRecyclerDesc : "An industrial material recycler",
+
+	ItemUsableVendingName : "Vending Machine",
+	ItemUsableVendingDesc : "A vending machine",
+
 	//ITEMS - PREFIXES
 	ItemPrefixLCA : "a",
 	ItemPrefixCapA : "A",
@@ -330,7 +339,7 @@ var loc = {
 	ItemFoodMREName : "MRE",
 	ItemFoodMREDesc : "A pre-packaged meal",
 
-	ItemFoodSunflowerSeedsName : "A bag of sunflower seeds",
+	ItemFoodSunflowerSeedsName : "Bag of sunflower seeds",
 	ItemFoodSunflowerSeedsDesc : "Guht's Premium Sunflower Seeds",
 
 	//ITEMS - MEDICINE

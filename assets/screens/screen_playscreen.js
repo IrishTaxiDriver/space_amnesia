@@ -270,13 +270,17 @@ Game.Screen.playScreen = {
     },
     showItemsSubScreen: function(subScreen, items, emptyMessage, container) {
         if (items && subScreen.setup(this._player, items) > 0) {
-            if (!container) {
+            if (!container || container == undefined) {
                 this.setSubScreen(subScreen);
             } else {
                 this.setSubScreen(subScreen, container);
             }
         } else {
-            Game.sendMessage(this._player, emptyMessage, [container.getName()]);
+            if (!container || container == undefined ) {
+                Game.sendMessage(this._player, emptyMessage);
+            } else {
+                Game.sendMessage(this._player, emptyMessage, [container.getName()]);
+            }
             Game.refresh();
         }
     }
