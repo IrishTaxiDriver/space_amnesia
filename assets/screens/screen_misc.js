@@ -204,7 +204,7 @@ Game.Screen.helpScreen = {
         display.drawText(0, y++, 'You wake up with no memory.');
         display.drawText(0, y++, 'Explore your surroundings.');
         y += 3;
-        display.drawText(0, y++, '[' + String.fromCharCode(config.PickupKey) + '] ' + loc.HelpScreenPickupKeyDesc);
+        display.drawText(0, y++, '[semicolon] ' + loc.HelpScreenPickupKeyDesc);
         display.drawText(0, y++, '[' + String.fromCharCode(config.DropKey) + '] ' + loc.HelpScreenDropKeyDesc);
         display.drawText(0, y++, '[' + String.fromCharCode(config.EatKey) + '] ' + loc.HelpScreenEatKeyDesc);
         display.drawText(0, y++, '[' + String.fromCharCode(config.WearKey) + '] ' + loc.HelpScreenWieldKeyDesc);

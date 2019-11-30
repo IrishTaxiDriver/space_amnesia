@@ -174,6 +174,9 @@ var Debug = {
             entity.setX(player.getX() - 1);
             entity.setY(player.getY() - 1);
             entity.setZ(player.getZ());
+            if (entity.hasMixin(Game.EntityMixins.EntityRarity) && rarity) {
+                entity.setRarity(rarity);
+            }
             map.addEntity( entity );
         } else {
             Debug.log("Debug.spawn: Using item repository.");
@@ -181,7 +184,7 @@ var Debug = {
             if (item.hasMixin(Game.ItemMixins.Currency)) {
                 item.randomizeValue(100);
             }
-            if (item.hasMixin(Game.ItemMixins.Rarity) && rarity) {
+            if (item.hasMixin(Game.ItemMixins.ItemRarity) && rarity) {
                 item.setRarity(rarity);
             }
             map.addItem( player.getX(), player.getY(), player.getZ(), item);

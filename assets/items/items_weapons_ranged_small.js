@@ -10,7 +10,8 @@ Game.ItemRepository.define(loc.ItemWeaponAntiRiotGunName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 3,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -26,7 +27,8 @@ Game.ItemRepository.define(loc.ItemWeaponLaserPistolName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 5,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

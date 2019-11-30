@@ -9,7 +9,8 @@ Game.ItemRepository.define(loc.ItemWeaponSwordOfficerName, {
     wieldable: true,
     prefix: loc.ItemPrefixLCAn,
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -25,7 +26,8 @@ Game.ItemRepository.define(loc.ItemWeaponSwordCaptainName, {
     wieldable: true,
     prefix: loc.ItemPrefixLCA,
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -41,7 +43,8 @@ Game.ItemRepository.define(loc.ItemWeaponCrowbarName, {
     wieldable: true,
     prefix: loc.ItemPrefixLCA,
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -57,7 +60,8 @@ Game.ItemRepository.define(loc.ItemWeaponFireaxeName, {
     wieldable: true,
     prefix: loc.ItemPrefixLCA,
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

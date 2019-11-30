@@ -9,7 +9,8 @@ Game.ItemRepository.define(loc.ItemWearablesWaistBeltName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotWaist,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -24,7 +25,8 @@ Game.ItemRepository.define(loc.ItemWearablesWaistFannyPackName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotWaist,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

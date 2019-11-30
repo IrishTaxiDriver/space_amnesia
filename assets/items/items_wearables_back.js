@@ -10,7 +10,8 @@ Game.ItemRepository.define(loc.ItemWearablesBackToteName, {
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotBack,
     inventorySlots: 4,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -26,7 +27,8 @@ Game.ItemRepository.define(loc.ItemWearablesBackPackName, {
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotBack,
     inventorySlots: 8,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -42,7 +44,8 @@ Game.ItemRepository.define(loc.ItemWearablesBackPackMilName, {
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotBack,
     inventorySlots: 12,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

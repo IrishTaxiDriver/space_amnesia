@@ -128,7 +128,10 @@ Game.EntityMixins.TaskActor = {
     groupName: 'Actor',
     init: function(template) {
         // Load tasks
-        this._tasks = template['tasks'] || ['wander']; 
+        this._tasks = template['tasks'] || ['wander'];
+        if (this.hasMixin(Game.EntityMixins.EntityRarity)) {
+            this.setRandomRarity();
+        } 
     },
     act: function() {
         // Iterate through all our tasks
@@ -854,3 +857,87 @@ Game.EntityMixins.Usable = {
         return this._locked;
     }
 };
+
+//TODO: Enemy rarities. Regular, elite, boss, etc.
+Game.EntityMixins.EntityRarity = {
+    name: 'EntityRarity',
+    groupName: 'Actor',
+    init: function(template) {
+        this._rarity = this.setRandomRarity();
+    },
+    getRarity: function() {
+        return this._rarity;
+    },
+    setRandomRarity: function() {
+        rarity = Math.round(Math.random() * 100);
+
+        if (rarity <= 60) {
+            this.setRarity(0);
+        } else if (rarity >= 61 && rarity <= 80 ) {
+            this.setRarity(1);
+        } else if (rarity >= 81 && rarity <= 90 ) {
+            this.setRarity(2);
+        } else if (rarity >= 91 && rarity <= 95 ) {
+            this.setRarity(3);
+        } else if (rarity >= 96 && rarity <= 98 ) {
+            this.setRarity(4);
+        } else if (rarity >= 99 && rarity <= 100 ) {
+            this.setRarity(5);
+        }
+    },
+    setRarity: function(rarity) {
+        this._rarity = rarity;
+        this.setColorBasedOnRarity();
+        this.setPrefixForRarity();
+    },
+    getPrefixForRarity: function() {
+        if (this._rarity == 0) { //Grey
+            return loc.EntityRarity0;
+        } else if (this._rarity == 1 ) { //White
+            return loc.EntityRarity1;
+        } else if (this._rarity == 2 ) { //Green
+            return loc.EntityRarity2;
+        } else if (this._rarity == 3 ) { //Blue
+            return loc.EntityRarity3;
+        } else if (this._rarity == 4 ) { //Purple
+            return loc.EntityRarity4;
+        } else if (this._rarity == 5 ) { //Yellow
+            return loc.EntityRarity5;
+        } else if (this._rarity == 6 ) { //Orange
+            return loc.EntityRarity6;
+        } else if (this._rarity == 7 ) { //Red
+            return loc.EntityRarity7;
+        } else {
+            return "";
+        }
+    },
+    getColorForRarity: function() {
+        if (this._rarity == 0) { //Grey
+            return 'grey';
+        } else if (this._rarity == 1 ) { //White
+            return 'white';
+        } else if (this._rarity == 2 ) { //Green
+            return 'green';
+        } else if (this._rarity == 3 ) { //Blue
+            return 'blue';
+        } else if (this._rarity == 4 ) { //Purple
+            return 'purple';
+        } else if (this._rarity == 5 ) { //Yellow
+            return 'yellow';
+        } else if (this._rarity == 6 ) { //Orange
+            return 'orange';
+        } else if (this._rarity == 7 ) { //Red
+            return 'red';
+        }
+    },
+    setColorBasedOnRarity: function() {
+        Debug.log("Game.EntityMixins.EntityRarity.setColorBasedOnRarity: Setting " + this._name + " to rarity " + this._rarity);
+        this.setForeground(this.getColorForRarity());
+    },
+    setPrefixForRarity: function() {
+        rarityPrefix = this.getPrefixForRarity();
+        Debug.log("Game.ItemMixins.ItemRarity.setPrefixForRarity: Setting " + this._name + " to name " + rarityPrefix + this._name);
+        this._name = rarityPrefix + this._name;       
+    }
+
+}

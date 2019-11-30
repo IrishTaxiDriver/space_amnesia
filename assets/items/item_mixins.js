@@ -67,10 +67,10 @@ Game.ItemMixins.Currency = {
 };
 
 //TODO: Rarity shows up in name.
-Game.ItemMixins.Rarity = {
-    name: 'Rarity',
+Game.ItemMixins.ItemRarity = {
+    name: 'ItemRarity',
     init: function(template) {
-        this._rarity = this.setRandomRarity() || 0;
+        this._rarity = this.setRandomRarity();
     },
     getRarity: function() {
         return this._rarity;
@@ -79,45 +79,72 @@ Game.ItemMixins.Rarity = {
         rarity = Math.round(Math.random() * 100);
 
         if (rarity <= 60) {
-            return 0;
+            this.setRarity(0);
         } else if (rarity >= 61 && rarity <= 80 ) {
-            return 1;
+            this.setRarity(1);
         } else if (rarity >= 81 && rarity <= 90 ) {
-            return 2;
+            this.setRarity(2);
         } else if (rarity >= 91 && rarity <= 95 ) {
-            return 3;
+            this.setRarity(3);
         } else if (rarity >= 96 && rarity <= 98 ) {
-            return 4;
+            this.setRarity(4);
         } else if (rarity >= 99 && rarity <= 100 ) {
-            return 5;
+            this.setRarity(5);
         }
     },
     setRarity: function(rarity) {
         this._rarity = rarity;
         this.setColorBasedOnRarity();
+        this.setPrefixForRarity();
     },
-    getColorForRarity: function(rarity) {
-        if (rarity == 0) { //Grey
+    getPrefixForRarity: function() {
+        if (this._rarity == 0) { //Grey
+            return loc.ItemRarity0;
+        } else if (this._rarity == 1 ) { //White
+            return loc.ItemRarity1;
+        } else if (this._rarity == 2 ) { //Green
+            return loc.ItemRarity2;
+        } else if (this._rarity == 3 ) { //Blue
+            return loc.ItemRarity3;
+        } else if (this._rarity == 4 ) { //Purple
+            return loc.ItemRarity4;
+        } else if (this._rarity == 5 ) { //Yellow
+            return loc.ItemRarity5;
+        } else if (this._rarity == 6 ) { //Orange
+            return loc.ItemRarity6;
+        } else if (this._rarity == 7 ) { //Red
+            return loc.ItemRarity7;
+        } else {
+            return "";
+        }
+    },
+    getColorForRarity: function() {
+        if (this._rarity == 0) { //Grey
             return 'grey';
-        } else if (rarity == 1 ) { //White
+        } else if (this._rarity == 1 ) { //White
             return 'white';
-        } else if (rarity == 2 ) { //Green
+        } else if (this._rarity == 2 ) { //Green
             return 'green';
-        } else if (rarity == 3 ) { //Blue
+        } else if (this._rarity == 3 ) { //Blue
             return 'blue';
-        } else if (rarity == 4 ) { //Purple
+        } else if (this._rarity == 4 ) { //Purple
             return 'purple';
-        } else if (rarity == 5 ) { //Yellow
+        } else if (this._rarity == 5 ) { //Yellow
             return 'yellow';
-        } else if (rarity == 6 ) { //Orange
+        } else if (this._rarity == 6 ) { //Orange
             return 'orange';
-        } else if (rarity == 7 ) { //Red
+        } else if (this._rarity == 7 ) { //Red
             return 'red';
         }
     },
     setColorBasedOnRarity: function() {
-        Debug.log("Game.ItemMixins.setColorBasedOnRarity: Setting " + this._name + " to rarity " + this._rarity);
-        this.setForeground(this.getColorForRarity(this._rarity));
+        Debug.log("Game.ItemMixins.ItemRarity.setColorBasedOnRarity: Setting " + this._name + " to rarity " + this._rarity);
+        this.setForeground(this.getColorForRarity());
+    },
+    setPrefixForRarity: function() {
+        rarityPrefix = this.getPrefixForRarity();
+        Debug.log("Game.ItemMixins.ItemRarity.setPrefixForRarity: Setting " + this._name + " to name " + rarityPrefix + this._name);
+        this._name = rarityPrefix + this._name;       
     }
 };
 
@@ -126,9 +153,15 @@ Game.ItemMixins.Set = {
     init: function(template) {
         this._setName = template['setName'] || null;
     },
-    //getSetBonuses
-    //applySetBonuses
-    //probably more
+    getSetBonuses: function() {
+
+    },
+    applySetBonuses: function() {
+
+    },
+    listInSet: function() {
+        
+    }
 };
 
 // Equipment Mixin

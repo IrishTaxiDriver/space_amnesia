@@ -13,7 +13,9 @@ Game.ItemRepository.define(loc.ItemWeaponFlamethrowerName, {
     components: [loc.ItemWeaponPipeName, loc.ItemWeaponPipeName,
     			loc.ItemPlantExtractsName, loc.ItemBottleName,
     			loc.ItemWeaponLaserPistolName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -31,7 +33,9 @@ Game.ItemRepository.define(loc.ItemWeaponRocketLauncherName, {
     range: 5,
     components: [loc.ItemWeaponPipeName, loc.ItemWeaponMTSName,
     			loc.ItemWeaponLaserRifleName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

@@ -9,7 +9,8 @@ Game.ItemRepository.define(loc.ItemWearablesHeadGogglesName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHead,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -24,7 +25,8 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatCrewmansName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -39,7 +41,8 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatOfficersName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -54,7 +57,8 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatCaptainsName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -69,7 +73,8 @@ Game.ItemRepository.define(loc.ItemWearablesHeadShieldWeldersName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -84,7 +89,8 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHelmetRiotName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -101,7 +107,9 @@ Game.ItemRepository.define(loc.ItemWearablesHeadXRayGogglesName, {
     slot: loc.EntityPlayerEquipSlotHead,
     components: [loc.ItemWearablesHeadGogglesName, loc.ItemMTSName,
                 loc.ItemMagnetName, loc.ItemMetalScrapName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

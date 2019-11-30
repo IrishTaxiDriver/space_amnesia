@@ -11,7 +11,8 @@ Game.ItemRepository.define(loc.ItemWeaponLargePipeName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 2,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -28,7 +29,8 @@ Game.ItemRepository.define(loc.ItemWeaponSledgehammerName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 2,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -45,7 +47,9 @@ Game.ItemRepository.define(loc.ItemWeaponSpearName, {
     prefix: loc.ItemPrefixLCA,
     range: 2,
     components: [loc.ItemWoodScrapName, loc.ItemTapeName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -62,7 +66,9 @@ Game.ItemRepository.define(loc.ItemWeaponPolearmName, {
     prefix: loc.ItemPrefixLCA,
     range: 2,
     components: [loc.ItemWoodScrapName, loc.ItemTapeName, loc.ItemWeaponBoxcutterName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

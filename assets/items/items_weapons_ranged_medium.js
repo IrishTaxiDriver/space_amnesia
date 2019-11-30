@@ -10,7 +10,8 @@ Game.ItemRepository.define(loc.ItemWeaponLaserRifleName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -26,7 +27,8 @@ Game.ItemRepository.define(loc.ItemWeaponCrossBowName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -42,7 +44,8 @@ Game.ItemRepository.define(loc.ItemWeaponBowHuntingName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hands',
     range: 8,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -59,7 +62,9 @@ Game.ItemRepository.define(loc.ItemWeaponBowName, {
     slot: 'hands',
     range: 8,
     components: [loc.ItemIntestinesName, loc.ItemWoodScrapName],
-    mixins: [Game.ItemMixins.Equippable, Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

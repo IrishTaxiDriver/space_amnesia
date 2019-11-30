@@ -9,7 +9,8 @@ Game.ItemRepository.define(loc.ItemWearablesCryoUndiesName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -24,7 +25,8 @@ Game.ItemRepository.define(loc.ItemWearablesPantsShortsName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -39,7 +41,8 @@ Game.ItemRepository.define(loc.ItemWearablesPantsShortsCargoName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -54,7 +57,8 @@ Game.ItemRepository.define(loc.ItemWearablesPantsCrewmanName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -69,7 +73,8 @@ Game.ItemRepository.define(loc.ItemWearablesPantsOfficerName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -84,7 +89,8 @@ Game.ItemRepository.define(loc.ItemWearablesPantsCaptainName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -99,7 +105,8 @@ Game.ItemRepository.define(loc.ItemWearablesPantsBDUName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotLegs,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

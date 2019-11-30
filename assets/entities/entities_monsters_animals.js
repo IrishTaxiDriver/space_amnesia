@@ -15,7 +15,8 @@ Game.EntityRepository.define(loc.EntityBatName, {
              Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
              Game.EntityMixins.ExperienceGainer,
-             Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.RandomStatGainer,
+             Game.EntityMixins.EntityRarity]
 });
 Game.EntityRepository.define(loc.EntityNewtName, {
     name: loc.EntityNewtName,
@@ -32,7 +33,8 @@ Game.EntityRepository.define(loc.EntityNewtName, {
              Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
              Game.EntityMixins.ExperienceGainer,
-             Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.RandomStatGainer,
+             Game.EntityMixins.EntityRarity]
 });
 Game.EntityRepository.define(loc.EntityCaveSpiderName, {
     name: loc.EntityCaveSpiderName,
@@ -49,7 +51,8 @@ Game.EntityRepository.define(loc.EntityCaveSpiderName, {
              Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
              Game.EntityMixins.ExperienceGainer,
-             Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.RandomStatGainer,
+             Game.EntityMixins.EntityRarity]
 });
 Game.EntityRepository.define(loc.EntityCaveBeetleName, {
     name: loc.EntityCaveBeetleName,
@@ -66,7 +69,8 @@ Game.EntityRepository.define(loc.EntityCaveBeetleName, {
              Game.EntityMixins.Destructible,
              Game.EntityMixins.CorpseDropper,
              Game.EntityMixins.ExperienceGainer,
-             Game.EntityMixins.RandomStatGainer]
+             Game.EntityMixins.RandomStatGainer,
+             Game.EntityMixins.EntityRarity]
 });
 
 //BIOMES - TEMPERATE MONSTERS

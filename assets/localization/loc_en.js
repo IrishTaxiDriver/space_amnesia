@@ -204,6 +204,16 @@ var loc = {
 	EntityClassSubMammal : "mammal",
 	EntityClassSubAmphibian : "amphibian",
 
+	//ENTITY - RARITY
+	EntityRarity0 : "Poor ",
+	EntityRarity1 : "Fair ",
+	EntityRarity2 : "Good ",
+	EntityRarity3 : "Great ",
+	EntityRarity4 : "Incredible ",
+	EntityRarity5 : "Masterwork ",
+	EntityRarity6 : "Unrivaled ",
+	EntityRarity7 : "Literally Perfect ",
+
 	//ENTITY - PLAYER
 	EntityPlayerName : "human (you)",
 
@@ -273,9 +283,23 @@ var loc = {
 	ItemPrefixSome : "some",
 	ItemPrefixBlank : "",
 
+	//ITEMS - RARITY
+	ItemRarity0 : "Poor ",
+	ItemRarity1 : "Fair ",
+	ItemRarity2 : "Good ",
+	ItemRarity3 : "Great ",
+	ItemRarity4 : "Incredible ",
+	ItemRarity5 : "Masterwork ",
+	ItemRarity6 : "Unrivaled ",
+	ItemRarity7 : "Literally Perfect ",
+
 	//ITEMS - CURRENCY
 	ItemCurrencyCreditsName : "credits",
 	ItemCurrencyCreditsDesc : "Standard currency",
+
+	//ITEMS - SETS
+	ItemSetMechanicName : "Mechanic Outfit",
+	ItemSetMechanicDesc : "A mechanics outfit.",
 
 	//ITEMS - JUNK
 	ItemRockName : "Rock",

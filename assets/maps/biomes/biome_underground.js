@@ -25,7 +25,7 @@ Game.Map.biome_underground = function(tiles, player) {
         for (var i = 0; i < 15; i++) {
             var item = Game.ItemRepository.createRandomFromCriteria("habitat", this._habitat);
             // Add a random item for the habitat
-            if (item.hasMixin(Game.ItemMixins.Currency)) {
+            if (item.hasMixin('ItemCurrency')) {
                 item.randomizeValue(100);
             }
             this.addItemAtRandomPosition(item, z);

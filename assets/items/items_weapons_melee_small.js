@@ -12,7 +12,7 @@ Game.ItemRepository.define(loc.ItemWeaponPipeName, {
     slot: 'hand',
     range: 1,
     mixins: [Game.ItemMixins.Equippable,
-             Game.ItemMixins.Rarity]
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -29,7 +29,8 @@ Game.ItemRepository.define(loc.ItemWeaponNightstickName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -46,7 +47,8 @@ Game.ItemRepository.define(loc.ItemWeaponBoxcutterName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -63,7 +65,8 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchPlumberName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -80,7 +83,8 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchCrescentName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -97,7 +101,8 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchMonkeyName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -114,7 +119,8 @@ Game.ItemRepository.define(loc.ItemWeaponWrenchPipeName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -131,7 +137,8 @@ Game.ItemRepository.define(loc.ItemWeaponHammerName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -148,7 +155,8 @@ Game.ItemRepository.define(loc.ItemWeaponMalletName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -165,7 +173,8 @@ Game.ItemRepository.define(loc.ItemWeaponHatchetName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -182,7 +191,8 @@ Game.ItemRepository.define(loc.ItemWeaponScrewdriverName, {
     prefix: loc.ItemPrefixLCA,
     slot: 'hand',
     range: 1,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

@@ -9,7 +9,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -24,7 +25,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesSnowName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -39,7 +41,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesWoolName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -54,7 +57,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesLatexName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -69,7 +73,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesWelderName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -84,7 +89,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesTacticalName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -99,7 +105,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesCombatName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });
@@ -114,7 +121,8 @@ Game.ItemRepository.define(loc.ItemWearablesHandsGlovesCombatFingerlessName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHands,
-    mixins: [Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemRarity]
 }, {
     disableRandomCreation: true
 });

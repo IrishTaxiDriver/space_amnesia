@@ -20,6 +20,12 @@ Game.Glyph.prototype.getRepresentation = function() {
     return '%c{' + this._foreground + '}%b{' + this._background + '}' + this._char +
         '%c{white}%b{black}';
 };
-Game.Glyph.prototype.setForeground = function(foreground){ 
-    this._foreground = foreground; 
+Game.Glyph.prototype.setChar = function(newChar){ 
+    this._char = newChar;
+};
+Game.Glyph.prototype.setBackground = function(newBackground){ 
+    this._background = newBackground; 
+};
+Game.Glyph.prototype.setForeground = function(newForeground){ 
+    this._foreground = newForeground; 
 };
