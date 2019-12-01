@@ -258,3 +258,41 @@ Game.Map.prototype.addItemAtRandomPosition = function(item, z) {
 Game.Map.prototype.getPlayer = function() {
     return this._player;
 };
+
+Game.Map.prototype.populateEntities = function(num, habitat) {
+ for (var z = 0; z < this._depth; z++) {
+        for (var i = 0; i < num; i++) {
+            var entity = Game.EntityRepository.createRandomFromCriteria("habitat", habitat);
+            // Add a random entity
+            this.addEntityAtRandomPosition(entity, z);
+            // Level up the entity based on the floor
+            if (entity.hasMixin('ExperienceGainer')) {
+                for (var level = 0; level < z; level++) {
+                    entity.giveExperience(entity.getNextLevelExperience() -
+                        entity.getExperience());
+                }
+            }
+        }
+    }
+}
+
+Game.Map.prototype.populateItems = function(num, habitat) {
+    for (var z = 0; z < this._depth; z++) {
+        for (var i = 0; i < num; i++) {
+            var item = Game.ItemRepository.createRandomFromCriteria("habitat", habitat);
+            // Add a random item for the habitat
+            if (item.hasMixin('ItemCurrency')) {
+                item.randomizeValue(100);
+            }
+            this.addItemAtRandomPosition(item, z);
+        }
+    }
+}
+
+Game.Map.prototype.addContainer = function() {
+    for (var z = 0; z < this._depth; z++) {
+        var container = Game.EntityRepository.createRandomFromCriteria("class", loc.EntityClassContainer);
+        container.populateContainerWithRandomCount(5);
+        this.addEntityAtRandomPosition(container, z);
+    }
+}

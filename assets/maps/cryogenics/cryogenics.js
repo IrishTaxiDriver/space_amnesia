@@ -1,6 +1,6 @@
 Game.Map.Cryogenics = function(player) {
     // Call the Map constructor
-    Game.Map.call(this, this._loadLevel( firm.URL + "cryogenics/cryo_1.txt"));
+    //Game.Map.call(this, this._loadLevel( firm.URL + "cryogenics/cryo_1.txt"));
     // Set the habitat
     this._habitat = loc.MapBiomeHabitatShip;
     

@@ -67,11 +67,11 @@ Game.Screen.playScreen = {
         url_postfix = "')";
         default_icon_url = url_prefix + "assets/images/inventory/icons/empty_icon.jpg" + url_postfix;
 
-        inventoryHelmSlotElement = document.getElementById("canvasInventoryHelmSlot");
-        inventoryBackSlotElement = document.getElementById("canvasInventoryBackSlot");
+        inventoryHelmSlotElement  = document.getElementById("canvasInventoryHelmSlot");
+        inventoryBackSlotElement  = document.getElementById("canvasInventoryBackSlot");
         inventoryChestSlotElement = document.getElementById("canvasInventoryChestSlot");
-        inventoryFeetSlotElement = document.getElementById("canvasInventoryFeetSlot");
-        inventoryLegsSlotElement = document.getElementById("canvasInventoryLegsSlot");
+        inventoryFeetSlotElement  = document.getElementById("canvasInventoryFeetSlot");
+        inventoryLegsSlotElement  = document.getElementById("canvasInventoryLegsSlot");
         inventoryWaistSlotElement = document.getElementById("canvasInventoryWaistSlot");
         inventoryLHandSlotElement = document.getElementById("canvasInventoryLHandSlot");
         inventoryRHandSlotElement = document.getElementById("canvasInventoryRHandSlot");
