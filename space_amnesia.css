@@ -6,7 +6,7 @@ body {
     background-color: black;
     margin: auto;
     padding: 200px;
-    width: 1232px;
+    width: 978px;
     height: 475px;
 }
 
@@ -19,7 +19,7 @@ canvas {
 #canvasStats, #canvasLog, #canvasInventory {
 	border: 3px solid blue;
 	padding: 10px;
-	width: 227px;
+	width: 100px;
 	height: 355px;
 	font-family: arial, 'sans serif';
     color: #FFFFFF;
@@ -28,62 +28,9 @@ canvas {
 
 #canvasInventory {
 	float: right;
-	background-image: url('assets/images/inventory/bg_inventory.jpg');
-	background-repeat: no-repeat;
-	background-position: left top;
 }
 
 #canvasLog {
-	width: 1206px;
+	width: 952px;
 	height: 100px;
-	text-align: justify;
-}
-
-#canvasInventoryHelmSlot, #canvasInventoryBackSlot, #canvasInventoryChestSlot, #canvasInventoryFeetSlot, #canvasInventoryLegsSlot, #canvasInventoryWaistSlot, #canvasInventoryLHandSlot, #canvasInventoryRHandSlot {
-	position: relative;
-	width: 64px;
-	height: 64px;
-	background-image: url('assets/images/inventory/icons/empty_icon.jpg');
-	background-repeat: no-repeat;
-	background-position: left top;
-} 
-
-#canvasInventoryHelmSlot {
-	top: -10px;
-	right: -78px;	
-}
-
-#canvasInventoryBackSlot {
-	top: -32px;
-	right: -10px;		
-}
-
-#canvasInventoryChestSlot {
-	top: -48px;
-	right: -78px;	
-}
-
-#canvasInventoryFeetSlot {
-	top: 85px;
-	right: -78px;	
-}
-
-#canvasInventoryLegsSlot {
-	top: -44px;
-	right: -78px;	
-}
-
-#canvasInventoryWaistSlot {
-	top: -175px;
-	right: -78px;	
-}
-
-#canvasInventoryLHandSlot {
-	top: -240px;
-	right: -160px;		
-}
-
-#canvasInventoryRHandSlot {
-	top: -304px;
-	right: 0px;		
 }
