@@ -73,6 +73,46 @@ var Game =  {
         inventoryText.id = "canvasInventoryText";
         inventory.appendChild(inventoryText);
         document.body.appendChild(inventory);
+
+        //helm slot
+        var inventoryHelmSlot = document.createElement("div");
+        inventoryHelmSlot.id = "canvasInventoryHelmSlot";
+        inventory.appendChild(inventoryHelmSlot);
+
+        //back slot
+        var inventoryBackSlot = document.createElement("div");
+        inventoryBackSlot.id = "canvasInventoryBackSlot";
+        inventory.appendChild(inventoryBackSlot);
+
+        //chest slot
+        var inventoryChestSlot = document.createElement("div");
+        inventoryChestSlot.id = "canvasInventoryChestSlot";
+        inventory.appendChild(inventoryChestSlot);
+
+        //feet slot
+        var inventoryFeetSlot = document.createElement("div");
+        inventoryFeetSlot.id = "canvasInventoryFeetSlot";
+        inventory.appendChild(inventoryFeetSlot);
+
+        //legs slot
+        var inventoryLegsSlot = document.createElement("div");
+        inventoryLegsSlot.id = "canvasInventoryLegsSlot";
+        inventory.appendChild(inventoryLegsSlot);
+
+        //waist slot
+        var inventoryWaistSlot = document.createElement("div");
+        inventoryWaistSlot.id = "canvasInventoryWaistSlot";
+        inventory.appendChild(inventoryWaistSlot);
+
+        //lhand slot
+        var inventoryLHandSlot = document.createElement("div");
+        inventoryLHandSlot.id = "canvasInventoryLHandSlot";
+        inventory.appendChild(inventoryLHandSlot);
+
+        //rhand slot
+        var inventoryRHandSlot = document.createElement("div");
+        inventoryRHandSlot.id = "canvasInventoryRHandSlot";
+        inventory.appendChild(inventoryRHandSlot);
     },
     addLogDisplay: function() {
         var log = document.createElement("div");
@@ -81,7 +121,7 @@ var Game =  {
         logText.id = "canvasLogText";
         log.appendChild(logText);
         document.body.appendChild(log);
-    }
+    },
 };
 
 window.onload = function() {
