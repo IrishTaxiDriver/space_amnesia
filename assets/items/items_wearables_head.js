@@ -9,6 +9,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadGogglesName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -25,6 +26,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatCrewmansName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -41,6 +43,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatOfficersName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -57,6 +60,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHatCaptainsName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -73,6 +77,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadShieldWeldersName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -89,6 +94,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadHelmetRiotName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -105,6 +111,7 @@ Game.ItemRepository.define(loc.ItemWearablesHeadXRayGogglesName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotHead,
+    icon: 'assets/images/inventory/icons/hat_icon.jpg',
     components: [loc.ItemWearablesHeadGogglesName, loc.ItemMTSName,
                 loc.ItemMagnetName, loc.ItemMetalScrapName],
     mixins: [Game.ItemMixins.Equippable,

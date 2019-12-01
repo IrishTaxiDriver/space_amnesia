@@ -151,7 +151,9 @@ Game.ItemMixins.ItemRarity = {
 Game.ItemMixins.Set = {
     name: 'Set',
     init: function(template) {
-        this._setName = template['setName'] || null;
+        this._name = template['name'] || null;
+        this._itemsInSet = template['itemsInSet'] || null;
+        this._itemSetBonuses = this.getSetBonuses() || [null];
     },
     getSetBonuses: function() {
 
@@ -179,6 +181,7 @@ Game.ItemMixins.Equippable = {
         this._name = template['name'] || null;
         this._inventorySlots = template['inventorySlots'] || 0;
         this._prefix = template['prefix'] || '';
+        this._icon = template['icon'] || 'http://www.danmerboth.com/games/space_amnesia/assets/images/inventory/icons/no_icon.jpg';
     },
     getAttackValue: function() {
         return this._attackValue;
@@ -206,6 +209,9 @@ Game.ItemMixins.Equippable = {
     },
     getPrefix: function() {
         return this._prefix;
+    },
+    getIcon: function() {
+        return this._icon;
     },
     listeners: {
         'details': function() {

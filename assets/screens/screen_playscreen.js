@@ -60,18 +60,70 @@ Game.Screen.playScreen = {
             document.getElementById("canvasStatsText").innerHTML = stats;
     },
     renderInventory: function(display) {
-        var inventory = loc.EntityPlayerEquipSlotHead + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotHead) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotChest + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotChest) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotBack + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotBack) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotHands + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotHands) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotWaist + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotWaist) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotLegs + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotLegs) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotFeet + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotFeet) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotLHand + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotLHand) + "<br>";
-        inventory += loc.EntityPlayerEquipSlotRHand + ": " + this._player.getItemInSlotName(loc.EntityPlayerEquipSlotRHand) + "<br>";
+        //NOTE: This is appearantly bad performance wise. Should add checks to constantly not set the same image.
+        //TODO: Set the element hover text to the item's name / card / whatever.
 
-        if (document.getElementById("canvasInventoryText"))
-            document.getElementById("canvasInventoryText").innerHTML = inventory;
+        url_prefix = "url('";
+        url_postfix = "')";
+        default_icon_url = url_prefix + "assets/images/inventory/icons/empty_icon.jpg" + url_postfix;
+
+        inventoryHelmSlotElement = document.getElementById("canvasInventoryHelmSlot");
+        inventoryBackSlotElement = document.getElementById("canvasInventoryBackSlot");
+        inventoryChestSlotElement = document.getElementById("canvasInventoryChestSlot");
+        inventoryFeetSlotElement = document.getElementById("canvasInventoryFeetSlot");
+        inventoryLegsSlotElement = document.getElementById("canvasInventoryLegsSlot");
+        inventoryWaistSlotElement = document.getElementById("canvasInventoryWaistSlot");
+        inventoryLHandSlotElement = document.getElementById("canvasInventoryLHandSlot");
+        inventoryRHandSlotElement = document.getElementById("canvasInventoryRHandSlot");
+
+        if (inventoryHelmSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotHead))
+                inventoryHelmSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotHead).getIcon() + url_postfix;
+            else
+                inventoryHelmSlotElement.style.backgroundImage = default_icon_url;
+
+        if (inventoryBackSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotBack))
+                inventoryBackSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotBack).getIcon() + url_postfix;
+            else
+                inventoryBackSlotElement.style.backgroundImage = default_icon_url;
+
+        if (inventoryChestSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotChest))
+                inventoryChestSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotChest).getIcon() + url_postfix;
+            else
+                inventoryChestSlotElement.style.backgroundImage = default_icon_url;
+
+        if (inventoryFeetSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotFeet))
+                inventoryFeetSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotFeet).getIcon() + url_postfix;
+            else
+                inventoryFeetSlotElement.style.backgroundImage = default_icon_url;
+        
+        if (inventoryLegsSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotLegs))
+                inventoryLegsSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotLegs).getIcon() + url_postfix;
+            else
+                inventoryLegsSlotElement.style.backgroundImage = default_icon_url;
+
+        if (inventoryWaistSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotWaist))
+                inventoryWaistSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotWaist).getIcon() + url_postfix;
+            else
+                inventoryWaistSlotElement.style.backgroundImage = default_icon_url;
+
+        if (inventoryLHandSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotLHand))
+                inventoryLHandSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotLHand).getIcon() + url_postfix;
+            else
+                inventoryLHandSlotElement.style.backgroundImage = default_icon_url;
+
+        if (inventoryRHandSlotElement)
+            if (this._player.getItemInSlot(loc.EntityPlayerEquipSlotRHand))
+                inventoryRHandSlotElement.style.backgroundImage = url_prefix + this._player.getItemInSlot(loc.EntityPlayerEquipSlotRHand).getIcon() + url_postfix;
+            else
+                inventoryRHandSlotElement.style.backgroundImage = default_icon_url;
+
     },
     renderTiles: function(display) {
         var screenWidth = Game.getScreenWidth();

@@ -10,6 +10,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestCryoFilmName, {
     wearable: true,
     prefix: loc.ItemPrefixLCThe,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable]
 }, {
     disableRandomCreation: true
@@ -26,6 +27,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtTeeName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -43,6 +45,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtTankName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -60,6 +63,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtHenleyName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -77,6 +81,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtCrewmansName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -94,6 +99,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtOfficersName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -111,6 +117,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestShirtCaptainsName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -128,6 +135,7 @@ Game.ItemRepository.define(loc.ItemWearablesChestVestRiotName, {
     wearable: true,
     prefix: loc.ItemPrefixLCA,
     slot: loc.EntityPlayerEquipSlotChest,
+    icon: 'assets/images/inventory/icons/chest_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {

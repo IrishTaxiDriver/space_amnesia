@@ -9,6 +9,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetShoesCrewmansName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -25,6 +26,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetFlipFlopsName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -41,6 +43,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -57,6 +60,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsSnowName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -73,6 +77,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsDuckName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -89,6 +94,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsWetName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
@@ -105,6 +111,7 @@ Game.ItemRepository.define(loc.ItemWearablesFeetBootsSoldierName, {
     wearable: true,
     prefix: loc.ItemPrefixPair,
     slot: loc.EntityPlayerEquipSlotFeet,
+    icon: 'assets/images/inventory/icons/feet_icon.jpg',
     mixins: [Game.ItemMixins.Equippable,
              Game.ItemMixins.ItemRarity]
 }, {
