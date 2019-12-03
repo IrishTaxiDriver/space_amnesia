@@ -4,10 +4,10 @@ Game.EntityMixins.Attacker = {
     groupName: 'Attacker',
     init: function(template) {
         this._attackValue = template['attackValue'] || 1;
-        this._critChance = template['critChance'] || 0;
-        this._dodgeChance = template['dodgeChance'] || 0;
-        this._parryChance = template['parryChance'] || 0;
-        this._hitChance = template['hitChance'] || 0;
+        this._critValue = template['critValue'] || 0;
+        this._dodgeValue = template['dodgeValue'] || 0;
+        this._parryValue = template['parryValue'] || 0;
+        this._hitValue = template['hitValue'] || 0;
     },
     getAttackValue: function(slot) {
         var modifier = 0;
@@ -20,6 +20,21 @@ Game.EntityMixins.Attacker = {
         }
         return this._attackValue + modifier;
     },
+    getAttackValue: function() {
+        return this._attackValue;
+    },
+    getCritValue: function() {
+        return this._critValue;
+    },
+    getDodgeValue: function() {
+        return this._dodgeValue;
+    },
+    getParryValue: function() {
+        return this._parryValue;
+    },
+    getHitValue: function() {
+        return this._hitValue;
+    },
     increaseAttackValue: function(value) {
         // If no value was passed, default to 2.
         value = value || 2;
@@ -28,19 +43,20 @@ Game.EntityMixins.Attacker = {
         Game.sendMessage(this, loc.EntityIncreasedAttackValue);
     },
     attack: function(target) {
-        // If the target is destructible, calculate the damage
-        // based on attack and defense value
+        //TODO: I'm sure theres a way to clean this up.
         if (target.hasMixin('Destructible')) {
 
-            var chanceToHit = Math.floor(Math.random(100) * 100) + this._hitChance;
+            var chanceToHit = Math.floor(Math.random(100) * 100) + this.getHitValue();
 
-            Debug.log("Game.EntityMixins.Attacker.attack: Chance to hit against " + target.getName() + "'s dodge chance: " + chanceToHit + " (Including bonus to hit: " + this._hitChance +"%) vs " + target._dodgeChance);
+            Debug.log("Game.EntityMixins.Attacker.attack: Chance to hit against " + target.getName() + "'s dodge chance: " + chanceToHit + "% ( +hit: " + this.getHitValue() +"%) vs " + target.getDodgeValue() + "%");
 
-            if (chanceToHit <= target._dodgeChance) {
+            if (chanceToHit <= target.getDodgeValue()) {
+
                 Game.sendMessage(this, loc.EntityTheyDodgeAttack, 
                     [target.getName()]);
                 Game.sendMessage(target, loc.EntityYouDodgeAttack,
                     [this.getName()]);
+
             } else {
 
                 if (target == this.getMap().getPlayer() && Debug.noTarget)
@@ -49,15 +65,13 @@ Game.EntityMixins.Attacker = {
                 //TF2 minicrits.
                 //A weapon that won't hit if you don't critically hit.
 
-                var chanceToCrit = Math.floor(Math.random(100) * 100) + this._critChance;
+                var chanceToCrit = Math.floor(Math.random(100) * 100) + this.getCritValue();
                 var critRolls = 0;
-
                 var critMultiplier = 1;
                 var crit = false;
-
-                Debug.log("Game.EntityMixins.Attacker.attack: Chance to crit: " + chanceToCrit + "% (Including bonus to crit: +" + this._critChance + "%)");
-
                 var critAgainstChance = 100 - (Math.floor(Math.random(100) * 100));
+
+                Debug.log("Game.EntityMixins.Attacker.attack: Chance to crit: " + chanceToCrit + "% ( +crit:" + this.getCritValue() + "%) vs " + critAgainstChance + "%");
 
                 if (chanceToCrit > critAgainstChance) {
                     if (chanceToCrit > 100) {

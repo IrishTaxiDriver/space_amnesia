@@ -2,6 +2,7 @@
 Game.EntityMixins = {};
 
 //TODO: Consider splitting this up into different script files as it grows.
+//Considered! assets/entities/mixins/
 
 // Main player's actor mixin
 Game.EntityMixins.PlayerActor = {
@@ -25,8 +26,6 @@ Game.EntityMixins.PlayerActor = {
         // Lock the engine and wait asynchronously
         // for the player to press a key.
         this.getMap().getEngine().lock();
-        // Clear the message queue
-        //this.clearMessages();
         this._acting = false;
     }
 };
@@ -626,6 +625,7 @@ Game.EntityMixins.Equipper = {
     equip: function(item) {
         Debug.log("Game.EntityMixins.Equipper.equip: Equipping " + item.getName() + " in slot: " + item.getSlot());
         this._equipped[item.getSlot()] = item;
+        item.onEquip(this);
         if (item.getSlot() == loc.EntityPlayerEquipSlotBack) {
             this.modifyInventorySlots(item.getInventorySlots());
         }
@@ -633,6 +633,7 @@ Game.EntityMixins.Equipper = {
     unequip: function(item) {
         if (item == "all") {
             Debug.log("Game.EntityMixins.Equipper.unequip: Removing all.");
+            //TODO: uhh figure out how to do this with the removeEquip function.
             this._equipped[loc.EntityPlayerEquipSlotLHand] = null;
             this._equipped[loc.EntityPlayerEquipSlotRHand] = null;
             this._equipped[loc.EntityPlayerEquipSlotHead] = null;
@@ -648,6 +649,7 @@ Game.EntityMixins.Equipper = {
                 this.modifyInventorySlots(item.getInventorySlots() * -1);
             }
             this._equipped[item.getSlot()] = null;
+            item.removeEquip(this);
         }
     },
     getItemInSlot: function(slot) {

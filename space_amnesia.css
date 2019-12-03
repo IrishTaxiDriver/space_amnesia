@@ -43,47 +43,62 @@ canvas {
 	position: relative;
 	width: 64px;
 	height: 64px;
-	background-image: url('assets/images/inventory/icons/empty_icon.jpg');
+	background-image: url('assets/images/inventory/icons/empty_icon.png');
 	background-repeat: no-repeat;
 	background-position: left top;
+	cursor: help;
 } 
 
 #canvasInventoryHelmSlot {
-	top: -10px;
+	top: -2px;
 	right: -78px;	
 }
 
 #canvasInventoryBackSlot {
-	top: -32px;
+	top: -24px;
 	right: -10px;		
 }
 
 #canvasInventoryChestSlot {
-	top: -48px;
+	top: -40px;
 	right: -78px;	
 }
 
 #canvasInventoryFeetSlot {
-	top: 85px;
+	top: 93px;
 	right: -78px;	
 }
 
 #canvasInventoryLegsSlot {
-	top: -44px;
+	top: -36px;
 	right: -78px;	
 }
 
 #canvasInventoryWaistSlot {
-	top: -175px;
+	top: -167px;
 	right: -78px;	
 }
 
 #canvasInventoryLHandSlot {
-	top: -240px;
+	top: -232px;
 	right: -160px;		
 }
 
 #canvasInventoryRHandSlot {
-	top: -304px;
+	top: -296px;
 	right: 0px;		
+}
+
+#canvasItemHoverCard {
+	opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    border: 1px solid #eee;
+    background: #fff;
+    box-shadow: 3px 4px 6px rgba(0,0,0,0.4);
+    padding: 3px; 
+    font-weight: bolder;
 }

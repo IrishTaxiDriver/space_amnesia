@@ -69,47 +69,49 @@ var Game =  {
     addInventoryDisplay: function() {
         var inventory = document.createElement("div");
         inventory.id = "canvasInventory";
-        var inventoryText = document.createElement("p");
-        inventoryText.id = "canvasInventoryText";
-        inventory.appendChild(inventoryText);
         document.body.appendChild(inventory);
 
-        //helm slot
+        //Item Hover Card
+        var inventoryItemHoverCard = document.createElement("div");
+        inventoryItemHoverCard.id = "canvasItemHoverCard";
+        inventory.appendChild(inventoryItemHoverCard);
+
+        //Helm Slot
         var inventoryHelmSlot = document.createElement("div");
         inventoryHelmSlot.id = "canvasInventoryHelmSlot";
         inventory.appendChild(inventoryHelmSlot);
 
-        //back slot
+        //Back Slot
         var inventoryBackSlot = document.createElement("div");
         inventoryBackSlot.id = "canvasInventoryBackSlot";
         inventory.appendChild(inventoryBackSlot);
 
-        //chest slot
+        //Chest Slot
         var inventoryChestSlot = document.createElement("div");
         inventoryChestSlot.id = "canvasInventoryChestSlot";
         inventory.appendChild(inventoryChestSlot);
 
-        //feet slot
+        //Feet Slot
         var inventoryFeetSlot = document.createElement("div");
         inventoryFeetSlot.id = "canvasInventoryFeetSlot";
         inventory.appendChild(inventoryFeetSlot);
 
-        //legs slot
+        //Legs Slot
         var inventoryLegsSlot = document.createElement("div");
         inventoryLegsSlot.id = "canvasInventoryLegsSlot";
         inventory.appendChild(inventoryLegsSlot);
 
-        //waist slot
+        //Waist Slot
         var inventoryWaistSlot = document.createElement("div");
         inventoryWaistSlot.id = "canvasInventoryWaistSlot";
         inventory.appendChild(inventoryWaistSlot);
 
-        //lhand slot
+        //LHand Slot
         var inventoryLHandSlot = document.createElement("div");
         inventoryLHandSlot.id = "canvasInventoryLHandSlot";
         inventory.appendChild(inventoryLHandSlot);
 
-        //rhand slot
+        //RHand Slot
         var inventoryRHandSlot = document.createElement("div");
         inventoryRHandSlot.id = "canvasInventoryRHandSlot";
         inventory.appendChild(inventoryRHandSlot);

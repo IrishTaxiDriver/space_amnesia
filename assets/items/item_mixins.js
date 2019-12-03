@@ -174,6 +174,10 @@ Game.ItemMixins.Equippable = {
         this._attackType = template['attackType'] || 'slash';
         this._defenseValue = template['defenseValue'] || 0;
         this._defenseType = template['defenseType'] || 'slash';
+        this._critValue = template['critValue'] || 0;
+        this._dodgeValue = template['dodgeValue'] || 0;
+        this._hitValue = template['hitValue'] || 0;
+        this._parryValue = template['parryValue'] || 0;
         this._wieldable = template['wieldable'] || false;
         this._wearable = template['wearable'] || false;
         this._slot = template['slot'] || 'none';
@@ -181,13 +185,25 @@ Game.ItemMixins.Equippable = {
         this._name = template['name'] || null;
         this._inventorySlots = template['inventorySlots'] || 0;
         this._prefix = template['prefix'] || '';
-        this._icon = template['icon'] || 'assets/images/inventory/icons/no_icon.jpg';
+        this._icon = template['icon'] || 'assets/images/inventory/icons/no_icon.png';
     },
     getAttackValue: function() {
         return this._attackValue;
     },
     getDefenseValue: function() {
         return this._defenseValue;
+    },
+    getCritValue: function() {
+        return this._critValue;
+    },
+    getDodgeValue: function() {
+        return this._dodgeValue;
+    },
+    getHitValue: function() {
+        return this._hitValue;
+    },
+    getParryValue: function() {
+        return this._parryValue;
     },
     getInventorySlots: function() {
     	return this._inventorySlots;
@@ -212,6 +228,34 @@ Game.ItemMixins.Equippable = {
     },
     getIcon: function() {
         return this._icon;
+    },
+    onEquip: function(ent) {
+
+        ent._attackValue += this.getAttackValue();
+        ent._defenseValue += this.getDefenseValue();
+        ent._critValue += this.getCritValue();
+        ent._hitValue += this.getHitValue();
+        ent._dodgeValue += this.getDodgeValue();
+        ent._parryValue += this.getParryValue();
+
+        Debug.log("Game.ItemMixins.Equippable.onEquip: Adding bonuses to " + ent.getName() + " from " + this.getName() + ": "
+            + "\n-attack: " + this.getAttackValue() + " (total: " + ent.getAttackValue() + ")"
+            + "\n-defense: " + this.getDefenseValue() + " (total: " + ent.getDefenseValue() + ")"
+            + "\n-crit: " + this.getCritValue() + " (total: " + ent.getCritValue() + ")"
+            + "\n-hit: " + this.getHitValue() + " (total: " + ent.getHitValue() + ")" 
+            + "\n-dodge: " + this.getDodgeValue() + " (total: " + ent.getDodgeValue() + ")"
+            + "\n-parry: " + this.getParryValue() + " (total: " + ent.getParryValue() + ")");
+    },
+    removeEquip: function(ent) {
+
+        Debug.log("Game.ItemMixins.Equippable.removeEquip: Removing bonuses from " + ent.getName() + " from " + this.getName());
+
+        ent._attackValue -= this.getAttackValue();
+        ent._defenseValue -= this.getDefenseValue();
+        ent._critValue -= this.getCritValue();
+        ent._hitValue -= this.getHitValue();
+        ent._dodgeValue -= this.getDodgeValue();
+        ent._parryValue -= this.getParryValue();
     },
     listeners: {
         'details': function() {
