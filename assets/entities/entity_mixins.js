@@ -201,64 +201,6 @@ Game.EntityMixins.TaskActor = {
     }
 };
 
-// This signifies our entity can attack basic destructible entities
-Game.EntityMixins.Attacker = {
-    name: 'Attacker',
-    groupName: 'Attacker',
-    init: function(template) {
-        this._attackValue = template['attackValue'] || 1;
-    },
-    getAttackValue: function(slot) {
-        var modifier = 0;
-        // If we can equip items, then have to take into 
-        // consideration weapon and armor
-        if (this.hasMixin(Game.EntityMixins.Equipper)) {
-            if (this.getItemInSlot(slot)) {
-                modifier += this.getItemInSlot(slot).getAttackValue();
-            }
-        }
-        return this._attackValue + modifier;
-    },
-    increaseAttackValue: function(value) {
-        // If no value was passed, default to 2.
-        value = value || 2;
-        // Add to the attack value.
-        this._attackValue += value;
-        Game.sendMessage(this, loc.EntityIncreasedAttackValue);
-    },
-    attack: function(target) {
-        // If the target is destructible, calculate the damage
-        // based on attack and defense value
-        if (target.hasMixin('Destructible')) {
-            var attack = this.getAttackValue();
-            var defense = target.getDefenseValue();
-            var max = Math.max(0, attack - defense);
-            var damage = 1 + Math.floor(Math.random() * max);
-
-            if (target == this.getMap().getPlayer() && Debug.noTarget)
-                return;
-
-            Game.sendMessage(this, loc.EntityYouAttack, 
-                [target.getName(), damage]);
-            Game.sendMessage(target, loc.EntityTakeAttack, 
-                [this.getName(), damage]);
-
-            if (Debug.god) {
-                if (target != this.getMap().getPlayer()) {
-                    target.takeDamage(this, damage);
-                }
-            } else {
-                target.takeDamage(this, damage);
-            }   
-        }
-    },
-    listeners: {
-        details: function() {
-            return [{key: 'attack', value: this.getAttackValue()}];
-        }
-    }
-};
-
 // This mixin signifies an entity can take damage and be destroyed
 Game.EntityMixins.Destructible = {
     name: 'Destructible',

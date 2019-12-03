@@ -166,10 +166,16 @@ var loc = {
 	EntityIncreasedAttackValue : "You look stronger!",
 	EntityYouAttack : "You strike the %s for %d damage!",
 	EntityTakeAttack : "The %s strikes you for %d damage!",
+	EntityYouAttackCritical : "You critically strike the %s for %d damage (Multiplier: %d)!",
+	EntityTakeAttackCritical : "The %s critically strikes you for %d damage (Multiplier: %d)!",
 	EntityIncreasedDefenseValue : "You look tougher!",
 	EntityIncreasedHealthValue : "You look healthier!",
 	EntityKill : "You kill the %s!",
 	EntityIncreasedSightValue : "You are more aware of your surroundings!",
+	EntityYouDodgeAttack : "You dodged the attack from %s!",
+	EntityTheyDodgeAttack : "The %s dodged your attack!",
+	EntityYouParryAttack : "You parry the attack from %s!",
+	EntityTheyParryAttack : "The %s parried your attack!",
 
 	//ENTITY - MIXINS - HUNGER
 	EntityStarved : "You have died of starvation!",
