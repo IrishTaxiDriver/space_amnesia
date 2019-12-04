@@ -693,7 +693,7 @@ var loc = {
 	ItemWearablesHeadShieldWeldersDesc : "Standard eye shield worn by welders",
 
 	ItemWearablesHeadHelmetRiotName : "Riot Helmet",
-	ItemWearablesHeadHelmetRiotDesc : "A riot helmet, with shield",	
+	ItemWearablesHeadHelmetRiotDesc : "A riot helmet, with faceshield",	
 
 	ItemWearablesHeadXRayGogglesName : "X-Ray Goggles",
 	ItemWearablesHeadXRayGogglesDesc : "Jury rigged x-ray goggles",

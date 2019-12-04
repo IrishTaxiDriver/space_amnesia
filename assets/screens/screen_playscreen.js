@@ -64,53 +64,140 @@ Game.Screen.playScreen = {
         if (item == null)
             return "Nothing Equipped";
 
-        info = item.getName();
-        info += "\n" + item.getRarity(); + " " + item.getSlot() + "\n";
+        info = item.getName() + "<br>";
+        info += item.getPrefixForRarity(); + "Quality " + item.getSlot() + "<br><br>";
 
         if (item.getDefenseValue() != 0)
-            info += "\nDefense: " + item.getDefenseValue();
+            info += "Defense: " + item.getDefenseValue() + "<br>";
 
         if (item.getAttackValue() != 0)
-            info += "\nAttack: " + item.getAttackValue();
+            info += "Attack: " + item.getAttackValue() + "<br>";
 
         if (item.getCritValue() != 0)
-            info += "\nCrit +" + item.getCritValue() + "%";
+            info += "Crit +" + item.getCritValue() + "%<br>";
 
         if (item.getDodgeValue() != 0)
-            info += "\nDodge +" + item.getDodgeValue() + "%";
+            info += "Dodge +" + item.getDodgeValue() + "%<br>";
 
         if (item.getHitValue() != 0)
-            info += "\nHit +" + item.getHitValue() + "%";  
+            info += "Hit +" + item.getHitValue() + "%<br>"; 
 
         if (item.getParryValue() != 0)
-            info += "\nParry +" + item.getParryValue() + "%";
+            info += "Parry +" + item.getParryValue() + "%<br>";
+
+        if (item.getDescription() != '')
+            info += "\"" + item.getDescription() + "\"";
 
         return info;
     },
-    renderSlot: function(invElement, item) {
+    renderSlot: function(element, item) {
 
         default_icon_url = "url('assets/images/inventory/icons/empty_icon.png')";
 
         if (item) {
             imageIcon = "url('" + item.getIcon() + "')";
-            if (invElement.style.backgroundImage != imageIcon) {
-                invElement.style.backgroundImage = imageIcon;
-                //TODO: I'm constantly overwriting this. Needs to be part of the JQuery script to update on mouseenter.
-                card = document.querySelector('#canvasItemHoverCard');
-                card.dataset.value = this.writeItemCard(item);
+            if (element.style.backgroundImage != imageIcon) {
+                element.style.backgroundImage = imageIcon;
+                element.setAttribute("data-item-card", this.writeItemCard(item));
             }
         } else {
-            if (invElement.style.backgroundImage != default_icon_url) {
-                invElement.style.backgroundImage = default_icon_url;
-                //TODO: I'm constantly overwriting this. Needs to be part of the JQuery script to update on mouseenter.
-                card = document.querySelector('#canvasItemHoverCard');
-                card.dataset.value = this.writeItemCard(null);
+            if (element.style.backgroundImage != default_icon_url) {
+                element.style.backgroundImage = default_icon_url;
+                element.setAttribute("data-item-card", "");
             }
         }
     },
-    renderInventory: function(display) {
-        //NOTE: This is appearantly bad performance wise
+    addMouseEnterListener: function(element) {
+        element.addEventListener("mouseenter", function(event) {
 
+            card = document.getElementById( "canvasItemHoverCard" );
+            card.style.display = "";
+            card.style.top = element.offsetTop + 48 + "px";
+            card.style.left = element.offsetLeft + 48 + "px";
+            cardText = document.getElementById( "inventoryItemHoverCardText" );
+            cardText.innerHTML = element.getAttribute("data-item-card");
+        });
+    },
+    addMouseLeaveListener: function(element) {
+        element.addEventListener("mouseleave", function(event) {
+
+            card = document.getElementById( "canvasItemHoverCard" );
+            card.style.display = "none";
+            cardText = document.getElementById( "inventoryItemHoverCardText" );
+            cardText.innerHTML = "";
+
+        });
+    },
+    setupInventorySlots: function(inventory) {
+
+        //Helm Slot
+        var inventoryHelmSlot = document.createElement("div");
+        inventoryHelmSlot.id = "canvasInventoryHelmSlot";
+        this.addMouseEnterListener(inventoryHelmSlot);
+        this.addMouseLeaveListener(inventoryHelmSlot);
+        inventory.appendChild(inventoryHelmSlot);
+
+        //Back Slot
+        var inventoryBackSlot = document.createElement("div");
+        inventoryBackSlot.id = "canvasInventoryBackSlot";
+        this.addMouseEnterListener(inventoryBackSlot);
+        this.addMouseLeaveListener(inventoryBackSlot);
+        inventory.appendChild(inventoryBackSlot);
+
+        //Chest Slot
+        var inventoryChestSlot = document.createElement("div");
+        inventoryChestSlot.id = "canvasInventoryChestSlot";
+        this.addMouseEnterListener(inventoryChestSlot);
+        this.addMouseLeaveListener(inventoryChestSlot);
+        inventory.appendChild(inventoryChestSlot);
+
+        //Feet Slot
+        var inventoryFeetSlot = document.createElement("div");
+        inventoryFeetSlot.id = "canvasInventoryFeetSlot";
+        this.addMouseEnterListener(inventoryFeetSlot);
+        this.addMouseLeaveListener(inventoryFeetSlot);
+        inventory.appendChild(inventoryFeetSlot);
+
+        //Legs Slot
+        var inventoryLegsSlot = document.createElement("div");
+        inventoryLegsSlot.id = "canvasInventoryLegsSlot";
+        this.addMouseEnterListener(inventoryLegsSlot);
+        this.addMouseLeaveListener(inventoryLegsSlot);
+        inventory.appendChild(inventoryLegsSlot);
+
+        //Waist Slot
+        var inventoryWaistSlot = document.createElement("div");
+        inventoryWaistSlot.id = "canvasInventoryWaistSlot";
+        this.addMouseEnterListener(inventoryWaistSlot);
+        this.addMouseLeaveListener(inventoryWaistSlot);
+        inventory.appendChild(inventoryWaistSlot);
+
+        //LHand Slot
+        var inventoryLHandSlot = document.createElement("div");
+        inventoryLHandSlot.id = "canvasInventoryLHandSlot";
+        this.addMouseEnterListener(inventoryLHandSlot);
+        this.addMouseLeaveListener(inventoryLHandSlot);
+        inventory.appendChild(inventoryLHandSlot);
+
+        //RHand Slot
+        var inventoryRHandSlot = document.createElement("div");
+        inventoryRHandSlot.id = "canvasInventoryRHandSlot";
+        this.addMouseEnterListener(inventoryRHandSlot);
+        this.addMouseLeaveListener(inventoryRHandSlot);
+        inventory.appendChild(inventoryRHandSlot);
+
+        //Item Hover Card
+        var inventoryItemHoverCard = document.createElement("div");
+        inventoryItemHoverCard.id = "canvasItemHoverCard";
+        inventoryItemHoverCard.style.display = "none";
+        var inventoryItemHoverCardText = document.createElement("p");
+        inventoryItemHoverCardText.id = "inventoryItemHoverCardText";
+        inventoryItemHoverCard.appendChild(inventoryItemHoverCardText);
+        inventory.appendChild(inventoryItemHoverCard);
+    },
+    renderInventory: function(display) {
+        //NOTE: This is appearantly bad performance wise, should store them.
+        
         inventoryHelmSlotElement  = document.getElementById("canvasInventoryHelmSlot" );
         inventoryBackSlotElement  = document.getElementById("canvasInventoryBackSlot" );
         inventoryChestSlotElement = document.getElementById("canvasInventoryChestSlot");
@@ -119,6 +206,12 @@ Game.Screen.playScreen = {
         inventoryWaistSlotElement = document.getElementById("canvasInventoryWaistSlot");
         inventoryLHandSlotElement = document.getElementById("canvasInventoryLHandSlot");
         inventoryRHandSlotElement = document.getElementById("canvasInventoryRHandSlot");
+
+        //First time setup.
+        if (!inventoryHelmSlotElement && !inventoryBackSlotElement && !inventoryChestSlotElement &&
+            !inventoryFeetSlotElement && !inventoryLegsSlotElement && !inventoryWaistSlotElement &&
+            !inventoryLHandSlotElement && !inventoryRHandSlotElement)
+            this.setupInventorySlots(document.getElementById("canvasInventory" ));
 
         if (inventoryHelmSlotElement)
             this.renderSlot(inventoryHelmSlotElement, this._player.getItemInSlot(loc.EntityPlayerEquipSlotHead));

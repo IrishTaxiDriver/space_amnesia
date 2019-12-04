@@ -71,50 +71,6 @@ var Game =  {
         inventory.id = "canvasInventory";
         document.body.appendChild(inventory);
 
-        //Item Hover Card
-        var inventoryItemHoverCard = document.createElement("div");
-        inventoryItemHoverCard.id = "canvasItemHoverCard";
-        inventory.appendChild(inventoryItemHoverCard);
-
-        //Helm Slot
-        var inventoryHelmSlot = document.createElement("div");
-        inventoryHelmSlot.id = "canvasInventoryHelmSlot";
-        inventory.appendChild(inventoryHelmSlot);
-
-        //Back Slot
-        var inventoryBackSlot = document.createElement("div");
-        inventoryBackSlot.id = "canvasInventoryBackSlot";
-        inventory.appendChild(inventoryBackSlot);
-
-        //Chest Slot
-        var inventoryChestSlot = document.createElement("div");
-        inventoryChestSlot.id = "canvasInventoryChestSlot";
-        inventory.appendChild(inventoryChestSlot);
-
-        //Feet Slot
-        var inventoryFeetSlot = document.createElement("div");
-        inventoryFeetSlot.id = "canvasInventoryFeetSlot";
-        inventory.appendChild(inventoryFeetSlot);
-
-        //Legs Slot
-        var inventoryLegsSlot = document.createElement("div");
-        inventoryLegsSlot.id = "canvasInventoryLegsSlot";
-        inventory.appendChild(inventoryLegsSlot);
-
-        //Waist Slot
-        var inventoryWaistSlot = document.createElement("div");
-        inventoryWaistSlot.id = "canvasInventoryWaistSlot";
-        inventory.appendChild(inventoryWaistSlot);
-
-        //LHand Slot
-        var inventoryLHandSlot = document.createElement("div");
-        inventoryLHandSlot.id = "canvasInventoryLHandSlot";
-        inventory.appendChild(inventoryLHandSlot);
-
-        //RHand Slot
-        var inventoryRHandSlot = document.createElement("div");
-        inventoryRHandSlot.id = "canvasInventoryRHandSlot";
-        inventory.appendChild(inventoryRHandSlot);
     },
     addLogDisplay: function() {
         var log = document.createElement("div");

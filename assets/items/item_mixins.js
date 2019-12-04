@@ -186,6 +186,7 @@ Game.ItemMixins.Equippable = {
         this._inventorySlots = template['inventorySlots'] || 0;
         this._prefix = template['prefix'] || '';
         this._icon = template['icon'] || 'assets/images/inventory/icons/no_icon.png';
+        this._description = template['description'] || '';
     },
     getAttackValue: function() {
         return this._attackValue;
@@ -228,6 +229,9 @@ Game.ItemMixins.Equippable = {
     },
     getIcon: function() {
         return this._icon;
+    },
+    getDescription: function() {
+        return this._description;
     },
     onEquip: function(ent) {
 
