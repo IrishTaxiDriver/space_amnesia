@@ -883,5 +883,4 @@ Game.EntityMixins.EntityRarity = {
         Debug.log("Game.ItemMixins.ItemRarity.setPrefixForRarity: Setting " + this._name + " to name " + rarityPrefix + this._name);
         this._name = rarityPrefix + this._name;       
     }
-
 }

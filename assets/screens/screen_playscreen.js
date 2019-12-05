@@ -51,21 +51,59 @@ Game.Screen.playScreen = {
     },
     renderHUD: function(display) {
         // Render player stats
-        var stats = vsprintf('HP: %d/%d<br>L: %d<br>XP: %d', 
-            [this._player.getHp(), this._player.getMaxHp(),
-             this._player.getLevel(), this._player.getExperience()]);
-        stats += "<br>";
-        stats += this._player.getHungerState();
-        if (document.getElementById("canvasStatsText"))
-            document.getElementById("canvasStatsText").innerHTML = stats;
+        
+        statsVerboseTextLeft = document.getElementById("statsVerboseTextLeft");
+        statsVerboseTextRight = document.getElementById("statsVerboseTextRight");
+
+        statsHPPolyBar = document.getElementById("statsHPPolyBar");
+        statsHPText = document.getElementById("statsHPText");
+
+        statsXPPolyBar = document.getElementById("statsXPPolyBar");
+        statsXPText = document.getElementById("statsXPText");
+
+        if (statsHPPolyBar) {
+            if (statsHPPolyBar.style.display == "none") {
+
+                statsHPPolyBar.style.display = "";
+                statsHPText.style.display = "";
+                document.getElementById("statsHPPolyBarBackground").style.display = "";
+
+                statsXPPolyBar.style.display = "";
+                statsXPText.style.display = "";
+                document.getElementById("statsXPPolyBarBackground").style.display = "";
+
+                statsVerboseTextLeft.style.display = "";
+                statsVerboseTextLeft.innerHTML = "Level:<br>Attack:<br>Defense:<br>Crit:<br>Dodge:<br>Hit:<br>Parry:<br>";
+                statsVerboseTextRight.style.display = "";
+                document.getElementById("statsVerboseBackground").style.display = "";
+
+            }
+
+            statsHPPolyBar.style.width = ((this._player.getHp() / this._player.getMaxHp()) * 227) + "px";
+            statsHPText.innerHTML = vsprintf('%d/%d', [this._player.getHp(), this._player.getMaxHp()]);
+
+            statsXPPolyBar.style.width = ((this._player.getExperience() / this._player.getNextLevelExperience()) * 227) + "px";
+            statsXPText.innerHTML = vsprintf('%d/%d', [this._player.getExperience(), this._player.getNextLevelExperience()]);
+        }
+
+        var statsRight = this._player.getLevel() + "<br>";
+        statsRight += this._player.getAttackValue() + "<br>";
+        statsRight += this._player.getDefenseValue() + "<br>";
+        statsRight += this._player.getCritValue() + "%<br>";
+        statsRight += this._player.getDodgeValue() + "%<br>";
+        statsRight += this._player.getHitValue() + "%<br>";
+        statsRight += this._player.getParryValue() + "%<br>";
+        statsRight += this._player.getHungerState();
+
+        if (statsVerboseTextRight)
+            statsVerboseTextRight.innerHTML = statsRight;
     },
-    writeItemCard: function(item) {
+    writeItemCardAttributes: function(item) {
 
         if (item == null)
             return "Nothing Equipped";
 
-        info = item.getName() + "<br>";
-        info += item.getPrefixForRarity(); + "Quality " + item.getSlot() + "<br><br>";
+        info = item.getSlot() + "<br>";
 
         if (item.getDefenseValue() != 0)
             info += "Defense: " + item.getDefenseValue() + "<br>";
@@ -85,10 +123,15 @@ Game.Screen.playScreen = {
         if (item.getParryValue() != 0)
             info += "Parry +" + item.getParryValue() + "%<br>";
 
-        if (item.getDescription() != '')
-            info += "\"" + item.getDescription() + "\"";
-
         return info;
+    },
+    writeItemCardDescription(item) {
+
+        if (item == null)
+            return "Nothing Equipped";
+
+        if (item.getDescription() != '')
+            return "\"" + item.getDescription() + "\"";
     },
     renderSlot: function(element, item) {
 
@@ -98,33 +141,56 @@ Game.Screen.playScreen = {
             imageIcon = "url('" + item.getIcon() + "')";
             if (element.style.backgroundImage != imageIcon) {
                 element.style.backgroundImage = imageIcon;
-                element.setAttribute("data-item-card", this.writeItemCard(item));
+                element.style.borderColor = item.getForeground();
+                element.setAttribute("data-item", "true");
+                element.setAttribute("data-item-title", item.getName());
+                element.setAttribute("data-item-color", item.getForeground());
+                element.setAttribute("data-item-attributes", this.writeItemCardAttributes(item));
+                element.setAttribute("data-item-description", this.writeItemCardDescription(item));
             }
         } else {
             if (element.style.backgroundImage != default_icon_url) {
                 element.style.backgroundImage = default_icon_url;
-                element.setAttribute("data-item-card", "");
+                element.style.borderColor = "";
+                element.setAttribute("data-item", "false");
+                element.setAttribute("data-item-title", "");
+                element.setAttribute("data-item-color", "");
+                element.setAttribute("data-item-attributes", "");
+                element.setAttribute("data-item-description", "");
             }
         }
     },
     addMouseEnterListener: function(element) {
         element.addEventListener("mouseenter", function(event) {
 
-            card = document.getElementById( "canvasItemHoverCard" );
-            card.style.display = "";
-            card.style.top = element.offsetTop + 48 + "px";
-            card.style.left = element.offsetLeft + 48 + "px";
-            cardText = document.getElementById( "inventoryItemHoverCardText" );
-            cardText.innerHTML = element.getAttribute("data-item-card");
+            if (element.getAttribute("data-item") == "true") {
+                card = document.getElementById( "canvasItemHoverCard" );
+                card.style.display = "";
+                card.style.top = element.offsetTop + 48 + "px";
+                card.style.left = element.offsetLeft + 48 + "px";
+                cardTextItemTitle = document.getElementById( "inventoryItemHoverCardItemTitle" );
+                cardTextItemTitle.innerHTML = element.getAttribute("data-item-title");
+                cardTextItemTitle.style.color = element.getAttribute("data-item-color");
+                cardTextItemAttributes = document.getElementById( "inventoryItemHoverCardItemAttributes" );
+                cardTextItemAttributes.innerHTML = element.getAttribute("data-item-attributes");
+                cardTextItemDescription = document.getElementById( "inventoryItemHoverCardItemDescription" );
+                cardTextItemDescription.innerHTML = element.getAttribute("data-item-description");
+            }
         });
     },
     addMouseLeaveListener: function(element) {
         element.addEventListener("mouseleave", function(event) {
 
-            card = document.getElementById( "canvasItemHoverCard" );
-            card.style.display = "none";
-            cardText = document.getElementById( "inventoryItemHoverCardText" );
-            cardText.innerHTML = "";
+            if (element.getAttribute("data-item") == "true") {
+                card = document.getElementById( "canvasItemHoverCard" );
+                card.style.display = "none";
+                cardTextItemTitle = document.getElementById( "inventoryItemHoverCardItemTitle" );
+                cardTextItemTitle.innerHTML = "";
+                cardTextItemAttributes = document.getElementById( "inventoryItemHoverCardItemAttributes" );
+                cardTextItemAttributes.innerHTML = "";
+                cardTextItemDescription = document.getElementById( "inventoryItemHoverCardItemDescription" );
+                cardTextItemDescription.innerHTML = "";
+            }
 
         });
     },
@@ -190,9 +256,15 @@ Game.Screen.playScreen = {
         var inventoryItemHoverCard = document.createElement("div");
         inventoryItemHoverCard.id = "canvasItemHoverCard";
         inventoryItemHoverCard.style.display = "none";
-        var inventoryItemHoverCardText = document.createElement("p");
-        inventoryItemHoverCardText.id = "inventoryItemHoverCardText";
-        inventoryItemHoverCard.appendChild(inventoryItemHoverCardText);
+        var inventoryItemHoverCardItemTitle = document.createElement("p");
+        inventoryItemHoverCardItemTitle.id = "inventoryItemHoverCardItemTitle";
+        var inventoryItemHoverCardItemAttributes = document.createElement("p");
+        inventoryItemHoverCardItemAttributes.id = "inventoryItemHoverCardItemAttributes";
+        var inventoryItemHoverCardItemDescription = document.createElement("p");
+        inventoryItemHoverCardItemDescription.id = "inventoryItemHoverCardItemDescription";
+        inventoryItemHoverCard.appendChild(inventoryItemHoverCardItemTitle);
+        inventoryItemHoverCard.appendChild(inventoryItemHoverCardItemAttributes);
+        inventoryItemHoverCard.appendChild(inventoryItemHoverCardItemDescription);
         inventory.appendChild(inventoryItemHoverCard);
     },
     renderInventory: function(display) {

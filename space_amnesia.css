@@ -1,5 +1,25 @@
-p, div {
+p, div, canvas {
 	padding: 0px;
+	border-radius: 5px;
+}
+
+p#inventoryItemHoverCardItemTitle, p#inventoryItemHoverCardItemAttributes, p#inventoryItemHoverCardItemDescription {
+	font-family: arial, 'sans serif';
+	padding: 10px;
+}
+
+p#inventoryItemHoverCardItemTitle {
+	font-weight: bolder;
+	padding: 10px;
+	color: #696969;
+}
+
+p#inventoryItemHoverCardItemAttributes {
+	color: #FFFAF0;
+}
+
+p#inventoryItemHoverCardItemDescription {
+	color: #B8860B;
 }
 
 body {
@@ -12,12 +32,14 @@ body {
 
 canvas {
 	border: 3px solid blue;
+	border-radius: 5px;
 	padding: 0px;
 	float: left;
 }
 
 #canvasStats, #canvasLog, #canvasInventory {
 	border: 3px solid blue;
+	border-radius: 5px;
 	padding: 10px;
 	width: 227px;
 	height: 355px;
@@ -39,8 +61,57 @@ canvas {
 	text-align: justify;
 }
 
+#statsHPPolyBarBackground, #statsXPPolyBarBackground {
+	position: relative;
+	float: left;
+	height: 25px;
+	width: 227px;
+	border: 1px solid #eee;
+    border-radius: 0px;
+    text-align: center;
+}
+
+#statsVerboseBackground {
+	float: center;
+	width: 70%;
+	height: 100px;
+	padding-left: 15%;
+	padding-top: 30%;
+}
+
+#statsHPPolyBar, #statsXPPolyBar {
+	position: relative;
+	height: 25px;
+	float: left;
+	z-index: 0;
+}
+
+p#statsHPText, p#statsXPText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -140%);
+}
+
+p#statsVerboseTextLeft {
+	position: relative;
+	top: -12.5px;
+	float: left;
+	text-align: left;
+	color: #FFFFFF;
+}
+
+p#statsVerboseTextRight {
+	position: relative;
+	top: -12.5px;
+	float: right;
+	text-align: right;
+	color: #FFFFFF;
+}
+
 #canvasInventoryHelmSlot, #canvasInventoryBackSlot, #canvasInventoryChestSlot, #canvasInventoryFeetSlot, #canvasInventoryLegsSlot, #canvasInventoryWaistSlot, #canvasInventoryLHandSlot, #canvasInventoryRHandSlot {
 	position: relative;
+	border-radius: 5px;
 	width: 64px;
 	height: 64px;
 	background-image: url('assets/images/inventory/icons/empty_icon.png');
@@ -96,12 +167,13 @@ canvas {
     -o-transition: all 500ms ease-in-out;
     transition: all 500ms ease-in-out;
     border: 1px solid #eee;
+    border-radius: 5px;
     background: #000000;
     box-shadow: 3px 4px 6px rgba(0,0,0,0.4);
-    padding: 3px; 
-    font-weight: bolder;
     z-index: 1;
     overflow: hidden;
 	height: auto;
+	width: 250px;
 	position: absolute;
+	padding-top: 0px;
 }

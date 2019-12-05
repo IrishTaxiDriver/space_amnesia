@@ -66,7 +66,6 @@ Game.ItemMixins.Currency = {
     }
 };
 
-//TODO: Rarity shows up in name.
 Game.ItemMixins.ItemRarity = {
     name: 'ItemRarity',
     init: function(template) {
@@ -95,7 +94,6 @@ Game.ItemMixins.ItemRarity = {
     setRarity: function(rarity) {
         this._rarity = rarity;
         this.setColorBasedOnRarity();
-        this.setPrefixForRarity();
     },
     getPrefixForRarity: function() {
         if (this._rarity == 0) { //Grey
@@ -141,11 +139,6 @@ Game.ItemMixins.ItemRarity = {
         Debug.log("Game.ItemMixins.ItemRarity.setColorBasedOnRarity: Setting " + this._name + " to rarity " + this._rarity);
         this.setForeground(this.getColorForRarity());
     },
-    setPrefixForRarity: function() {
-        rarityPrefix = this.getPrefixForRarity();
-        Debug.log("Game.ItemMixins.ItemRarity.setPrefixForRarity: Setting " + this._name + " to name " + rarityPrefix + this._name);
-        this._name = rarityPrefix + this._name;       
-    }
 };
 
 Game.ItemMixins.Set = {
@@ -216,7 +209,10 @@ Game.ItemMixins.Equippable = {
         return this._range;
     },
     getName: function() {
-        return this._name;
+        if (this.hasMixin(Game.ItemMixins.ItemRarity))
+            return this.getPrefixForRarity() + this._name;
+        else
+            return this._name;
     },
     isWieldable: function() {
         return this._wieldable;
