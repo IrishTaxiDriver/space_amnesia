@@ -3,7 +3,9 @@ p, div, canvas {
 	border-radius: 5px;
 }
 
-p#inventoryItemHoverCardItemTitle, p#inventoryItemHoverCardItemAttributes, p#inventoryItemHoverCardItemDescription {
+p#inventoryItemHoverCardItemTitle,
+p#inventoryItemHoverCardItemAttributes,
+p#inventoryItemHoverCardItemDescription {
 	font-family: arial, 'sans serif';
 	padding: 10px;
 }
@@ -37,7 +39,9 @@ canvas {
 	float: left;
 }
 
-#canvasStats, #canvasLog, #canvasInventory {
+#canvasStats,
+#canvasLog,
+#canvasInventory {
 	border: 3px solid blue;
 	border-radius: 5px;
 	padding: 10px;
@@ -46,6 +50,10 @@ canvas {
 	font-family: arial, 'sans serif';
     color: #FFFFFF;
     float: left;
+}
+
+p#canvasLogText {
+	margin: 0px;
 }
 
 #canvasInventory {
@@ -61,7 +69,8 @@ canvas {
 	text-align: justify;
 }
 
-#statsHPPolyBarBackground, #statsXPPolyBarBackground {
+#statsHPPolyBarBackground,
+#statsXPPolyBarBackground {
 	position: relative;
 	float: left;
 	height: 25px;
@@ -79,14 +88,16 @@ canvas {
 	padding-top: 30%;
 }
 
-#statsHPPolyBar, #statsXPPolyBar {
+#statsHPPolyBar,
+#statsXPPolyBar {
 	position: relative;
 	height: 25px;
 	float: left;
 	z-index: 0;
 }
 
-p#statsHPText, p#statsXPText {
+p#statsHPText,
+p#statsXPText {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -109,7 +120,14 @@ p#statsVerboseTextRight {
 	color: #FFFFFF;
 }
 
-#canvasInventoryHelmSlot, #canvasInventoryBackSlot, #canvasInventoryChestSlot, #canvasInventoryFeetSlot, #canvasInventoryLegsSlot, #canvasInventoryWaistSlot, #canvasInventoryLHandSlot, #canvasInventoryRHandSlot {
+#canvasInventoryHelmSlot,
+#canvasInventoryBackSlot,
+#canvasInventoryChestSlot,
+#canvasInventoryFeetSlot,
+#canvasInventoryLegsSlot,
+#canvasInventoryWaistSlot,
+#canvasInventoryLHandSlot,
+#canvasInventoryRHandSlot {
 	position: relative;
 	border-radius: 5px;
 	width: 64px;
@@ -160,6 +178,20 @@ p#statsVerboseTextRight {
 	right: 0px;		
 }
 
+p#inventoryItemHoverCardItemTitle,
+p#inventoryItemHoverCardItemAttributes,
+p#inventoryItemHoverCardItemDescription {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+p#inventoryItemHoverCardItemDescription {
+	padding-bottom: 5px;
+}
+
 #canvasItemHoverCard {
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
@@ -170,10 +202,24 @@ p#statsVerboseTextRight {
     border-radius: 5px;
     background: #000000;
     box-shadow: 3px 4px 6px rgba(0,0,0,0.4);
-    z-index: 1;
-    overflow: hidden;
 	height: auto;
 	width: 250px;
 	position: absolute;
-	padding-top: 0px;
+	padding: 0px;
+	margin: 0px;
+}
+
+p#statsHPText,
+p#statsXPText,
+p#inventoryItemHoverCardItemTitle,
+p#inventoryItemHoverCardItemAttributes,
+p#inventoryItemHoverCardItemDescription,
+p#statsVerboseTextRight,
+p#statsVerboseTextLeft {
+
+	-webkit-user-select: none; /* Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
+
 }
