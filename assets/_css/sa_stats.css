@@ -1,0 +1,52 @@
+/* STATS DIV */
+
+#statsHPPolyBarBackground,
+#statsXPPolyBarBackground {
+	position: relative;
+	float: left;
+	height: 25px;
+	width: 227px;
+	border: 1px solid #eee;
+    border-radius: 0px;
+    text-align: center;
+}
+
+#statsVerboseBackground {
+	float: center;
+	width: 70%;
+	height: 100px;
+	padding-left: 15%;
+	padding-top: 30%;
+}
+
+#statsHPPolyBar,
+#statsXPPolyBar {
+	position: relative;
+	height: 25px;
+	float: left;
+	z-index: 0;
+}
+
+p#statsHPText,
+p#statsXPText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -140%);
+}
+
+p#statsVerboseTextLeft {
+	position: relative;
+	top: -12.5px;
+	float: left;
+	text-align: left;
+	color: #FFFFFF;
+}
+
+p#statsVerboseTextRight {
+	position: relative;
+	top: -12.5px;
+	float: right;
+	text-align: right;
+	color: #FFFFFF;
+}

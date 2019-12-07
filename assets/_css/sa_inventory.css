@@ -1,0 +1,192 @@
+/* INVENTORY DIV */
+
+#canvasInventory {
+	float: right;
+}
+
+#canvasInventoryHelmSlot,
+#canvasInventoryBackSlot,
+#canvasInventoryChestSlot,
+#canvasInventoryFeetSlot,
+#canvasInventoryLegsSlot,
+#canvasInventoryWaistSlot,
+#canvasInventoryLHandSlot,
+#canvasInventoryRHandSlot,
+#canvasInventoryBagSlot1,
+#canvasInventoryBagSlot2,
+#canvasInventoryBagSlot3,
+#canvasInventoryBagSlot4,
+#canvasInventoryBagSlot5,
+#canvasInventoryBagSlot6,
+#canvasInventoryBagSlot7,
+#canvasInventoryBagSlot8,
+#canvasInventoryBagSlot9,
+#canvasInventoryBagSlot10,
+#canvasInventoryBagSlot11,
+#canvasInventoryBagSlot12,
+#canvasInventoryBagSlot13,
+#canvasInventoryBagSlot14,
+#canvasInventoryBagSlot15 {
+	position: relative;
+	border-radius: 5px;
+	width: 64px;
+	height: 64px;
+	background-image: url('../images/inventory/icons/empty_icon.png');
+	background-repeat: no-repeat;
+	background-position: left top;
+	cursor: help;
+} 
+
+#canvasInventoryHelmSlot {
+	top: 0px;
+	right: -81px;
+}
+
+#canvasInventoryBackSlot {
+	top: -24px;
+	right: -10px;		
+}
+
+#canvasInventoryChestSlot {
+	top: -40px;
+	right: -81px;	
+}
+
+#canvasInventoryWaistSlot {
+	top: -167px;
+	right: -81px;	
+}
+
+#canvasInventoryLegsSlot {
+	top: -36px;
+	right: -81px;	
+}
+
+#canvasInventoryFeetSlot {
+	top: 93px;
+	right: -81px;	
+}
+
+#canvasInventoryLHandSlot {
+	top: -232px;
+	right: -160px;		
+}
+
+#canvasInventoryRHandSlot {
+	top: -296px;
+	right: 0px;		
+}
+
+#canvasInventoryBagSlot1,
+#canvasInventoryBagSlot2,
+#canvasInventoryBagSlot3,
+#canvasInventoryBagSlot4,
+#canvasInventoryBagSlot5,
+#canvasInventoryBagSlot6,
+#canvasInventoryBagSlot7,
+#canvasInventoryBagSlot8,
+#canvasInventoryBagSlot9,
+#canvasInventoryBagSlot10,
+#canvasInventoryBagSlot11,
+#canvasInventoryBagSlot12,
+#canvasInventoryBagSlot13,
+#canvasInventoryBagSlot14,
+#canvasInventoryBagSlot15 {
+	position: relative;
+	margin: 3px;
+}
+
+#canvasInventoryBagSlot1,
+#canvasInventoryBagSlot4,
+#canvasInventoryBagSlot7,
+#canvasInventoryBagSlot10,
+#canvasInventoryBagSlot13 {
+	float: left;
+}
+
+#canvasInventoryBagSlot2,
+#canvasInventoryBagSlot5,
+#canvasInventoryBagSlot8,
+#canvasInventoryBagSlot11,
+#canvasInventoryBagSlot14 {
+	float: left;
+}
+
+#canvasInventoryBagSlot3,
+#canvasInventoryBagSlot6,
+#canvasInventoryBagSlot9,
+#canvasInventoryBagSlot12,
+#canvasInventoryBagSlot15 {
+	float: left;
+}
+
+/* INVENTORY P ADJUSTMENTS */
+p#inventoryItemHoverCardItemTitle,
+p#inventoryItemHoverCardItemAttributes,
+p#inventoryItemHoverCardItemDescription {
+	font-family: arial, 'sans serif';
+	padding: 10px;
+}
+
+p#inventoryItemHoverCardItemTitle {
+	font-weight: bolder;
+	padding: 10px;
+	color: #696969;
+}
+
+p#inventoryItemHoverCardItemAttributes {
+	color: #FFFAF0;
+}
+
+p#inventoryItemHoverCardItemDescription {
+	color: #B8860B;
+}
+
+p#canvasLogText {
+	margin: 0px;
+}
+
+p#inventoryItemHoverCardItemTitle,
+p#inventoryItemHoverCardItemAttributes,
+p#inventoryItemHoverCardItemDescription {
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding-left: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+p#inventoryItemHoverCardItemDescription {
+	padding-bottom: 5px;
+}
+
+#canvasItemHoverCard {
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background: #000000;
+    box-shadow: 3px 4px 6px rgba(0,0,0,0.4);
+	height: auto;
+	width: 250px;
+	position: absolute;
+	padding: 0px;
+	margin: 0px;
+}
+
+#canvasInventoryEquip {
+	height: inherit;
+	width: inherit;
+	background-image: url('../images/inventory/bg_inventory.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#canvasInventoryBags {
+	height: inherit;
+	width: auto;
+	margin: auto;
+}

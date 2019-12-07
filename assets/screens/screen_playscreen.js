@@ -32,7 +32,7 @@ Game.Screen.playScreen = {
         // Render the hud
         Game.Screen.divStats.renderHUD(display);
         // Render the inventory
-        Game.Screen.divInventory.renderInventory(display);
+        Game.Screen.divInventoryManager.manage(display);
     },
     getScreenOffsets: function() {
         // Make sure we still have enough space to fit an entire game screen
