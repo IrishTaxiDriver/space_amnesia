@@ -1,39 +1,38 @@
 Game.Screen.divStats = {
+    _player: null,
+    setup: function() {
+
+        this._player = Game.Screen.playScreen._player;
+
+        Game.Screen._canvasStats = document.getElementById("canvasStats");
+
+        this.setupStatsPanel();
+
+    },
 	renderHUD: function(display) {
         // Render player stats
         
-        this._player = Game.Screen.playScreen._player;
+        if (this._player == null)
+            this.setup();
 
-        if (!document.getElementById("statsVerboseTextLeft"))
-            this.setupStatsPanel(document.getElementById("canvasStats"));
+        Game.Screen._statsHPPolyBar.style.display = "";
+        Game.Screen._statsHPText.style.display = "";
+        Game.Screen._statsHPPolyBarBackground.style.display = "";
 
-        statsVerboseTextLeft = document.getElementById("statsVerboseTextLeft");
-        statsVerboseTextRight = document.getElementById("statsVerboseTextRight");
+        Game.Screen._statsXPPolyBar.style.display = "";
+        Game.Screen._statsXPText.style.display = "";
+        Game.Screen._statsXPPolyBarBackground.style.display = "";
 
-        statsHPPolyBar = document.getElementById("statsHPPolyBar");
-        statsHPText = document.getElementById("statsHPText");
+        Game.Screen._statsVerboseTextLeft.style.display = "";
+        Game.Screen._statsVerboseTextLeft.innerHTML = Game.Screen._statsVerboseTextLeftText;
+        Game.Screen._statsVerboseTextRight.style.display = "";
+        Game.Screen._statsVerboseBackground.style.display = "";
 
-        statsXPPolyBar = document.getElementById("statsXPPolyBar");
-        statsXPText = document.getElementById("statsXPText");
+        Game.Screen._statsHPPolyBar.style.width = ((this._player.getHp() / this._player.getMaxHp()) * 227) + "px";
+        Game.Screen._statsHPText.innerHTML = vsprintf('%d/%d', [this._player.getHp(), this._player.getMaxHp()]);
 
-        statsHPPolyBar.style.display = "";
-        statsHPText.style.display = "";
-        document.getElementById("statsHPPolyBarBackground").style.display = "";
-
-        statsXPPolyBar.style.display = "";
-        statsXPText.style.display = "";
-        document.getElementById("statsXPPolyBarBackground").style.display = "";
-
-        statsVerboseTextLeft.style.display = "";
-        statsVerboseTextLeft.innerHTML = "Level:<br>Attack:<br>Defense:<br>Crit:<br>Dodge:<br>Hit:<br>Parry:<br>";
-        statsVerboseTextRight.style.display = "";
-        document.getElementById("statsVerboseBackground").style.display = "";
-
-        statsHPPolyBar.style.width = ((this._player.getHp() / this._player.getMaxHp()) * 227) + "px";
-        statsHPText.innerHTML = vsprintf('%d/%d', [this._player.getHp(), this._player.getMaxHp()]);
-
-        statsXPPolyBar.style.width = ((this._player.getExperience() / this._player.getNextLevelExperience()) * 227) + "px";
-        statsXPText.innerHTML = vsprintf('%d/%d', [this._player.getExperience(), this._player.getNextLevelExperience()]);
+        Game.Screen._statsXPPolyBar.style.width = ((this._player.getExperience() / this._player.getNextLevelExperience()) * 227) + "px";
+        Game.Screen._statsXPText.innerHTML = vsprintf('%d/%d', [this._player.getExperience(), this._player.getNextLevelExperience()]);
 
         var statsRight = this._player.getLevel() + "<br>";
         statsRight += this._player.getAttackValue() + "<br>";
@@ -44,66 +43,66 @@ Game.Screen.divStats = {
         statsRight += this._player.getParryValue() + "%<br>";
         statsRight += this._player.getHungerState();
 
-        if (statsVerboseTextRight)
-            statsVerboseTextRight.innerHTML = statsRight;
+        Game.Screen._statsVerboseTextRight.innerHTML = statsRight;
 	},
-    setupStatsPanel: function(stats) {
+    setupStatsPanel: function() {
+
         //HP Bar
-        var statsHPPolyBarBackground = document.createElement("div");
-        statsHPPolyBarBackground.id = "statsHPPolyBarBackground";
-        statsHPPolyBarBackground.style.display = "none";
+        Game.Screen._statsHPPolyBarBackground = document.createElement("div");
+        Game.Screen._statsHPPolyBarBackground.id = "statsHPPolyBarBackground";
+        Game.Screen._statsHPPolyBarBackground.style.display = "none";
 
-        var statsHPPolyBar = document.createElement("img");
-        statsHPPolyBar.id = "statsHPPolyBar";
-        statsHPPolyBar.src = "assets/images/misc/polybar_red.png";
-        statsHPPolyBar.style.display = "none";
+        Game.Screen._statsHPPolyBar = document.createElement("img");
+        Game.Screen._statsHPPolyBar.id = "statsHPPolyBar";
+        Game.Screen._statsHPPolyBar.src = "assets/images/misc/polybar_red.png";
+        Game.Screen._statsHPPolyBar.style.display = "none";
 
-        var statsHPText = document.createElement("p");
-        statsHPText.id = "statsHPText";
-        statsHPText.style.display = "none";
+        Game.Screen._statsHPText = document.createElement("p");
+        Game.Screen._statsHPText.id = "statsHPText";
+        Game.Screen._statsHPText.style.display = "none";
 
-        var statsText = document.createElement("p");
-        statsText.id = "canvasStatsText";
+        Game.Screen._statsText = document.createElement("p");
+        Game.Screen._statsText.id = "canvasStatsText";
 
-        statsHPPolyBarBackground.appendChild(statsHPPolyBar);
-        statsHPPolyBarBackground.appendChild(statsHPText);
+        Game.Screen._statsHPPolyBarBackground.appendChild(Game.Screen._statsHPPolyBar);
+        Game.Screen._statsHPPolyBarBackground.appendChild(Game.Screen._statsHPText);
 
         //XP Bar
-        var statsXPPolyBarBackground = document.createElement("div");
-        statsXPPolyBarBackground.id = "statsXPPolyBarBackground";
-        statsXPPolyBarBackground.style.display = "none";
+        Game.Screen._statsXPPolyBarBackground = document.createElement("div");
+        Game.Screen._statsXPPolyBarBackground.id = "statsXPPolyBarBackground";
+        Game.Screen._statsXPPolyBarBackground.style.display = "none";
 
-        var statsXPPolyBar = document.createElement("img");
-        statsXPPolyBar.id = "statsXPPolyBar";
-        statsXPPolyBar.src = "assets/images/misc/polybar_yellow.png";
-        statsXPPolyBar.style.display = "none";
+        Game.Screen._statsXPPolyBar = document.createElement("img");
+        Game.Screen._statsXPPolyBar.id = "statsXPPolyBar";
+        Game.Screen._statsXPPolyBar.src = "assets/images/misc/polybar_yellow.png";
+        Game.Screen._statsXPPolyBar.style.display = "none";
 
-        var statsXPText = document.createElement("p");
-        statsXPText.id = "statsXPText";
-        statsXPText.style.display = "none";
+        Game.Screen._statsXPText = document.createElement("p");
+        Game.Screen._statsXPText.id = "statsXPText";
+        Game.Screen._statsXPText.style.display = "none";
 
-        statsXPPolyBarBackground.appendChild(statsXPPolyBar);
-        statsXPPolyBarBackground.appendChild(statsXPText);
+        Game.Screen._statsXPPolyBarBackground.appendChild(Game.Screen._statsXPPolyBar);
+        Game.Screen._statsXPPolyBarBackground.appendChild(Game.Screen._statsXPText);
 
         //Verbose stats
-        var statsVerboseBackground = document.createElement("div");
-        statsVerboseBackground.id = "statsVerboseBackground";
-        statsHPPolyBarBackground.style.display = "none";
+        Game.Screen._statsVerboseBackground = document.createElement("div");
+        Game.Screen._statsVerboseBackground.id = "statsVerboseBackground";
+        Game.Screen._statsVerboseBackground.style.display = "none";
 
-        var statsVerboseTextLeft = document.createElement("p");
-        statsVerboseTextLeft.id = "statsVerboseTextLeft";
-        statsVerboseTextLeft.style.display = "none";
+        Game.Screen._statsVerboseTextLeft = document.createElement("p");
+        Game.Screen._statsVerboseTextLeft.id = "statsVerboseTextLeft";
+        Game.Screen._statsVerboseTextLeft.style.display = "none";
 
-        var statsVerboseTextRight = document.createElement("p");
-        statsVerboseTextRight.id = "statsVerboseTextRight";
-        statsVerboseTextRight.style.display = "none";
+        Game.Screen._statsVerboseTextRight = document.createElement("p");
+        Game.Screen._statsVerboseTextRight.id = "statsVerboseTextRight";
+        Game.Screen._statsVerboseTextRight.style.display = "none";
 
-        statsVerboseBackground.appendChild(statsVerboseTextLeft);
-        statsVerboseBackground.appendChild(statsVerboseTextRight);
+        Game.Screen._statsVerboseBackground.appendChild(Game.Screen._statsVerboseTextLeft);
+        Game.Screen._statsVerboseBackground.appendChild(Game.Screen._statsVerboseTextRight);
 
         //Append the main divs to the stats div
-        stats.appendChild(statsHPPolyBarBackground);
-        stats.appendChild(statsXPPolyBarBackground);
-        stats.appendChild(statsVerboseBackground);
+        Game.Screen._canvasStats.appendChild(Game.Screen._statsHPPolyBarBackground);
+        Game.Screen._canvasStats.appendChild(Game.Screen._statsXPPolyBarBackground);
+        Game.Screen._canvasStats.appendChild(Game.Screen._statsVerboseBackground);
     }
 };

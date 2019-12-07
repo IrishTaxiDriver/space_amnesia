@@ -1,24 +1,32 @@
 Game.Screen.divInventoryManager = {
-	_activeInventoryDiv: "Equip",
-	manage: function(display) {
+	_activeInventoryDiv: null,
+	_itemNull: "Nothing Equipped",
+	setup: function() {
 
-		if (!document.getElementById("canvasInventoryHelmSlot"))
-			this.setupInventorySlots( document.getElementById( "canvasInventory" ) );
+		this._activeInventoryDiv = "Equip";
 
-		if (!document.getElementById("canvasInventoryBagSlot1"))
-			this.createBagSlots(document.getElementById( "canvasInventory" ));
+		Game.Screen._canvasInventory = document.getElementById("canvasInventory");
 
-		equipInventory = document.getElementById("canvasInventoryEquip");
-		bagsInventory = document.getElementById("canvasInventoryBags");
+		this.setupInventorySlots();
+		this.createBagSlots(Game.Screen._canvasInventory);
+
+		Game.Screen._inventoryEquip = document.getElementById("canvasInventoryEquip");
+		Game.Screen._inventoryBags = document.getElementById("canvasInventoryBags");
+
+	},
+	manage: function() {
+
+		if (this._activeInventoryDiv == null)
+			this.setup();
 
 		if (this._activeInventoryDiv == "Equip") {
-			bagsInventory.style.display = "none";
-			equipInventory.style.display = "";
+			Game.Screen._inventoryBags.style.display = "none";
+			Game.Screen._inventoryEquip.style.display = "";
 			Game.Screen.divInventoryEquip.renderInventory();
 		}
 		else {
-			bagsInventory.style.display = "";
-			equipInventory.style.display = "none";
+			Game.Screen._inventoryBags.style.display = "";
+			Game.Screen._inventoryEquip.style.display = "none";
 			Game.Screen.divInventoryBags.renderBags();
 		}
 
@@ -26,34 +34,34 @@ Game.Screen.divInventoryManager = {
 	writeItemCardAttributes: function(item) {
 
         if (item == null)
-            return "Nothing Equipped";
+            return this._itemNull;
 
         info = item.getSlot() + "<br>";
 
         if (item.getDefenseValue() != 0)
-            info += "Defense: " + item.getDefenseValue() + "<br>";
+        	info += vsprintf('Defense: %d<br>', [item.getDefenseValue()]);
 
         if (item.getAttackValue() != 0)
-            info += "Attack: " + item.getAttackValue() + "<br>";
+        	info += vsprintf('Attack: %d<br>', [item.getAttackValue()]);
 
         if (item.getCritValue() != 0)
-            info += "Crit +" + item.getCritValue() + "%<br>";
+        	info += vsprintf('Crit +%d%<br>', [item.getCritValue()]);
 
         if (item.getDodgeValue() != 0)
-            info += "Dodge +" + item.getDodgeValue() + "%<br>";
+        	info += vsprintf('Dodge +%d%<br>', [item.getDodgeValue()]);
 
         if (item.getHitValue() != 0)
-            info += "Hit +" + item.getHitValue() + "%<br>"; 
+        	info += vsprintf('Hit +%d%<br>', [item.getHitValue()]);
 
         if (item.getParryValue() != 0)
-            info += "Parry +" + item.getParryValue() + "%<br>";
+        	info += vsprintf('Parry +%d%<br>', [item.getParryValue()]);
 
         return info;
     },
     writeItemCardDescription(item) {
 
         if (item == null)
-            return "Nothing Equipped";
+            return this._itemNull;
 
         if (item.getDescription() != '')
             return "\"" + item.getDescription() + "\"";
@@ -90,21 +98,17 @@ Game.Screen.divInventoryManager = {
 
             if (element.getAttribute("data-item") == "true") {
 
-                card = document.getElementById( "canvasItemHoverCard" );
-                card.style.display = "";
-                card.style.top = element.offsetTop + 48 + "px";
-                card.style.left = element.offsetLeft + 48 + "px";
-                card.style.borderColor = element.getAttribute("data-item-color");
+                Game.Screen._inventoryItemHoverCard.style.display = "";
+                Game.Screen._inventoryItemHoverCard.style.top = element.offsetTop + 48 + "px";
+                Game.Screen._inventoryItemHoverCard.style.left = element.offsetLeft + 48 + "px";
+                Game.Screen._inventoryItemHoverCard.style.borderColor = element.getAttribute("data-item-color");
 
-                cardTextItemTitle = document.getElementById( "inventoryItemHoverCardItemTitle" );
-                cardTextItemTitle.innerHTML = element.getAttribute("data-item-title");
-                cardTextItemTitle.style.color = element.getAttribute("data-item-color");
+                Game.Screen._inventoryItemHoverCardItemTitle.innerHTML = element.getAttribute("data-item-title");
+                Game.Screen._inventoryItemHoverCardItemTitle.style.color = element.getAttribute("data-item-color");
 
-                cardTextItemAttributes = document.getElementById( "inventoryItemHoverCardItemAttributes" );
-                cardTextItemAttributes.innerHTML = element.getAttribute("data-item-attributes");
+                Game.Screen._inventoryItemHoverCardItemAttributes.innerHTML = element.getAttribute("data-item-attributes");
 
-                cardTextItemDescription = document.getElementById( "inventoryItemHoverCardItemDescription" );
-                cardTextItemDescription.innerHTML = element.getAttribute("data-item-description");
+                Game.Screen._inventoryItemHoverCardItemDescription.innerHTML = element.getAttribute("data-item-description");
             }
         });
     },
@@ -112,25 +116,18 @@ Game.Screen.divInventoryManager = {
         element.addEventListener("mouseleave", function(event) {
 
             if (element.getAttribute("data-item") == "true") {
-                card = document.getElementById( "canvasItemHoverCard" );
-                card.style.display = "none";
-
-                cardTextItemTitle = document.getElementById( "inventoryItemHoverCardItemTitle" );
-                cardTextItemTitle.innerHTML = "";
-
-                cardTextItemAttributes = document.getElementById( "inventoryItemHoverCardItemAttributes" );
-                cardTextItemAttributes.innerHTML = "";
-
-                cardTextItemDescription = document.getElementById( "inventoryItemHoverCardItemDescription" );
-                cardTextItemDescription.innerHTML = "";
+                Game.Screen._inventoryItemHoverCard.style.display = "none";
+                Game.Screen._inventoryItemHoverCardItemTitle.innerHTML = "";
+                Game.Screen._inventoryItemHoverCardItemAttributes.innerHTML = "";
+                Game.Screen._inventoryItemHoverCardItemDescription.innerHTML = "";
             }
 
         });
     },
-    setupInventorySlots: function(inventory) {
+    setupInventorySlots: function() {
 
-    	var inventoryEquip = document.createElement("div");
-    	inventoryEquip.id = "canvasInventoryEquip";
+    	Game.Screen._inventoryEquip = document.createElement("div");
+    	Game.Screen._inventoryEquip.id = "canvasInventoryEquip";
 
     	slots = ["canvasInventoryHelmSlot", "canvasInventoryBackSlot",
     			 "canvasInventoryChestSlot", "canvasInventoryFeetSlot",
@@ -139,45 +136,46 @@ Game.Screen.divInventoryManager = {
 
     	//Equip slots
     	slots.forEach(function(slot) {
-    			inventoryEquip.appendChild(Game.Screen.divInventoryManager.createSlot(slot));
+    			Game.Screen._inventoryEquip.appendChild(Game.Screen.divInventoryManager.createSlot(slot));
     	});
 
-        inventory.appendChild(inventoryEquip);
+        Game.Screen._canvasInventory.appendChild(Game.Screen._inventoryEquip);
 
-        inventory.appendChild(this.createHoverCard());
+        this.createHoverCard();
     },
     createHoverCard: function () {
 
-        var inventoryItemHoverCard = document.createElement("div");
-        inventoryItemHoverCard.id = "canvasItemHoverCard";
-        inventoryItemHoverCard.style.display = "none";
+        Game.Screen._inventoryItemHoverCard = document.createElement("div");
+        Game.Screen._inventoryItemHoverCard.id = "canvasItemHoverCard";
+        Game.Screen._inventoryItemHoverCard.style.display = "none";
 
-        var inventoryItemHoverCardItemTitle = document.createElement("p");
-        inventoryItemHoverCardItemTitle.id = "inventoryItemHoverCardItemTitle";
+        Game.Screen._inventoryItemHoverCardItemTitle = document.createElement("p");
+        Game.Screen._inventoryItemHoverCardItemTitle.id = "inventoryItemHoverCardItemTitle";
 
-        var inventoryItemHoverCardItemAttributes = document.createElement("p");
-        inventoryItemHoverCardItemAttributes.id = "inventoryItemHoverCardItemAttributes";
+        Game.Screen._inventoryItemHoverCardItemAttributes = document.createElement("p");
+        Game.Screen._inventoryItemHoverCardItemAttributes.id = "inventoryItemHoverCardItemAttributes";
 
-        var inventoryItemHoverCardItemDescription = document.createElement("p");
-        inventoryItemHoverCardItemDescription.id = "inventoryItemHoverCardItemDescription";
+        Game.Screen._inventoryItemHoverCardItemDescription = document.createElement("p");
+        Game.Screen._inventoryItemHoverCardItemDescription.id = "inventoryItemHoverCardItemDescription";
 
-        inventoryItemHoverCard.appendChild(inventoryItemHoverCardItemTitle);
-        inventoryItemHoverCard.appendChild(inventoryItemHoverCardItemAttributes);
-        inventoryItemHoverCard.appendChild(inventoryItemHoverCardItemDescription);
+        Game.Screen._inventoryItemHoverCard.appendChild(Game.Screen._inventoryItemHoverCardItemTitle);
+        Game.Screen._inventoryItemHoverCard.appendChild(Game.Screen._inventoryItemHoverCardItemAttributes);
+        Game.Screen._inventoryItemHoverCard.appendChild(Game.Screen._inventoryItemHoverCardItemDescription);
 
-        return inventoryItemHoverCard;
+
+        Game.Screen._canvasInventory.appendChild(Game.Screen._inventoryItemHoverCard);
 
     },
-    createBagSlots: function(inventoryDiv) {
+    createBagSlots: function() {
 
-		var canvasInventoryBags = document.createElement("div");
-        canvasInventoryBags.id = "canvasInventoryBags";
+		Game.Screen._inventoryBags = document.createElement("div");
+        Game.Screen._inventoryBags.id = "canvasInventoryBags";
 
 		for(var i = 1; i <= 15; i++) {
-			canvasInventoryBags.appendChild(this.createSlot("canvasInventoryBagSlot" + i));
+			Game.Screen._inventoryBags.appendChild(this.createSlot("canvasInventoryBagSlot" + i));
 		}
 
-		inventoryDiv.appendChild(canvasInventoryBags);
+		Game.Screen._canvasInventory.appendChild(Game.Screen._inventoryBags);
 
 	},
 	createSlot: function(name) {

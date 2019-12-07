@@ -2,7 +2,7 @@
 Game.Screen.playScreen = {
     _player: null,
     _gameEnded: false,
-    _subScreen: null,
+    _subScreen: null, 
     enter: function() {
         // Create a map based on our size parameters
         var width = 100;
@@ -28,11 +28,11 @@ Game.Screen.playScreen = {
         // Render the tiles
         this.renderTiles(display);
         // Render messages
-        this.renderMessages(display);
+        Game.Screen.divLog.renderMessages();
         // Render the hud
-        Game.Screen.divStats.renderHUD(display);
+        Game.Screen.divStats.renderHUD();
         // Render the inventory
-        Game.Screen.divInventoryManager.manage(display);
+        Game.Screen.divInventoryManager.manage();
     },
     getScreenOffsets: function() {
         // Make sure we still have enough space to fit an entire game screen
@@ -105,22 +105,6 @@ Game.Screen.playScreen = {
                         glyph.getChar(), 
                         foreground, 
                         glyph.getBackground());
-                }
-            }
-        }
-    },
-    renderMessages: function(display) {
-        // Get the messages in the player's queue and render them
-        var messages = this._player.getMessages();
-
-        if (document.getElementById("canvasLogText"))
-                document.getElementById("canvasLogText").innerHTML = "";
-
-        for (var i = 0; i < messages.length; i++) {
-            if (typeof messages[i] !== 'undefined') {
-                if (document.getElementById("canvasLogText")) {
-                    document.getElementById("canvasLogText").innerHTML += messages[i];
-                    document.getElementById("canvasLogText").innerHTML += "<br>";
                 }
             }
         }

@@ -1,1 +1,51 @@
-Game.Screen = {};
+Game.Screen = {
+	//Stats
+	_canvasStats: null,
+	_statsVerboseBackground: null,
+    _statsVerboseTextLeft: null,
+    _statsVerboseTextLeftText: "Level:<br>Attack:<br>Defense:<br>Crit:<br>Dodge:<br>Hit:<br>Parry:<br>",
+    _statsVerboseTextRight: null,
+    _statsText: null,
+    _statsHPPolyBarBackground: null,
+    _statsHPPolyBar: null,
+    _statsHPText: null,
+    _statsXPPolyBarBackground: null,
+    _statsXPPolyBar: null,
+    _statsXPText: null,
+    //Log
+    _canvasLog: null,
+    _canvasLogText: null,
+    //Inventory
+    _canvasInventory: null,
+    _inventoryEquip: null,
+    _inventoryHelmSlot: null,
+    _inventoryBackSlot: null,
+    _inventoryChestSlot: null,
+    _inventoryFeetSlot: null,
+    _inventoryLegsSlot: null,
+    _inventoryWaistSlot: null,
+    _inventoryLHandSlot: null,
+    _inventoryRHandSlot: null,
+    //Hover Card
+    _inventoryItemHoverCard: null,
+    _inventoryItemHoverCardItemTitle: null,
+    _inventoryItemHoverCardItemAttributes: null,
+    _inventoryItemHoverCardItemDescription: null,
+    //Bags
+    _inventoryBags: null,
+    _inventoryBagSlot1: null,
+    _inventoryBagSlot2: null,
+    _inventoryBagSlot3: null,
+    _inventoryBagSlot4: null,
+    _inventoryBagSlot5: null,
+    _inventoryBagSlot6: null,
+    _inventoryBagSlot7: null,
+    _inventoryBagSlot8: null,
+    _inventoryBagSlot9: null,
+    _inventoryBagSlot10: null,
+    _inventoryBagSlot11: null,
+    _inventoryBagSlot12: null,
+    _inventoryBagSlot13: null,
+    _inventoryBagSlot14: null,
+    _inventoryBagSlot15: null
+};
