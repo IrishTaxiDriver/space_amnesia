@@ -6,7 +6,8 @@ Game.ItemRepository.define(loc.ItemMedicineBandageName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName,loc.ItemGauzeName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemMedicineAntibioticsName, {
@@ -17,7 +18,8 @@ Game.ItemRepository.define(loc.ItemMedicineAntibioticsName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCAn,
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemMedicineDisinfectantName, {
@@ -28,7 +30,8 @@ Game.ItemRepository.define(loc.ItemMedicineDisinfectantName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemMedicineAspirinName, {
@@ -39,7 +42,8 @@ Game.ItemRepository.define(loc.ItemMedicineAspirinName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCAn,
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemMedicineAntacidName, {
@@ -50,5 +54,6 @@ Game.ItemRepository.define(loc.ItemMedicineAntacidName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCAn,
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });

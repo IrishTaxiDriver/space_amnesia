@@ -1,18 +1,18 @@
 Game.Screen.divStats = {
-    _player: null,
+    _firstTimeSetup: null,
     setup: function() {
 
-        this._player = Game.Screen.playScreen._player;
-
         Game.Screen._canvasStats = document.getElementById("canvasStats");
+
+        this._firstTimeSetup = true;
 
         this.setupStatsPanel();
 
     },
-	renderHUD: function(display) {
+	renderHUD: function() {
         // Render player stats
         
-        if (this._player == null)
+        if (this._firstTimeSetup == null)
             this.setup();
 
         Game.Screen._statsHPPolyBar.style.display = "";
@@ -28,20 +28,20 @@ Game.Screen.divStats = {
         Game.Screen._statsVerboseTextRight.style.display = "";
         Game.Screen._statsVerboseBackground.style.display = "";
 
-        Game.Screen._statsHPPolyBar.style.width = ((this._player.getHp() / this._player.getMaxHp()) * 227) + "px";
-        Game.Screen._statsHPText.innerHTML = vsprintf('%d/%d', [this._player.getHp(), this._player.getMaxHp()]);
+        Game.Screen._statsHPPolyBar.style.width = ((Game._player.getHp() / Game._player.getMaxHp()) * 227) + "px";
+        Game.Screen._statsHPText.innerHTML = vsprintf('%d/%d', [Game._player.getHp(), Game._player.getMaxHp()]);
 
-        Game.Screen._statsXPPolyBar.style.width = ((this._player.getExperience() / this._player.getNextLevelExperience()) * 227) + "px";
-        Game.Screen._statsXPText.innerHTML = vsprintf('%d/%d', [this._player.getExperience(), this._player.getNextLevelExperience()]);
+        Game.Screen._statsXPPolyBar.style.width = ((Game._player.getExperience() / Game._player.getNextLevelExperience()) * 227) + "px";
+        Game.Screen._statsXPText.innerHTML = vsprintf('%d/%d', [Game._player.getExperience(), Game._player.getNextLevelExperience()]);
 
-        var statsRight = this._player.getLevel() + "<br>";
-        statsRight += this._player.getAttackValue() + "<br>";
-        statsRight += this._player.getDefenseValue() + "<br>";
-        statsRight += this._player.getCritValue() + "%<br>";
-        statsRight += this._player.getDodgeValue() + "%<br>";
-        statsRight += this._player.getHitValue() + "%<br>";
-        statsRight += this._player.getParryValue() + "%<br>";
-        statsRight += this._player.getHungerState();
+        var statsRight = Game._player.getLevel() + "<br>";
+        statsRight += Game._player.getAttackValue() + "<br>";
+        statsRight += Game._player.getDefenseValue() + "<br>";
+        statsRight += Game._player.getCritValue() + "%<br>";
+        statsRight += Game._player.getDodgeValue() + "%<br>";
+        statsRight += Game._player.getHitValue() + "%<br>";
+        statsRight += Game._player.getParryValue() + "%<br>";
+        statsRight += Game._player.getHungerState();
 
         Game.Screen._statsVerboseTextRight.innerHTML = statsRight;
 	},

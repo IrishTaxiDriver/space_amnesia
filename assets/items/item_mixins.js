@@ -1,5 +1,31 @@
 Game.ItemMixins = {};
 
+Game.ItemMixins.ItemCore = {
+    name: 'ItemCore',
+    init: function(template) {
+        this._slot = template['slot'] || 'none';
+        this._name = template['name'] || null;
+        this._prefix = template['prefix'] || '';
+        this._icon = template['icon'] || 'assets/images/inventory/icons/no_icon.jpg';
+        this._description = template['description'] || '';
+    },
+    getSlot: function() {
+        return this._slot;
+    },
+    getName: function() {
+        return this._name;
+    },
+    getPrefix: function() {
+        return this._prefix;
+    },
+    getIcon: function() {
+        return this._icon;
+    },
+    getDescription: function() {
+        return this._description;
+    }
+};
+
 // Edible Mixin
 Game.ItemMixins.Edible = {
     name: 'Edible',
@@ -178,7 +204,7 @@ Game.ItemMixins.Equippable = {
         this._name = template['name'] || null;
         this._inventorySlots = template['inventorySlots'] || 0;
         this._prefix = template['prefix'] || '';
-        this._icon = template['icon'] || 'assets/images/inventory/icons/no_icon.png';
+        this._icon = template['icon'] || 'assets/images/inventory/icons/no_icon.jpg';
         this._description = template['description'] || '';
     },
     getAttackValue: function() {

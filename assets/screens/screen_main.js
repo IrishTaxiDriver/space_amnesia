@@ -33,6 +33,9 @@ Game.Screen = {
     _inventoryItemHoverCardItemDescription: null,
     //Bags
     _inventoryBags: null,
+    _inventoryBagsText: null,
+    _inventoryBagsTextText: "%d/%d",
+    _InventoryBagSlots: null,
     _inventoryBagSlot1: null,
     _inventoryBagSlot2: null,
     _inventoryBagSlot3: null,

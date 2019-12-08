@@ -6,7 +6,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableMolotovName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableKnifeName, {
@@ -17,7 +18,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableKnifeName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableGrenadeName, {
@@ -28,7 +30,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableGrenadeName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableRiotGrenadeName, {
@@ -39,7 +42,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableRiotGrenadeName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableStickyGrenadeName, {
@@ -50,7 +54,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableStickyGrenadeName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableSatchelChargeName, {
@@ -61,7 +66,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableSatchelChargeName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableFlashbangName, {
@@ -72,7 +78,8 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableFlashbangName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWeaponThrowableConcGrenadeName, {
@@ -83,5 +90,6 @@ Game.ItemRepository.define(loc.ItemWeaponThrowableConcGrenadeName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     components: [loc.ItemPlantExtractsName, loc.ItemGauzeName, loc.ItemBottleName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });

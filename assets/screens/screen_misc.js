@@ -5,8 +5,8 @@ Game.Screen.pickupScreen = new Game.Screen.ItemListScreen({
     ok: function(selectedItems) {
         // Try to pick up all items, messaging the player if they couldn't all be
         // picked up.
-        if (!this._player.pickupItems(Object.keys(selectedItems))) {
-            Game.sendMessage(this._player, loc.PickupScreenPartialPickup);
+        if (!Game._player.pickupItems(Object.keys(selectedItems))) {
+            Game.sendMessage(Game._player, loc.PickupScreenPartialPickup);
         }
         return true;
     }
@@ -18,7 +18,7 @@ Game.Screen.dropScreen = new Game.Screen.ItemListScreen({
     canSelectMultipleItems: false,
     ok: function(selectedItems) {
         // Drop the selected item
-        this._player.dropItem(Object.keys(selectedItems)[0]);
+        Game._player.dropItem(Object.keys(selectedItems)[0]);
         return true;
     }
 });
@@ -34,10 +34,10 @@ Game.Screen.eatScreen = new Game.Screen.ItemListScreen({
         // Eat the item, removing it if there are no consumptions remaining.
         var key = Object.keys(selectedItems)[0];
         var item = selectedItems[key];
-        Game.sendMessage(this._player, loc.EatScreenEat, [item.describeThe()]);
-        item.eat(this._player);
+        Game.sendMessage(Game._player, loc.EatScreenEat, [item.describeThe()]);
+        item.eat(Game._player);
         if (!item.hasRemainingConsumptions()) {
-            this._player.removeItem(key);
+            Game._player.removeItem(key);
         }
         return true;
     }
@@ -53,8 +53,8 @@ Game.Screen.containerScreen = new Game.Screen.ItemListScreen({
     ok: function(selectedItems,container) {
         // Try to pick up all items, messaging the player if they couldn't all be
         // picked up.
-        if (!this._player.pickupItemsFromContainer(Object.keys(selectedItems), container)) {
-            Game.sendMessage(this._player, loc.PickupScreenPartialPickup);
+        if (!Game._player.pickupItemsFromContainer(Object.keys(selectedItems), container)) {
+            Game.sendMessage(Game._player, loc.PickupScreenPartialPickup);
         }
         return true;
     }
@@ -72,22 +72,22 @@ Game.Screen.wieldScreen = new Game.Screen.ItemListScreen({
         // Check if we selected 'no item'
         var keys = Object.keys(selectedItems);
         if (keys.length === 0) {
-            this._player.unequip("all");
-            Game.sendMessage(this._player, loc.WieldScreenEmptyHanded)
+            Game._player.unequip("all");
+            Game.sendMessage(Game._player, loc.WieldScreenEmptyHanded)
         } else {
             var item = selectedItems[keys[0]];
             var removedItem = null;
             var slot = item.getSlot();
             // Make sure to unequip the slot first, if theres something there.
-            if (this._player.getItemInSlot(slot) != null) {
-                removedItem = this._player.getItemInSlot(slot)
-                this._player.unequip(removedItem);
-                Game.sendMessage(this._player, loc.WieldScreenYouPutAway, [item.describeA()]);
+            if (Game._player.getItemInSlot(slot) != null) {
+                removedItem = Game._player.getItemInSlot(slot)
+                Game._player.unequip(removedItem);
+                Game.sendMessage(Game._player, loc.WieldScreenYouPutAway, [item.describeA()]);
             }
             // If we just unequipped the item above, we don't want to re-equip it.
             if (removedItem != item) {
-                this._player.equip(item);
-                Game.sendMessage(this._player, loc.WieldScreenYouAreWielding, [item.describeA()]);
+                Game._player.equip(item);
+                Game.sendMessage(Game._player, loc.WieldScreenYouAreWielding, [item.describeA()]);
             }
         }
         return true;
@@ -106,22 +106,22 @@ Game.Screen.wearScreen = new Game.Screen.ItemListScreen({
         // Check if we selected 'no item'
         var keys = Object.keys(selectedItems);
         if (keys.length === 0) {
-            this._player.unequip("all");
-            Game.sendMessage(this._player, loc.WearScreenNude)
+            Game._player.unequip("all");
+            Game.sendMessage(Game._player, loc.WearScreenNude)
         } else {
             var item = selectedItems[keys[0]];
             var removedItem = null;
             var slot = item.getSlot();
             // Make sure to unequip the slot first, if theres something there.
-            if (this._player.getItemInSlot(slot) != null) {
-                removedItem = this._player.getItemInSlot(slot)
-                this._player.unequip(removedItem);
-                Game.sendMessage(this._player, loc.WearScreenYouTakeOff, [item.describeA()]);
+            if (Game._player.getItemInSlot(slot) != null) {
+                removedItem = Game._player.getItemInSlot(slot)
+                Game._player.unequip(removedItem);
+                Game.sendMessage(Game._player, loc.WearScreenYouTakeOff, [item.describeA()]);
             }
             // If we just unequipped the item above, we don't want to re-equip it.
             if (removedItem != item) {
-                this._player.equip(item);
-                Game.sendMessage(this._player, loc.WearScreenYouAreWearing, [item.describeA()]);
+                Game._player.equip(item);
+                Game.sendMessage(Game._player, loc.WearScreenYouAreWearing, [item.describeA()]);
             }
         }
         return true;
@@ -139,7 +139,7 @@ Game.Screen.examineScreen = new Game.Screen.ItemListScreen({
         var keys = Object.keys(selectedItems);
         if (keys.length > 0) {
             var item = selectedItems[keys[0]];
-            Game.sendMessage(this._player, loc.ExamineScreenIts, 
+            Game.sendMessage(Game._player, loc.ExamineScreenIts, 
                 [
                     item.describeA(false),
                     item.details()

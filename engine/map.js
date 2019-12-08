@@ -167,7 +167,7 @@ Game.Map.prototype.addEntity = function(entity) {
     } 
     // If the entity is the player, set the player.
     if (entity.hasMixin(Game.EntityMixins.PlayerActor)) {
-        this._player = entity;
+        Game._player = entity;
     }
 };
 
@@ -183,7 +183,7 @@ Game.Map.prototype.removeEntity = function(entity) {
     }
     // If the entity is the player, update the player field.
     if (entity.hasMixin(Game.EntityMixins.PlayerActor)) {
-        this._player = undefined;
+        Game._player = undefined;
     }
 };
 
@@ -256,7 +256,7 @@ Game.Map.prototype.addItemAtRandomPosition = function(item, z) {
 };
 
 Game.Map.prototype.getPlayer = function() {
-    return this._player;
+    return Game._player;
 };
 
 Game.Map.prototype.populateEntities = function(num, habitat) {

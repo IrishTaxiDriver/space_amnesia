@@ -541,6 +541,21 @@ Game.EntityMixins.InventoryHolder = {
             }
             this.removeItem(i);      
         }
+    },
+    sortItems: function() {
+        this._items = this._items.filter(function (item) {
+            return item != null;
+        });
+    },
+    getFilledInventorySlots: function() {
+        var count = 0;
+
+        this._items.forEach(function(item) {
+            if (item != null || item != undefined)
+                count++;
+        });
+
+        return count;
     }
 };
 
@@ -590,7 +605,7 @@ Game.EntityMixins.FoodConsumer = {
 Game.EntityMixins.CorpseDropper = {
     name: 'CorpseDropper',
     init: function(template) {
-        // Chance of dropping a cropse (out of 100).
+        // Chance of dropping a corpse (out of 100).
         this._corpseDropRate = template['corpseDropRate'] || 100;
     },
     listeners: {
@@ -601,7 +616,9 @@ Game.EntityMixins.CorpseDropper = {
                 this._map.addItem(this.getX(), this.getY(), this.getZ(),
                     Game.ItemRepository.create('corpse', {
                         name: this._name + " " + loc.EntityCorpse,
-                        foreground: this._foreground
+                        foreground: this._foreground,
+                        icon: 'assets/images/inventory/icons/no_icon.jpg',
+                        description: 'A dead ' + this._name + '.'
                     }));
             }    
         }
@@ -649,7 +666,8 @@ Game.EntityMixins.Equipper = {
                 this.modifyInventorySlots(item.getInventorySlots() * -1);
             }
             this._equipped[item.getSlot()] = null;
-            item.removeEquip(this);
+            if (item.getSlot() != "none")
+                item.removeEquip(this);
         }
     },
     getItemInSlot: function(slot) {

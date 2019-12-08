@@ -1,7 +1,7 @@
 Game.Screen.divLog = {
     renderMessages: function() {
         // Get the messages in the player's queue and render them
-        var messages = Game.Screen.playScreen._player.getMessages();
+        var messages = Game._player.getMessages();
 
         if (Game.Screen._canvasLog == null)
             Game.Screen._canvasLog = document.getElementById("canvasLog");

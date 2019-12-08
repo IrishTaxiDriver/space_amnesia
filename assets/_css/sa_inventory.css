@@ -142,10 +142,6 @@ p#inventoryItemHoverCardItemDescription {
 	color: #B8860B;
 }
 
-p#canvasLogText {
-	margin: 0px;
-}
-
 p#inventoryItemHoverCardItemTitle,
 p#inventoryItemHoverCardItemAttributes,
 p#inventoryItemHoverCardItemDescription {
@@ -158,6 +154,13 @@ p#inventoryItemHoverCardItemDescription {
 
 p#inventoryItemHoverCardItemDescription {
 	padding-bottom: 5px;
+}
+
+p#inventoryBagsText {
+	position: relative;
+	//margin: auto;
+	text-align: center;
+	top: -22px;
 }
 
 #canvasItemHoverCard {
@@ -175,6 +178,7 @@ p#inventoryItemHoverCardItemDescription {
 	position: absolute;
 	padding: 0px;
 	margin: 0px;
+	z-index: 1;
 }
 
 #canvasInventoryEquip {
@@ -189,4 +193,12 @@ p#inventoryItemHoverCardItemDescription {
 	height: inherit;
 	width: auto;
 	margin: auto;
+}
+
+#canvasInventoryBagSlots {
+	height: inherit;
+	width: 93%;
+	margin-left: 0px;
+	padding: 0px;
+	
 }

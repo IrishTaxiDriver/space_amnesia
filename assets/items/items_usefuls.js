@@ -3,7 +3,8 @@ Game.ItemRepository.define(loc.ItemHandChargerName, {
     description: loc.ItemHandChargerDesc,
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    mixins: [Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemWristComputerName, {
@@ -11,5 +12,6 @@ Game.ItemRepository.define(loc.ItemWristComputerName, {
     description: loc.ItemWristComputerDesc,
     habitat: [loc.MapBiomeHabitatNone],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    mixins: [Game.ItemMixins.ItemCore]
 });

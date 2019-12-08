@@ -3,7 +3,7 @@ Game.Screen.divInventoryManager = {
 	_itemNull: "Nothing Equipped",
 	setup: function() {
 
-		this._activeInventoryDiv = "Equip";
+		this._activeInventoryDiv = "equip";
 
 		Game.Screen._canvasInventory = document.getElementById("canvasInventory");
 
@@ -19,7 +19,7 @@ Game.Screen.divInventoryManager = {
 		if (this._activeInventoryDiv == null)
 			this.setup();
 
-		if (this._activeInventoryDiv == "Equip") {
+		if (this._activeInventoryDiv == "equip") {
 			Game.Screen._inventoryBags.style.display = "none";
 			Game.Screen._inventoryEquip.style.display = "";
 			Game.Screen.divInventoryEquip.renderInventory();
@@ -78,7 +78,12 @@ Game.Screen.divInventoryManager = {
                 element.setAttribute("data-item", "true");
                 element.setAttribute("data-item-title", item.getName());
                 element.setAttribute("data-item-color", item.getForeground());
-                element.setAttribute("data-item-attributes", this.writeItemCardAttributes(item));
+
+                if (item.getSlot() != "none")
+                	element.setAttribute("data-item-attributes", this.writeItemCardAttributes(item));
+                else
+					element.setAttribute("data-item-attributes", "");
+
                 element.setAttribute("data-item-description", this.writeItemCardDescription(item));
             }
         } else {
@@ -171,9 +176,18 @@ Game.Screen.divInventoryManager = {
 		Game.Screen._inventoryBags = document.createElement("div");
         Game.Screen._inventoryBags.id = "canvasInventoryBags";
 
+        Game.Screen._inventoryBagsText = document.createElement("p");
+        Game.Screen._inventoryBagsText.id = "inventoryBagsText";
+
+        Game.Screen._InventoryBagSlots = document.createElement("div");
+        Game.Screen._InventoryBagSlots.id = "canvasInventoryBagSlots";
+
 		for(var i = 1; i <= 15; i++) {
-			Game.Screen._inventoryBags.appendChild(this.createSlot("canvasInventoryBagSlot" + i));
+			Game.Screen._InventoryBagSlots.appendChild(this.createSlot("canvasInventoryBagSlot" + i));
 		}
+
+		Game.Screen._inventoryBags.appendChild(Game.Screen._InventoryBagSlots);
+		Game.Screen._inventoryBags.appendChild(Game.Screen._inventoryBagsText);
 
 		Game.Screen._canvasInventory.appendChild(Game.Screen._inventoryBags);
 

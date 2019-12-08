@@ -12,7 +12,6 @@ Game.Screen.TargetBasedScreen = function(template) {
 };
 
 Game.Screen.TargetBasedScreen.prototype.setup = function(player, startX, startY, offsetX, offsetY) {
-    this._player = player;
     // Store original position. Subtract the offset to make life easy so we don't
     // always have to remove it.
     this._startX = startX - offsetX;
@@ -25,9 +24,9 @@ Game.Screen.TargetBasedScreen.prototype.setup = function(player, startX, startY,
     this._offsetY = offsetY;
     // Cache the FOV
     var visibleCells = {};
-    this._player.getMap().getFov(this._player.getZ()).compute(
-        this._player.getX(), this._player.getY(), 
-        this._player.getSightRadius(), 
+    Game._player.getMap().getFov(Game._player.getZ()).compute(
+        Game._player.getX(), Game._player.getY(), 
+        Game._player.getSightRadius(), 
         function(x, y, radius, visibility) {
             visibleCells[x + "," + y] = true;
         });
@@ -83,6 +82,6 @@ Game.Screen.TargetBasedScreen.prototype.executeOkFunction = function() {
     Game.Screen.playScreen.setSubScreen(undefined);
     // Call the OK function and end the player's turn if it return true.
     if (this._okFunction(this._cursorX + this._offsetX, this._cursorY + this._offsetY)) {
-        this._player.getMap().getEngine().unlock();
+        Game._player.getMap().getEngine().unlock();
     }
 };

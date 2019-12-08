@@ -1,6 +1,5 @@
 // Define our playing screen
 Game.Screen.playScreen = {
-    _player: null,
     _gameEnded: false,
     _subScreen: null, 
     enter: function() {
@@ -9,10 +8,10 @@ Game.Screen.playScreen = {
         var height = 48;
         var depth = 6;
         // Create our map from the tiles and player
-        this._player = new Game.Entity(Game.PlayerTemplate);
+        Game._player = new Game.Entity(Game.PlayerTemplate);
         var tiles = new Game.Builder(width, height, depth).getTiles();
-        var map = new Game.Map.biome_underground(tiles, this._player);
-        //var map = new Game.Map.cryogenics(this._player);
+        var map = new Game.Map.biome_underground(tiles, Game._player);
+        //var map = new Game.Map.cryogenics(Game._player);
         // Start the map's engine
         map.getEngine().start();
     },
@@ -36,14 +35,14 @@ Game.Screen.playScreen = {
     },
     getScreenOffsets: function() {
         // Make sure we still have enough space to fit an entire game screen
-        var topLeftX = Math.max(0, this._player.getX() - (Game.getScreenWidth() / 2));
+        var topLeftX = Math.max(0, Game._player.getX() - (Game.getScreenWidth() / 2));
         // Make sure we still have enough space to fit an entire game screen
-        topLeftX = Math.min(topLeftX, this._player.getMap().getWidth() -
+        topLeftX = Math.min(topLeftX, Game._player.getMap().getWidth() -
             Game.getScreenWidth());
         // Make sure the y-axis doesn't above the top bound
-        var topLeftY = Math.max(0, this._player.getY() - (Game.getScreenHeight() / 2));
+        var topLeftY = Math.max(0, Game._player.getY() - (Game.getScreenHeight() / 2));
         // Make sure we still have enough space to fit an entire game screen
-        topLeftY = Math.min(topLeftY, this._player.getMap().getHeight() - Game.getScreenHeight());
+        topLeftY = Math.min(topLeftY, Game._player.getMap().getHeight() - Game.getScreenHeight());
         return {
             x: topLeftX,
             y: topLeftY
@@ -57,13 +56,13 @@ Game.Screen.playScreen = {
         var topLeftY = offsets.y;
         // This object will keep track of all visible map cells
         var visibleCells = {};
-        // Store this._player.getMap() and player's z to prevent losing it in callbacks
-        var map = this._player.getMap();
-        var currentDepth = this._player.getZ();
+        // Store Game._player.getMap() and player's z to prevent losing it in callbacks
+        var map = Game._player.getMap();
+        var currentDepth = Game._player.getZ();
         // Find all visible cells and update the object
         map.getFov(currentDepth).compute(
-            this._player.getX(), this._player.getY(), 
-            this._player.getSightRadius(), 
+            Game._player.getX(), Game._player.getY(), 
+            Game._player.getSightRadius(), 
             function(x, y, radius, visibility) {
                 visibleCells[x + "," + y] = true;
                 // Mark cell as explored
@@ -135,45 +134,45 @@ Game.Screen.playScreen = {
                 this.move(0, 1, 0);
             } else if (inputData.keyCode === config.InventoryKey) {
                 // Show the inventory screen
-                this.showItemsSubScreen(Game.Screen.inventoryScreen, this._player.getItems(),
+                this.showItemsSubScreen(Game.Screen.inventoryScreen, Game._player.getItems(),
                     loc.InventoryScreenNotCarrying);
                 return;
             } else if (inputData.keyCode === config.DropKey) {
                 // Show the drop screen
-                this.showItemsSubScreen(Game.Screen.dropScreen, this._player.getItems(),
+                this.showItemsSubScreen(Game.Screen.dropScreen, Game._player.getItems(),
                     loc.InventoryScreenNothingToDrop);
                 return;
             } else if (inputData.keyCode === config.EatKey) {
                 // Show the drop screen
-                this.showItemsSubScreen(Game.Screen.eatScreen, this._player.getItems(),
+                this.showItemsSubScreen(Game.Screen.eatScreen, Game._player.getItems(),
                    loc.InventoryScreenNothingToEat);
                 return;
             } else if (inputData.keyCode === config.WearKey) {
                 if (inputData.shiftKey) {
                     // Show the wear screen
-                    this.showItemsSubScreen(Game.Screen.wearScreen, this._player.getItems(),
+                    this.showItemsSubScreen(Game.Screen.wearScreen, Game._player.getItems(),
                         loc.InventoryScreenNothingToWear);
                 } else {
                     // Show the wield screen
-                    this.showItemsSubScreen(Game.Screen.wieldScreen, this._player.getItems(),
+                    this.showItemsSubScreen(Game.Screen.wieldScreen, Game._player.getItems(),
                         loc.InventoryScreenNothingToWield);
                 }
                 return;
             } else if (inputData.keyCode === config.ExamineKey) {
                 // Show the drop screen
-                this.showItemsSubScreen(Game.Screen.examineScreen, this._player.getItems(),
+                this.showItemsSubScreen(Game.Screen.examineScreen, Game._player.getItems(),
                    loc.InventoryScreenNothingToExamine);
                 return;
             } else if (inputData.keyCode === config.PickupKey) {
-                var items = this._player.getMap().getItemsAt(this._player.getX(), 
-                    this._player.getY(), this._player.getZ());
+                var items = Game._player.getMap().getItemsAt(Game._player.getX(), 
+                    Game._player.getY(), Game._player.getZ());
                 // If there is only one item, directly pick it up
                 if (items && items.length === 1) {
                     var item = items[0];
-                    if (this._player.pickupItems([0])) {
-                        Game.sendMessage(this._player, loc.InventoryScreenYouPickUp, [item.describeA()]);
+                    if (Game._player.pickupItems([0])) {
+                        Game.sendMessage(Game._player, loc.InventoryScreenYouPickUp, [item.describeA()]);
                     } else {
-                        Game.sendMessage(this._player, loc.InventoryScreenCantPickUpFull);
+                        Game.sendMessage(Game._player, loc.InventoryScreenCantPickUpFull);
                     }
                 } else {
                     this.showItemsSubScreen(Game.Screen.pickupScreen, items,
@@ -184,7 +183,7 @@ Game.Screen.playScreen = {
                 return;
             }
             // Unlock the engine
-            this._player.getMap().getEngine().unlock();
+            Game._player.getMap().getEngine().unlock();
         } else if (inputType === 'keypress') {
             var keyChar = String.fromCharCode(inputData.charCode);
             if (keyChar === '>') {
@@ -194,8 +193,8 @@ Game.Screen.playScreen = {
             } else if (keyChar === ';') {
                 // Setup the look screen.
                 var offsets = this.getScreenOffsets();
-                Game.Screen.lookScreen.setup(this._player,
-                    this._player.getX(), this._player.getY(),
+                Game.Screen.lookScreen.setup(Game._player,
+                    Game._player.getX(), Game._player.getY(),
                     offsets.x, offsets.y);
                 this.setSubScreen(Game.Screen.lookScreen);
                 return;
@@ -208,15 +207,15 @@ Game.Screen.playScreen = {
                 return;
             }
             // Unlock the engine
-            this._player.getMap().getEngine().unlock();
+            Game._player.getMap().getEngine().unlock();
         } 
     },
     move: function(dX, dY, dZ) {
-        var newX = this._player.getX() + dX;
-        var newY = this._player.getY() + dY;
-        var newZ = this._player.getZ() + dZ;
+        var newX = Game._player.getX() + dX;
+        var newY = Game._player.getY() + dY;
+        var newZ = Game._player.getZ() + dZ;
         // Try to move to the new cell
-        this._player.tryMove(newX, newY, newZ, this._player.getMap());
+        Game._player.tryMove(newX, newY, newZ, Game._player.getMap());
     },
     setGameEnded: function(gameEnded) {
         this._gameEnded = gameEnded;
@@ -229,7 +228,7 @@ Game.Screen.playScreen = {
         Game.refresh();
     },
     showItemsSubScreen: function(subScreen, items, emptyMessage, container) {
-        if (items && subScreen.setup(this._player, items) > 0) {
+        if (items && subScreen.setup(Game._player, items) > 0) {
             if (!container || container == undefined) {
                 this.setSubScreen(subScreen);
             } else {
@@ -237,9 +236,9 @@ Game.Screen.playScreen = {
             }
         } else {
             if (!container || container == undefined ) {
-                Game.sendMessage(this._player, emptyMessage);
+                Game.sendMessage(Game._player, emptyMessage);
             } else {
-                Game.sendMessage(this._player, emptyMessage, [container.getName()]);
+                Game.sendMessage(Game._player, emptyMessage, [container.getName()]);
             }
             Game.refresh();
         }

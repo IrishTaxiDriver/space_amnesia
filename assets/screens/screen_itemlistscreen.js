@@ -16,7 +16,6 @@ Game.Screen.ItemListScreen = function(template) {
 };
 
 Game.Screen.ItemListScreen.prototype.setup = function(player, items) {
-    this._player = player;
     // Should be called before switching to the screen.
     var count = 0;
     // Iterate over each item, keeping only the acceptable ones and counting
@@ -39,7 +38,7 @@ Game.Screen.ItemListScreen.prototype.setup = function(player, items) {
 Game.Screen.ItemListScreen.prototype.render = function(display) {
     var letters = 'abcdefghijklmnopqrstuvwxyz';
     // Render the caption in the top row
-    display.drawText(0, 0, this._caption + ": " + this._player.getFullInventorySlots() + " out of " + this._items.length);
+    display.drawText(0, 0, this._caption + ": " + Game._player.getFullInventorySlots() + " out of " + this._items.length);
     // Render the no item row if enabled
     if (this._hasNoItemOption) {
         display.drawText(0, 1, loc.ItemListScreenNoItems);
@@ -57,7 +56,7 @@ Game.Screen.ItemListScreen.prototype.render = function(display) {
             // Check if the item is worn or wielded
             var suffix = '';
             if (Util.isFunction(this._items[i].getSlot)) {
-                if (this._items[i] === this._player.getItemInSlot(this._items[i].getSlot())) {
+                if (this._items[i] === Game._player.getItemInSlot(this._items[i].getSlot())) {
                     if (this._items[i].isWearable()) {
                         suffix = loc.ItemListScreenWearingSuffix + "[" + this._items[i].getSlot() + "]";
                     }
@@ -92,12 +91,12 @@ Game.Screen.ItemListScreen.prototype.executeOkFunction = function() {
     if (!this._container) {
         if (this._okFunction(selectedItems)) {
             Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: Function OK.");
-            this._player.getMap().getEngine().unlock();
+            Game._player.getMap().getEngine().unlock();
         }
     } else {
          if (this._okFunction(selectedItems, this._container)) {
             Debug.log("Game.Screen.ItemListScreen.prototype.executeOkFunction: Function OK.");
-            this._player.getMap().getEngine().unlock();
+            Game._player.getMap().getEngine().unlock();
         }       
     }
 };

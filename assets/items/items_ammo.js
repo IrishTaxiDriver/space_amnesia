@@ -5,7 +5,8 @@ Game.ItemRepository.define(loc.ItemAmmoArrowsName, {
     character: '*',
     foreground: 'white',
     components: [loc.ItemWoodScrapName,loc.ItemPillowFeathersName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemAmmoRocketsName, {
@@ -16,7 +17,8 @@ Game.ItemRepository.define(loc.ItemAmmoRocketsName, {
     foreground: 'white',
     components: [loc.ItemWeaponPipeName,loc.ItemPlantExtractsName,
     			loc.ItemFuseName],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemAmmoSmallBulletsName, {
@@ -26,7 +28,8 @@ Game.ItemRepository.define(loc.ItemAmmoSmallBulletsName, {
     character: '*',
     foreground: 'white',
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemAmmoLargeBulletsName, {
@@ -36,7 +39,8 @@ Game.ItemRepository.define(loc.ItemAmmoLargeBulletsName, {
     character: '*',
     foreground: 'white',
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemAmmoShellsName, {
@@ -46,7 +50,8 @@ Game.ItemRepository.define(loc.ItemAmmoShellsName, {
     character: '*',
     foreground: 'white',
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });
 
 Game.ItemRepository.define(loc.ItemAmmoSlugShellsName, {
@@ -56,5 +61,6 @@ Game.ItemRepository.define(loc.ItemAmmoSlugShellsName, {
     character: '*',
     foreground: 'white',
     components: [],
-    mixins: [Game.ItemMixins.Craftable]
+    mixins: [Game.ItemMixins.Craftable,
+             Game.ItemMixins.ItemCore]
 });

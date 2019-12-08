@@ -3,5 +3,6 @@ Game.ItemRepository.define(loc.ItemQuestGymTowelName, {
     description: loc.ItemQuestGymTowelDesc,
     habitat: [loc.MapBiomeHabitatAny],
     character: '*',
-    foreground: 'white'
+    foreground: 'white',
+    mixins: [Game.ItemMixins.ItemCore]
 });

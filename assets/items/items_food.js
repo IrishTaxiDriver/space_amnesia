@@ -7,7 +7,8 @@ Game.ItemRepository.define(loc.ItemFoodMushroomName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     foodValue: 50,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 });
 Game.ItemRepository.define(loc.ItemFoodLichenName, {
     name: loc.ItemFoodLichenName,
@@ -17,7 +18,8 @@ Game.ItemRepository.define(loc.ItemFoodLichenName, {
     foreground: 'white',
     prefix: loc.ItemPrefixLCA,
     foodValue: 50,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 });
 
 //FOOD - BIOMES - ARCTIC
@@ -44,7 +46,9 @@ Game.ItemRepository.define(loc.ItemFoodPumpkinName, {
     defenseValue: 2,
     wearable: true,
     wieldable: true,
-    mixins: [Game.ItemMixins.Edible, Game.ItemMixins.Equippable]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.Equippable,
+             Game.ItemMixins.ItemCore]
 });
 
 //FOOD - BIOMES - JUNGLE
@@ -57,7 +61,8 @@ Game.ItemRepository.define(loc.ItemFoodMelonName, {
     prefix: loc.ItemPrefixLCA,
     foodValue: 35,
     consumptions: 4,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 });
 
 //FOOD - BIOMES - SAVANNAH
@@ -70,7 +75,8 @@ Game.ItemRepository.define(loc.ItemFoodOkraName, {
     prefix: loc.ItemPrefixLCAn,
     foodValue: 35,
     consumptions: 4,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 });
 
 //FOOD - BIOMES - OCEAN
@@ -84,7 +90,8 @@ Game.ItemRepository.define(loc.ItemFoodMREName, {
     prefix: loc.ItemPrefixLCAn,
     foodValue: 35,
     consumptions: 4,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 });
 Game.ItemRepository.define(loc.ItemFoodSunflowerSeedsName, {
     name: loc.ItemFoodSunflowerSeedsName,
@@ -95,7 +102,8 @@ Game.ItemRepository.define(loc.ItemFoodSunflowerSeedsName, {
     prefix: loc.ItemPrefixLCA,
     foodValue: 35,
     consumptions: 4,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 });
 
 //FOOD - Corpse
@@ -107,7 +115,8 @@ Game.ItemRepository.define(loc.EntityCorpse, {
     prefix: loc.ItemPrefixLCA,
     foodValue: 75,
     consumptions: 1,
-    mixins: [Game.ItemMixins.Edible]
+    mixins: [Game.ItemMixins.Edible,
+             Game.ItemMixins.ItemCore]
 }, {
     disableRandomCreation: true
 });

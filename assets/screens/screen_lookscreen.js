@@ -1,7 +1,7 @@
 Game.Screen.lookScreen = new Game.Screen.TargetBasedScreen({
     captionFunction: function(x, y) {
-        var z = this._player.getZ();
-        var map = this._player.getMap();
+        var z = Game._player.getZ();
+        var map = Game._player.getMap();
         // If the tile is explored, we can give a better capton
         if (map.isExplored(x, y, z)) {
             // If the tile isn't explored, we have to check if we can actually 
@@ -42,8 +42,8 @@ Game.Screen.lookScreen = new Game.Screen.TargetBasedScreen({
 
 Game.Screen.lookScreen = new Game.Screen.TargetBasedScreen({
     captionFunction: function(x, y) {
-        var z = this._player.getZ();
-        var map = this._player.getMap();
+        var z = Game._player.getZ();
+        var map = Game._player.getMap();
         // If the tile is explored, we can give a better capton
         if (map.isExplored(x, y, z)) {
             // If the tile isn't explored, we have to check if we can actually 
