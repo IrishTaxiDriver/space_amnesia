@@ -34,6 +34,10 @@ canvas {
 }
 
 /* GLOBAL DIVS */
+#canvasGame {
+	height: inherit;
+	width: inherit;
+}
 
 #canvasStats,
 #canvasLog,
@@ -52,4 +56,23 @@ canvas {
 	width: 1206px;
 	height: 100px;
 	text-align: justify;
+}
+
+#canvasStart {
+	border: 3px solid blue;
+	border-radius: 5px;
+	padding: 10px;
+	position: absolute;
+	display: block;
+	height: inherit;
+	width: inherit;
+	font-family: arial, 'sans serif';
+    color: #FFFFFF;
+    float: left;
+    text-align: center;
+}
+
+p#startTitleText,
+p#startTitleDescription {
+
 }

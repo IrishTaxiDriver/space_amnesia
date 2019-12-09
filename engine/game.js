@@ -57,19 +57,42 @@ var Game =  {
         }
     },
     addDisplay: function() {
-        document.body.appendChild(this.getDisplay().getContainer());
+        Game.Screen._canvasGame.appendChild(this.getDisplay().getContainer());
+    },
+    addGameDisplay: function() {
+        Game.Screen._canvasGame = document.createElement("div");
+        Game.Screen._canvasGame.id = "canvasGame";
+
+        document.body.appendChild(Game.Screen._canvasGame);
+    },
+    addStartDisplay: function() {
+        Game.Screen._canvasStart = document.createElement("div");
+        Game.Screen._canvasStart.id = "canvasStart";
+
+        Game.Screen._canvasStartText = document.createElement("p");
+        Game.Screen._canvasStartText.id = "canvasStartText";
+        Game.Screen._canvasStartText.innerHTML = loc.StartScreenGameTitle;
+
+        Game.Screen._canvasStartDescription = document.createElement("p");
+        Game.Screen._canvasStartDescription.id = "canvasStartDescription";
+        Game.Screen._canvasStartDescription.innerHTML = loc.StartScreenGameDesc;
+
+        Game.Screen._canvasStart.appendChild(Game.Screen._canvasStartText);
+        Game.Screen._canvasStart.appendChild(Game.Screen._canvasStartDescription);
+
+        Game.Screen._canvasGame.appendChild(Game.Screen._canvasStart);
     },
     addStatsDisplay: function() {
         var stats = document.createElement("div");
         stats.id = "canvasStats";
 
         //And append the stats div to the page
-        document.body.appendChild(stats);
+        Game.Screen._canvasGame.appendChild(stats);
     },
     addInventoryDisplay: function() {
         var inventory = document.createElement("div");
         inventory.id = "canvasInventory";
-        document.body.appendChild(inventory);
+        Game.Screen._canvasGame.appendChild(inventory);
 
     },
     addLogDisplay: function() {
@@ -78,7 +101,7 @@ var Game =  {
         var logText = document.createElement("p");
         logText.id = "canvasLogText";
         log.appendChild(logText);
-        document.body.appendChild(log);
+        Game.Screen._canvasGame.appendChild(log);
     },
 };
 
@@ -90,6 +113,8 @@ window.onload = function() {
         // Initialize the game
         Game.init();
         // Add the container to our HTML page
+        Game.addGameDisplay();
+        Game.addStartDisplay();
         Game.addStatsDisplay();
         Game.addDisplay();
         Game.addInventoryDisplay();

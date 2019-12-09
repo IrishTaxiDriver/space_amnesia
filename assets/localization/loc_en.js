@@ -4,7 +4,7 @@ var loc = {
 	//START SCREEN
 	StartScreenEnter : "Entered start screen.",
 	StartScreenExit : "Exited start screen.",
-	StartScreenGameTitle : "%c{yellow}SPACE AMNESIA",
+	StartScreenGameTitle : "SPACE AMNESIA",
 	StartScreenGameDesc : "Press [Enter] to start!",
 
 	//PLAY SCREEN

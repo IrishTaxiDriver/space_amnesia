@@ -34,6 +34,8 @@ Game.Screen.divInventoryBags = {
 	},
 	renderBags: function() {
 
+		//TODO: Hide extra bag divs over your total inventory slots.
+
 		if (this._firstTimeSetup == null)
 			this.setup();
 

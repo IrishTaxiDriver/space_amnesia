@@ -1,5 +1,11 @@
 Game.Screen = {
-	//Stats
+    //Game Container
+    _canvasGame: null,
+    _canvas: null,
+	//Start Screen
+    _canvasStart: null,
+    _startTitleText: null,
+    //Stats
 	_canvasStats: null,
 	_statsVerboseBackground: null,
     _statsVerboseTextLeft: null,
